@@ -1,0 +1,135 @@
+body {
+
+    position: absolute;
+
+}
+
+a {
+    cursor: pointer;
+}
+
+.start-video-page {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.sf-video-wrapper, .vertical-content-page {
+    position: relative;
+    height: calc(100vh);
+    width: calc(100vw);
+}
+
+.video-player-dimensions {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.main-content-wrapper {
+    display: none;
+}
+
+video {
+
+    position: absolute;
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: fill !important;
+}
+
+a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100vw);
+    height: calc(90vh);
+}
+
+.custom-video-contain {
+
+    object-fit: contain !important;
+
+}
+
+.page-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.loading-img-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    display: table;
+    text-align: center;
+}
+
+.loading-img-wrapper img {
+
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+#loading-gif-file {
+    top: calc(50vh - 64px);
+    left: calc(50vw - 64px);
+    position: absolute;
+}
+
+.timecount-txt {
+    position: absolute;
+    top: 1.5%;
+    right: 2%;
+    font-size: calc(2vw);
+    font-weight: 500;
+    width: 25%;
+    height: 5%;
+    text-align: right;
+    color: white;
+    background: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.timecount-txt span {
+    color: red;
+}
+
+.btn-skip {
+    position: absolute;
+    left: 90%;
+    top: 92.5%;
+    width: 10%;
+    height: 5%;
+    transform: translate(-50%, -50%);
+    background: url(../images/btn_skip.png);
+    background-size: 100% 100% !important;
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.btn-skip:hover {
+    background: url(../images/btn_skip_hover.png);
+}

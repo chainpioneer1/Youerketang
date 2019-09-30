@@ -1,0 +1,397 @@
+.bg {
+    background: url("../../../images/teacher_work/report/bg.png");
+}
+
+.top-bar{
+}
+
+.wrong-modal{
+    display: none;
+}
+
+.report-title {
+    width: 50%;
+    height: calc(8vh);
+    line-height: calc(9vh);
+    left: 25%;
+    top: 4%;
+    font-size: calc(1.5vw);
+    font-weight: 600;
+    text-align: center;
+}
+
+.work-top-nav {
+    top: 12.4%;
+    left: 12.5%;
+    width: 37.5%;
+    height: 5.5%;
+}
+
+.work-top-nav .bg-nav {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 50%;
+    height: 100%;
+    background: url("../../../images/teacher_work/report/student_anal.png");
+}
+
+.work-top-nav .bg-nav:hover,
+.work-top-nav .bg-nav[item_type="1"][item_sel="1"] {
+    background: url("../../../images/teacher_work/report/student_anal_hover.png");
+}
+
+.work-top-nav .bg-nav[item_type="2"] {
+    left: 49.5%;
+    background: url("../../../images/teacher_work/report/problem_anal.png");
+}
+
+.work-top-nav .bg-nav[item_type="2"]:hover,
+.work-top-nav .bg-nav[item_type="2"][item_sel="1"] {
+    background: url("../../../images/teacher_work/report/problem_anal_hover.png");
+}
+
+.work-frame {
+    left: 13%;
+    top: 19%;
+    width: 74%;
+    height: 70%;
+}
+
+.work-frame .mean-time,
+.work-frame .show-detail,
+.work-frame .show-detail-anal{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(5vh);
+    line-height: calc(5vh);
+    padding: 0 2%;
+    font-size: calc(1.3vw);
+    font-weight: 600;
+}
+
+.work-frame .show-detail,
+.work-frame .show-detail-anal{
+    background: transparent;
+}
+
+.work-frame .show-detail-anal{
+    text-align: center;
+}
+
+.work-frame .canvas-container {
+    left: 10%;
+    top: 12%;
+    width: 80%;
+    height: 85%;
+    border: 1px solid #e0e0e0;
+}
+
+.work-frame[item_type="2"] .canvas-container {
+    left: 0%;
+    top: 7%;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.canvas-container .canvas-item {
+    position: relative;
+    display: inline-block;
+    width: calc(8vw);
+    height: calc(10vw);
+    margin: .5%;
+    border: 1px solid #f0f0f0;
+}
+
+.canvas-container .canvas-item .chart,
+.canvas-container .canvas-item .chart-number,
+.canvas-container .canvas-item .chart-title{
+    width: calc(14vw);
+    height: calc(7vw);
+    left: 50%;
+    top: 35%;
+    text-align: center;
+    font-size: calc(1.3vw);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.canvas-container .canvas-item .chart-number {
+    width: calc(11vw);
+    height: calc(11vw);
+    line-height: calc(11vw);
+}
+
+.canvas-container .canvas-item .chart-title{
+    top:85%;
+    width: calc(11vw);
+    height: calc(3vw);
+    line-height: calc(3vw);
+}
+
+.work-frame .left-arrow {
+    left: 94%;
+    top: 2%;
+    width: 2.5%;
+    height: 3%;
+    background: transparent;
+}
+
+
+.question_list_container{
+    top: 8.4%;
+    /* left: 4.6%; */
+    width: 100%;
+    height: 96.7%;
+    overflow-y: auto;
+}
+
+.question_list_item{
+    position: relative;
+    top: 0;
+    left: 3%;
+    width: 94%;
+    height: 90%;
+    border-radius: 10px;
+    background: #009688;
+}
+
+.prob_type_img{
+    top: 8.2%;
+    left: 22.1%;
+    width: 18.3%;
+    height: 8.9%;
+    background-size: contain !important;
+    /*background: url("../../../images/teacher_work/deliver/question_type.png") no-repeat;*/
+}
+
+.prob_img{
+    top: 19.8%;
+    left: 15.7%;
+    width: 30.1%;
+    height: 56.4%;
+    background-size: contain !important;
+    /*background: url("../../../images/teacher_work/deliver/prob_img.png") no-repeat;*/
+}
+
+.speaker_btn{
+    top: 82.9%;
+    left: 26.9%;
+    width: 7.6%;
+    height: 7.3%;
+    cursor: pointer;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/speaker_btn.png") no-repeat;
+}
+
+.seperate_container{
+    top:13.6%;
+    left:48.3%;
+    width: 0.7%;
+    height: 75.4%;
+    background-color: #22552c;
+}
+
+.answer_container{
+    top:19.1%;
+    left:52.3%;
+    width: 33.9%;
+    height: 60.7%;
+}
+
+.answer_item{
+    position: relative!important;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    height: 13%;
+    z-index: 100;
+    margin-bottom:6%;
+}
+
+.answer_title{
+    font-size: calc(2vw);
+    color: #000000;
+    font-weight: bold;
+    height: 100%;
+    width: 10%;
+}
+
+.answer_bg{
+    left: 13%;
+    width: 87%;
+    height: 100%;
+    background-color: #22552c;
+    border-radius: calc(0.7vw);
+}
+
+.answer_bg[item_checked="1"]{
+    left: 13%;
+    width: 87%;
+    height: 100%;
+    background-color: #22552c;
+    border-radius: calc(0.7vw);
+    border: #ff9918 1px solid;
+}
+.answer_btn{
+    top: 13%;
+    /* left: 20.7%; */
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/yes_img.png") no-repeat;
+}
+
+.answer_select_btn{
+    /* left: 20.7%; */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 100;
+    /*background-size: contain !important;*/
+    background: url("../../../images/teacher_work/deliver/yes_img.png") no-repeat;
+}
+
+.answer_btn[itemid='2']{
+    top: 13%;
+    /* left: 20.7%; */
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/no_img.png") no-repeat ;
+}
+
+.answer_text{
+    width: 100%;
+    height: 30%;
+    font-size: calc(2vw);
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+}
+.play_container{
+    top: 45%;
+    /* left: 70%; */
+    width: 100%;
+    height: 46%;
+    text-align: center;
+    background-size: contain !important;
+    background: url(../../../images/teacher_work/deliver/ans.png);
+}
+
+.display_btn{
+    top: 83.1%;
+    left: 66.8%;
+    width: 8.0%;
+    height: 7.1%;
+    z-index: 100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/display_btn.png") no-repeat;
+}
+
+.show-wrong-detail{
+    position: relative;
+    left: 0;
+    top: 0%;
+    width: 100%;
+    height: calc(5vh);
+    line-height: calc(5vh);
+    padding: 0 2%;
+    margin:1% 0;
+    font-size: calc(1.6vw);
+    font-weight: 300;
+    background: #f0f0f0;
+    border-bottom: 1px solid black;
+}
+
+.wrong-title{
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: calc(5vh);
+    line-height: calc(5vh);
+    padding: 0 2%;
+    font-size: calc(1.4vw);
+    font-weight: 500;
+
+}
+.student-count{
+    left: 80%;
+    top: 0;
+    width: 15%;
+    height: calc(5vh);
+    line-height: calc(5vh);
+    padding: 0 2%;
+    font-size: calc(1.4vw);
+    font-weight: 500;
+    text-align: right;
+}
+
+.right-arrow{
+    left: 94%;
+    top: 30%;
+    width: 1.5%;
+    height: 26%;
+    background: url("../../../images/teacher_work/report/go_right.png");
+}
+
+
+.student-wrong-container{
+    position: relative;
+    top: 10%;
+    width: 56%;
+    left: 18%;
+    height: 90%;
+}
+
+.student-wrong-title,
+.student-item{
+    position: relative;
+    width: 100%;
+    padding: 0 8%;
+    height: calc(3.6vh);
+    line-height: calc(3.6vh);
+    font-size: calc(1.3vw);
+    background: #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.student-item{
+    background:white;
+}
+
+::-webkit-scrollbar {
+    width: 10px!important;
+}
+
+/* Track bar Background */
+::-webkit-scrollbar-track {
+    background: rgba(200,200,200,.3);
+    border-radius: 20px!important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 20px!important;
+    background: rgba(1, 205, 175, .5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(1, 205, 175, 1);
+}
+
+

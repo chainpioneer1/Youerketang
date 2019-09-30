@@ -1,0 +1,347 @@
+div {
+    background-size: 100% 100% !important;
+}
+
+.lessonware_container {
+    position: absolute;
+    top: 20%;
+    left: 15.9%;
+    width: 68.6%;
+    height: 75%;
+    z-index: 1000;
+    background-size: 100% 100% !important;
+}
+
+.lessonware_list_head {
+    position: relative;
+    width: 100%;
+    height: 7%;
+    left: 0;
+    background-size: 100% 100% !important;
+    font-size: calc(2.0vw);
+    font-weight: 600;
+    text-align: right;
+    margin: 10px 0 20px 0;
+}
+
+.lessonware_list_container {
+    position: relative;
+    width: 100%;
+    height: 93%;
+    top: 0%;
+    left: 0;
+    background-size: 100% 100% !important;
+    font-size: calc(1.5vw);
+    font-weight: 600;
+    overflow-y: auto;
+}
+
+.lessonware_add_btn {
+    position: absolute;
+    width: 14%;
+    bottom: 0;
+    vertical-align: middle;
+    display: inline-block;
+    height: 70%;
+    line-height: calc(4vh);
+    right: 10%;
+    font-size: calc(1.2vw);
+    cursor: pointer;
+    background: #ffc948;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.lessonware_add_btn:hover {
+    background: gray;
+}
+
+.lessonware_list {
+    position: relative;
+    left: 1.5%;
+    width: 97%;
+    height: 30%;
+    background: white;
+    border-radius: 5px;
+    border: 1px slategrey;
+    margin: 0 0 20px 0;
+    box-shadow: 0px 5px 13px 0px rgba(0,0,0,.3);
+}
+
+.lessonware_icon {
+    left: 20px;
+    top: 20px;
+    width: 15%;
+    height: 80%;
+    /*background: lightskyblue;*/
+}
+.lessonware_text {
+    left: 19%;
+    top: 20%;
+    width: 15%;
+    height: 20%;
+    line-height: calc(4.3vh);
+}
+.lessonware_time {
+    left: 19%;
+    top: 73%;
+    width: 21%;
+    height: 14%;
+    line-height: calc(3vh);
+    font-size: calc(1.3vw);
+    color: black;
+}
+/*.lessonware_table thead tr {*/
+/*    border-bottom: 4px solid white;*/
+/*}*/
+
+/*.lessonware_table_head thead tr {*/
+/*    border-bottom: 2.0px solid white;*/
+/*}*/
+
+/*.lessonware_table tbody {*/
+/*    width: 100%;*/
+/*    height: 90%;*/
+/*    overflow-y: auto;*/
+/*}*/
+
+/*.lessonware_table tbody tr {*/
+/*    line-height: 3.6vh;*/
+/*    border-bottom: 2px solid #e5e5e5;*/
+/*}*/
+
+/*.lessonware_table td,*/
+/*.lessonware_table th {*/
+/*    position: relative;*/
+/*    text-align: center;*/
+/*    color: #4f4f4f;*/
+/*    vertical-align: middle;*/
+/*    font-size: calc(1.6vw);*/
+/*    line-height: .9;*/
+/*    font-weight: 500;*/
+/*}*/
+
+/*.lessonware_table_head td,*/
+/*.lessonware_table_head th {*/
+/*    position: relative;*/
+/*    text-align: center;*/
+/*    color: white;*/
+/*    vertical-align: middle;*/
+/*}*/
+
+/*.lessonware_table td {*/
+/*    color: #4f4f4f;*/
+/*    padding: 4% 0 0;*/
+/*}*/
+
+/*.lessonware_table td img {*/
+/*    height: calc(8vw);*/
+/*}*/
+
+.lessonware_operation {
+    left: 73%;
+    top: 61%;
+    width: 27%;
+    height: 20%;
+}
+
+.lessonware_list .publish-btn,
+.lessonware_list .edit-btn,
+.lessonware_list .delete-btn {
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 26%;
+    height: 37%;
+    cursor: pointer;
+    background: url(../../../assets/images/resource/lessonware/lessonware1/publish.png);
+    background-size: contain !important;
+}
+
+.lessonware_list .publish-btn[publish_status="0"]:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware1/publish_clicked.png);
+}
+
+.lessonware_list .publish-btn[publish_status="1"] {
+    background: url(../../../assets/images/resource/lessonware/lessonware1/unpublish.png);
+}
+
+.lessonware_list .publish-btn[publish_status="1"]:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware1/unpublish_clicked.png);
+}
+
+.lessonware_list .edit-btn {
+    left: 30%;
+    background: url(../../../assets/images/resource/lessonware/lessonware1/edit.png);
+}
+
+.lessonware_list .edit-btn:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware1/edit_clicked.png);
+}
+
+.lessonware_list .delete-btn {
+    left: 60%;
+    background: url(../../../assets/images/resource/lessonware/lessonware1/delete.png);
+}
+
+.lessonware_list .delete-btn:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware1/delete_clicked.png);
+}
+
+.lessonware_table .lesson_td {
+    padding-left: 0;
+    text-align: center !important;
+    cursor: pointer;
+}
+
+#lw_delete_modal {
+    position: absolute;
+    top: 41.3%;
+    left: 40.3%;
+    width: 18.4%;
+    height: 19%;
+    background-size: 100% 100% !important;
+    background: url(../../../assets/images/resource/lessonware/lessonware1/delete_bg.png);
+}
+
+#lw_delete_modal .msg-content{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    font-size: calc(1.4vw);
+}
+
+#delete_lw_item_btn,
+#no_lw_item_btn{
+    position: absolute;
+    top: 63.2%;
+    left: 18%;
+    width: 24.7%;
+    height: 18.1%;
+    cursor: pointer;
+    background-size: 100% 100% !important;
+    background: url(../../../assets/images/resource/lessonware/lessonware1/yes.png) no-repeat;
+}
+#delete_lw_item_btn:hover{
+    background: url(../../../assets/images/resource/lessonware/lessonware1/yes_clicked.png) no-repeat;
+}
+
+#no_lw_item_btn {
+    left: 59%;
+    background: url(../../../assets/images/resource/lessonware/lessonware1/no.png) no-repeat;
+}
+#no_lw_item_btn:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware1/no_clicked.png) no-repeat;
+}
+
+#lw_modify_modal,
+.click-event-sensor {
+    position: absolute;
+    background-color: rgba(255,255,255,1);
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lw_next_btn {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    width: 7.5%;
+    height: 3.5%;
+    cursor: pointer;
+    background-size: 100% 100% !important;
+    background: url(../../../assets/images/resource/lessonware/lessonware1/next.png) no-repeat;
+}
+
+.lw_next_btn:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware1/next_clicked.png) no-repeat;
+}
+
+.output {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+.lw_username {
+    position: absolute;
+    top: 34%;
+    left: 36%;
+    width: 29%;
+    height: 4%;
+    text-align: center;
+    background: url(../../../assets/images/resource/lessonware/lessonware1/add_bg.png) no-repeat;
+}
+
+label {
+    font-size: 3rem;
+    margin-right: 10px;
+}
+
+input {
+    position: relative;
+    font-size: calc(1.3vw);
+    left: 10%;
+    top: 0%;
+    width: 66%;
+    height: 100%;
+}
+
+.name_remove_btn {
+    position: absolute;
+    background: url(../../../assets/images/resource/lessonware/lessonware1/remove_btn.png) no-repeat left top;
+    width: 3.3%;
+    height: 38.3%;
+    left: 93.4%;
+    top: 33.2%;
+    background-size: contain;
+    cursor: pointer;
+}
+
+/*span{
+    display: inline-block;
+}
+input:invalid + span:after {
+    position: relative;
+    content: '✖';
+    color: #f00;
+    padding-left: 5px;
+}
+
+input:valid + span:after {
+    position: relative;
+    content: '✓';
+    color: #26b72b;
+    padding-left: 5px;
+}*/
+
+
+::-webkit-scrollbar {
+    width: 10px!important;
+}
+
+/* Track bar Background */
+::-webkit-scrollbar-track {
+    background: rgba(200,200,200,.2);
+    border-radius: 0!important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 0!important;
+    background: rgba(1, 205, 175, .5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(1, 205, 175, 1);
+}

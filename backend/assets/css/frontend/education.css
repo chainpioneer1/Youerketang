@@ -1,0 +1,102 @@
+.resource_list_container {
+    position: absolute;
+    width: 67.8%;
+    height: 52%;
+    top: 24.5%;
+    left: 16.8%;
+    overflow-y: auto;
+}
+
+.res_menu_container{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index:1000;
+}
+
+.item{
+    position: absolute;
+    top:0;
+    left:0;
+    background-size: 100% 100% !important;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.menu_item1{
+    width: 15.5%;
+    height: 11%;
+    left: 26.3%;
+    top: 3.1%;
+
+}
+
+.menu_item2{
+    width: 17.3%;
+    height: 11%;
+    left: 42.6%;
+    top: 3.1%;
+}
+
+.menu_item3{
+    width: 16.3%;
+    height: 10.5%;
+    left: 60.9%;
+    top: 3.6%;
+}
+
+.list_item {
+    position: relative;
+    display: inline-block;
+    width: 23%;
+    height: calc(22.8vh);
+    line-height: calc(8.8vh);
+    background-size: 100% 100% !important;
+    margin: 0 2% 2% 0;
+    vertical-align: middle;
+    transition: all .2s ease-in-out;
+    cursor:pointer;
+}
+
+.main_item_info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    color: white;
+}
+
+.item_infobar {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    line-height: calc(4.5vh);
+    font-size: calc(1vw);
+    text-align: center;
+}
+
+.main_item_info[item_type="self"]{
+    color: white;
+    text-align: center;
+    font-size:calc(1.8vw);
+    font-weight: 500;
+    background:url(../../images/classroom/blank.png);
+}
+
+.main_item_info[item_type="self"]:hover{
+    background:url(../../images/classroom/blank_clicked.png);
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw);
+    height: calc(100vh);
+}
+

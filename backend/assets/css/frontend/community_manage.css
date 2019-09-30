@@ -1,0 +1,900 @@
+
+.courseview-nav {
+    position: absolute;
+    left: 6%;
+    top: 53%;
+    width: 3.4%;
+    height: calc(57vh);
+    transform: translateY(-50%);
+}
+
+.courseview-nav .mainnav-item {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    background-size: 100% 80% !important;
+    padding: 0;
+    transition: all .3s ease-in-out;
+}
+
+.previous_Btn, .next_Btn, .next_Btn_sharing {
+    position: absolute;
+    left: 39%;
+    bottom: 15%;
+    width: 8.8%;
+    height: 5.9%;
+    background: url(../../images/frontend/community/prev.png) no-repeat;
+    background-size: 100% 100% !important;
+}
+
+.next_Btn, .next_Btn_sharing {
+    left: 56.8%;
+    background: url(../../images/frontend/community/next.png) no-repeat;
+}
+
+.search-bar {
+    position: absolute;
+    top: 19.4%;
+    height: 6.5%;
+    left: 52.8%;
+    width: 79%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    background-size: 100% 100% !important;
+}
+
+.search-bar .search-keyword,
+.search-bar .select-searchtype,
+.search-bar .select-searchtype-hover,
+.search-bar .btn-newtask,
+.search-bar .btn-back2view,
+.search-bar .btn-uploadwork,
+.search-bar .btn-newproduct {
+    position: absolute;
+    top: 50%;
+    height: 100%;
+    transform: translateY(-50%);
+    background: transparent;
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+}
+
+.search-bar .search-keyword {
+    width: 41%;
+    left: 0;
+    border-radius: calc(.6vw);
+    background: #caf2fd;
+}
+
+.search-keyword input,
+.search-keyword .btn-search {
+    background: transparent;
+    position: absolute;
+    height: 95%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 84%;
+    margin: 0;
+    padding: 0 3%;
+    border-radius: calc(.6vw);
+    background-size: 100% 100% !important;
+    border: none;
+    transition: all .3s ease-in-out;
+    box-shadow: none;
+    font-size: calc(4vh);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px dodgerblue;
+}
+
+.search-keyword .btn-search {
+    left: auto;
+    right: 0;
+    width: 16%;
+    height: 100%;
+    background: url(../../images/frontend/community/btn_search.png);
+}
+
+.search-keyword .btn-search:hover {
+    background: url(../../images/frontend/community/btn_search_hover.png);
+}
+
+.search-bar .select-searchtype {
+    left: 42%;
+    width: 12%;
+    transition: none;
+    background: url(../../images/frontend/community/sel_bg_list.png);
+}
+
+.search-bar .select-searchtype-hover {
+    display: none;
+    left: 42%;
+    width: 12%;
+    height: 300%;
+    top: 150%;
+    transition: none;
+    background: url(../../images/frontend/community/sel_bg_list_hover.png);
+}
+
+.sel-tasktime,
+.sel-taskname,
+.sel-class {
+    position: relative;
+    height: 20%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 84%;
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+    background: url(../../images/frontend/community/sel_taskname.png);
+}
+
+.sel-taskname:hover {
+    background: url(../../images/frontend/community/sel_taskname_hover.png);
+}
+
+.sel-tasktime {
+    background: url(../../images/frontend/community/sel_tasktime.png);
+}
+
+.sel-tasktime:hover {
+    background: url(../../images/frontend/community/sel_tasktime_hover.png);
+}
+
+.sel-class {
+    background: url(../../images/frontend/community/sel_class.png);
+}
+
+.sel-class:hover {
+    background: url(../../images/frontend/community/sel_class_hover.png);
+}
+
+.search-bar .btn-newtask,
+.search-bar .btn-back2view,
+.search-bar .btn-uploadwork,
+.search-bar .btn-newproduct {
+    left: auto;
+    right: 0;
+    width: 12%;
+    background: url(../../images/frontend/community/btn_additem.png);
+}
+
+.search-bar .btn-newtask:hover {
+    background: url(../../images/frontend/community/btn_additem_hover.png);
+}
+
+.community_list_wrapper,
+.task_item_container {
+    position: absolute;
+    top: 30.4%;
+    height: 53%;
+    left: 52.8%;
+    width: 74%;
+    transform: translateX(-50%);
+}
+
+.community_list_wrapper > div {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.comm_item_wrapper {
+    position: relative;
+    left: 0;
+    top: 0 !important;
+    margin: 2% 0 .6%;
+    width: 100%;
+    height: 19%;
+    background: url(../../images/frontend/community/item_bg.png) no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+}
+
+.comm_school,
+.comm_author,
+.comm_title,
+.comm_shareTime,
+.comm_viewNum {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    width: 25%;
+    height: calc(5vh);
+    transform: translate(-50%, -50%);
+    font-size: calc(3vh);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.comm_school {
+    left: 14.5%;
+    top: 26%;
+    font-size: calc(2.5vh);
+    color: white;
+}
+
+.comm_author {
+    left: 14.5%;
+    top: 75%;
+}
+
+.comm_shareTime {
+    left: 38%;
+}
+
+.comm_title {
+    left: 63.5%;
+    top: 66%;
+}
+
+.comm_viewNum {
+    left: 88%;
+    top: 66%;
+}
+
+.btn-preview,
+.btn-delete,
+.btn-share,
+.btn-unshare,
+.btn-update,
+.btn-deployed,
+.btn-deploy {
+    position: relative;
+    display: inline-block;
+    float: none;
+    width: 22.5%;
+    height: 100%;
+    font-size: calc(3vh);
+    background: white;
+    vertical-align: middle;
+    background: url(../../images/frontend/community/btn_preview.png);
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.comm_viewNum .btn-preview:hover {
+    background: url(../../images/frontend/community/btn_preview_hover.png);
+}
+
+.btn-delete {
+    background: url(../../images/frontend/community/btn_delete.png);
+}
+
+.btn-delete:hover {
+    background: url(../../images/frontend/community/btn_delete_hover.png);
+}
+
+.btn-update {
+    background: url(../../images/frontend/community/btn_update.png);
+}
+
+.btn-update:hover {
+    background: url(../../images/frontend/community/btn_update_hover.png);
+}
+
+.btn-deploy {
+    background: url(../../images/frontend/community/btn_deploy.png);
+}
+
+.btn-deploy:hover {
+    background: url(../../images/frontend/community/btn_deploy_hover.png);
+}
+
+.btn-deployed {
+    width: 29%;
+    background: url(../../images/frontend/community/btn_deployed.png);
+    cursor: default;
+}
+
+.community_new_task,
+.community_upload_work,
+.community_task_check {
+    position: absolute;
+    top: 52.9%;
+    left: 52.8%;
+    transform: translate(-50%, -50%);
+    width: 83%;
+    height: 77%;
+    background: url(../../images/frontend/community/comm_bg_newtask.png);
+    background-size: 100% 100% !important;
+    /*display: none;*/
+
+}
+
+.community_new_task input,
+.community_new_task textarea,
+.community_new_task .new-task-class,
+.community_new_task .new-task-addcontents,
+.community_new_task .new-task-deadtime,
+.new-task-btn-save,
+.new-task-btn-cancel,
+.new-work-btn-save,
+.new-work-btn-cancel {
+    position: absolute;
+    top: 11.5%;
+    left: 30%;
+    width: 34%;
+    height: 8%;
+    transform: translateY(-50%);
+    background: white;
+    border-radius: calc(.7vw);
+    border: none;
+    outline: none;
+    padding: calc(1vh) calc(1vw);
+    transition: all .3s ease-in-out;
+    -webkit-background-size: 100% 100% !important;
+    background-size: 100% 100% !important;
+    font-size: calc(1.5vw);
+}
+
+.community_new_task .new-task-class {
+    padding: 0;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px dodgerblue;
+}
+
+.new-task-class .add-class-input {
+    top: 50%;
+    left: 0;
+    height: 100%;
+    width: 80%;
+}
+
+.new-task-class .add-class-list,
+.new-task-class .add-class-btn {
+    position: absolute;
+    top: 0%;
+    left: 80%;
+    height: 100%;
+    width: 20%;
+    border-radius: calc(.7vw);
+    background: url(../../images/frontend/community/btn_selclass.png);
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+}
+
+.new-task-class .add-class-btn:hover {
+    background: url(../../images/frontend/community/btn_selclass_hover.png);
+}
+
+.new-task-class .add-class-list {
+    top: 100%;
+    left: 0;
+    height: 300%;
+    width: 100%;
+    background: white;
+    border: 1px solid lightgrey;
+    overflow: auto;
+    display: none;
+    transition: none;
+}
+
+.add-class-list .add-class-item {
+    position: relative;
+    width: 100%;
+    padding: calc(1vh) calc(1vw);
+    transition: all .3s ease-in-out;
+}
+
+.add-class-list .add-class-item:hover {
+    background: lightgrey;
+}
+
+.community_new_task .new-task-name {
+    top: 23%;
+}
+
+.community_new_task .new-task-desc {
+    top: 49%;
+    width: 53%;
+    height: 33%;
+    resize: none;
+}
+
+.community_new_task .new-task-addcontents {
+    top: 49%;
+    left: 83.5%;
+    width: calc(3.5vw + 20px);
+    height: 33%;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.new-task-addcontents .new-task-content,
+.new-task-addcontents .new-task-add-btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: calc(3.5vw);
+    height: calc(6.5vh);
+    margin-bottom: calc(.1vh);
+    background: url(../../images/frontend/community/btn_plus.png);
+    background-size: 100% 100% !important;
+    cursor: pointer;
+}
+
+.new-task-addcontents .new-task-content {
+    display: inline-block;
+    height: calc(4.5vh);
+}
+
+.new-task-addcontents .new-task-content[item_type="1"] {
+    background: url(../../images/frontend/community/itemtype1.png);
+}
+
+.new-task-addcontents .new-task-content[item_type="1"]:hover {
+    background: url(../../images/frontend/community/itemtype1_hover.png);
+}
+
+.new-task-addcontents .new-task-content[item_type="2"] {
+    background: url(../../images/frontend/community/itemtype2.png);
+}
+
+.new-task-addcontents .new-task-content[item_type="2"]:hover {
+    background: url(../../images/frontend/community/itemtype2_hover.png);
+}
+
+.new-task-addcontents .new-task-add-btn {
+    margin-bottom: calc(1.5vh);
+}
+
+.community_new_task .new-task-deadtime {
+    top: 72%;
+    padding:.1% 0 0 1%;
+}
+.new-task-deadtime div{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    margin:0;
+    padding:1%;
+    font-size:calc(1.7vw);
+    text-align: center;
+}
+.time-year, .time-hr-min {
+    position: relative;
+    display: inline-block;
+    border:none;
+}
+select{
+    border: 0 !important;  /*Removes border*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-overflow:'';
+    text-indent: 0.01px; /* Removes default arrow from firefox*/
+    text-overflow: "";  /*Removes default arrow from firefox*/
+    outline:none;
+}
+select::-ms-expand {
+    display: none;
+}
+.select-wrapper
+{
+    padding-left:0px;
+    overflow:hidden;
+}
+
+.new-work-btn-save,
+.new-work-btn-cancel,
+.new-task-btn-save,
+.new-task-btn-cancel {
+    top: 91%;
+    width: 10.5%;
+    transform: translate(-50%, -50%);
+    left: 40%;
+    border-radius: 0;
+    background: url(../../images/frontend/community/btn_savetask.png);
+}
+
+.new-work-btn-save:hover,
+.new-task-btn-save:hover {
+    background: url(../../images/frontend/community/btn_savetask_hover.png);
+}
+
+.new-work-btn-cancel,
+.new-task-btn-cancel {
+    left: 60%;
+    border-radius: 0;
+    background: url(../../images/frontend/community/btn_cancel.png);
+}
+
+.new-work-btn-cancel:hover,
+.new-task-btn-cancel:hover {
+    background: url(../../images/frontend/community/btn_cancel_hover.png);
+}
+
+.teachertask-student-check,
+.teachertask-sharing {
+    position: absolute;
+    top: 52.9%;
+    left: 52.8%;
+    transform: translate(-50%, -50%);
+    width: 83%;
+    height: 77%;
+    background: transparent;
+    /*background: url(../../images/frontend/community/comm_bg_newtask.png);*/
+    background-size: 100% 100% !important;
+}
+
+.teachertask-student-check .search-bar,
+.teachertask-sharing .search-bar {
+    top: 6.6%;
+    height: 8.3%;
+    left: 50%;
+    width: 95%;
+}
+
+.teachertask-student-check .community_task_check,
+.teachertask-sharing .community_task_check {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: url(../../images/frontend/community/comm_bg_taskcheck.png);
+}
+
+.community_task_check .task-item-container {
+    position: absolute;
+    top: 58%;
+    left: calc(50%);
+    transform: translate(-50%, -50%);
+    width: calc(90%);
+    height: 72%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.task-check-item {
+    position: relative;
+    width: 100%;
+    left: 0;
+    height: calc(7vh);
+    margin: calc(3vh) 0;
+    padding: 0;
+    background-color: #caf2fd;
+    border-radius: calc(3vh);
+
+}
+
+.check-item-student,
+.check-item-status,
+.check-item-content,
+.check-item-mark {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: calc(5vh);
+    top: 50%;
+    left: 50%;
+    font-size: calc(3vh);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.check-item-student {
+    left: 12.5%;
+    top: 60%;
+}
+
+.check-item-status {
+    left: 35%;
+    top: 60%;
+}
+
+.check-item-content {
+    left: 59.5%;
+}
+
+.check-item-content .btn-view {
+    position: relative;
+    display: inline-block;
+    width: 44%;
+    height: 100%;
+    transform: translateY(-50%);
+    top: 50%;
+    background-size: 100% 100% !important;
+    background: url(../../images/frontend/community/btn_viewcontent.png);
+}
+
+.check-item-content .btn-view:hover {
+    background: url(../../images/frontend/community/btn_viewcontent_hover.png);
+}
+
+.check-item-mark {
+    left: 86%;
+}
+
+.check-item-mark .check-item-star {
+    position: relative;
+    display: inline-block;
+    width: calc(3.8vh);
+    height: calc(3.7vh);
+    transform: translateY(-50%);
+    top: 50%;
+    margin: 0;
+    padding: 0 calc(.2vw);
+    background-size: 100% 100% !important;
+    background: url(../../images/frontend/community/status_star.png);
+}
+
+.teachertask-student-check .btn-back2view {
+    background: url('../../images/frontend/community/btn_back.png');
+}
+
+.teachertask-student-check .btn-back2view:hover {
+    background: url('../../images/frontend/community/btn_back_hover.png');
+}
+
+.teachertask-student-check .select-searchtype {
+    background: url(../../images/frontend/community/sel_bg_student.png);
+}
+
+.teachertask-student-check .select-searchtype-hover {
+    height: 350%;
+    top: 175%;
+    background: url(../../images/frontend/community/sel_bg_student_hover.png);
+}
+
+.sel-student,
+.sel-status,
+.sel-reviewed,
+.sel-unviewed {
+    position: relative;
+    height: 17%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 84%;
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+    background: url(../../images/frontend/community/sel_taskname.png);
+}
+
+.sel-student {
+    background: url(../../images/frontend/community/sel_student.png);
+}
+
+.sel-student:hover {
+    background: url(../../images/frontend/community/sel_student_hover.png);
+}
+
+.sel-status {
+    background: url(../../images/frontend/community/sel_status.png);
+}
+
+.sel-status:hover {
+    background: url(../../images/frontend/community/sel_status_hover.png);
+}
+
+.sel-reviewed {
+    background: url(../../images/frontend/community/sel_reviewed.png);
+}
+
+.sel-reviewed:hover {
+    background: url(../../images/frontend/community/sel_reviewed_hover.png);
+}
+
+.sel-unviewed {
+    background: url(../../images/frontend/community/sel_unviewed.png);
+}
+
+.sel-unviewed:hover {
+    background: url(../../images/frontend/community/sel_unviewed_hover.png);
+}
+
+.teachertask-sharing .community_task_check {
+    background: url(../../images/frontend/community/comm_bg_sharing.png);
+}
+
+.teachertask-sharing .task-item-container {
+    height: 60%;
+    top: 52%;
+    overflow: hidden;
+}
+
+.teachertask-sharing .task-check-item {
+    margin: calc(2.8vw) 0 calc(3.5vw);
+}
+
+.sharing-title,
+.sharing-author,
+.sharing-time,
+.sharing-operation {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: calc(5vh);
+    top: 50%;
+    left: 50%;
+    font-size: calc(3vh);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sharing-title {
+    left: 14.5%;
+}
+
+.sharing-author {
+    left: 36.5%;
+}
+
+.sharing-time {
+    left: 60.5%;
+}
+
+.sharing-operation {
+    left: 86%;
+    text-align: right;
+}
+
+.btn-share {
+    background: url(../../images/frontend/community/btn_share.png);
+}
+
+.btn-share:hover {
+    background: url(../../images/frontend/community/btn_share_hover.png);
+}
+
+.btn-unshare {
+    width: 40%;
+    background: url(../../images/frontend/community/btn_unshare.png);
+}
+
+.btn-unshare:hover {
+    background: url(../../images/frontend/community/btn_unshare_hover.png);
+}
+
+.teachertask-sharing .previous_Btn,
+.teachertask-sharing .next_Btn_sharing {
+    left: 33.3%;
+    bottom: 8.2%;
+    width: 10.6%;
+    height: 7.9%;
+}
+
+.teachertask-sharing .next_Btn_sharing {
+    left: 54.8%;
+}
+
+.teachertask-sharing .select-searchtype {
+    background: url(../../images/frontend/community/sel_bg_share.png);
+}
+
+.teachertask-sharing .select-searchtype-hover {
+    height: 230%;
+    top: 115%;
+    background: url(../../images/frontend/community/sel_bg_share_hover.png);
+}
+
+.sel-sharetime,
+.sel-sharetitle {
+    position: relative;
+    height: 25%;
+    top: 54%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 84%;
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+    background: url(../../images/frontend/community/sel_sharetitle.png);
+}
+
+.sel-sharetitle:hover {
+    background: url(../../images/frontend/community/sel_sharetitle_hover.png);
+}
+
+.sel-sharetime {
+    background: url(../../images/frontend/community/sel_sharetime.png);
+}
+
+.sel-sharetime:hover {
+    background: url(../../images/frontend/community/sel_sharetime_hover.png);
+}
+
+.search-bar .btn-uploadwork {
+    background: url(../../images/frontend/community/btn_uploadwork.png);
+}
+
+.search-bar .btn-uploadwork:hover {
+    background: url(../../images/frontend/community/btn_uploadwork_hover.png);
+}
+
+.community_upload_work {
+    background: url(../../images/frontend/community/comm_bg_uploadwork.png);
+}
+
+.community_upload_work input,
+.community_upload_work textarea,
+.community_upload_work .new-work-addcontents {
+    position: absolute;
+    top: 18%;
+    left: 31%;
+    width: 34%;
+    height: 8%;
+    transform: translateY(-50%);
+    background: white;
+    border-radius: calc(.7vw);
+    border: none;
+    outline: none;
+    padding: calc(1vh) calc(1vw);
+    transition: all .3s ease-in-out;
+    -webkit-background-size: 100% 100% !important;
+    background-size: 100% 100% !important;
+    font-size: calc(1.5vw);
+}
+
+.community_upload_work .new-work-desc {
+    top: 45%;
+    width: 53%;
+    height: 33%;
+    resize: none;
+}
+
+.community_upload_work .new-work-addcontents {
+    top: 71%;
+    left: 31%;
+    width: calc(44vw);
+    height: calc(6.5vh + 20px);
+    overflow: hidden;
+    overflow-x: auto;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.new-work-content,
+.new-work-add-btn {
+    position: relative;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: calc(3.5vw);
+    height: calc(6.8vh);
+    margin-bottom: calc(.1vh);
+    background: url(../../images/frontend/community/btn_plus.png);
+    background-size: 100% 100% !important;
+}
+
+.new-work-content {
+    display: inline-block;
+    width: calc(4.5vw);
+}
+
+.new-work-addcontents .new-work-content[item_type="1"] {
+    background: url(../../images/frontend/community/itemtype1.png);
+}
+
+.new-work-addcontents .new-work-content[item_type="1"]:hover {
+    background: url(../../images/frontend/community/itemtype1_hover.png);
+}
+
+.new-work-addcontents .new-work-content[item_type="2"] {
+    background: url(../../images/frontend/community/itemtype2.png);
+}
+
+.new-work-addcontents .new-work-content[item_type="2"]:hover {
+    background: url(../../images/frontend/community/itemtype2_hover.png);
+}
+
+.new-work-addcontents .new-work-add-btn {
+    margin: 0;
+}

@@ -1,0 +1,560 @@
+/*div{*/
+    /*position: absolute;*/
+    /*background-size: 100% 100%!important;*/
+/*}*/
+
+/*.bg {*/
+    /*position: absolute;*/
+    /*top:0;*/
+    /*left:0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-size: 100% 100%!important;*/
+    /*!*background: url("../../../images/teacher_work/testing/bianantuce.png") no-repeat;*!*/
+/*}*/
+
+/*.question_container{*/
+    /*left:5.3%;*/
+    /*width: 89.1%;*/
+    /*height: 100%;*/
+    /*background: url("../../../images/teacher_work/testing/zuoyedakuang.png") no-repeat;*/
+/*}*/
+
+/*.title_container{*/
+    /*top: 13%;*/
+    /*!* left: 20.7%; *!*/
+    /*width: 100%;*/
+    /*height: 5%;*/
+    /*text-align: center;*/
+    /*vertical-align: middle;*/
+    /*z-index: 100;*/
+    /*background-size: contain !important;*/
+/*}*/
+
+/*.question_title{*/
+    /*z-index:100;*/
+    /*background-size: contain !important;*/
+    /*background: url("../../../images/teacher_work/testing/zuoyexiangqingbiaoti.png") no-repeat;*/
+/*}*/
+
+/*.question_list_container{*/
+    /*top: 19.4%;*/
+    /*left: 4.6%;*/
+    /*width: 91.2%;*/
+    /*height: 66.7%;*/
+
+/*}*/
+
+/*.question_head_container{*/
+    /*top: 4%;*/
+    /*width: 95%;*/
+    /*left: 2%;*/
+    /*height: 9.5%;*/
+    /*background: url("../../../images/teacher_work/testing/changtiap3.png") no-repeat;*/
+/*}*/
+
+/*.time_text_container{*/
+    /*top: 21%;*/
+    /*width: 95%;*/
+    /*left: 64%;*/
+    /*height: 79%;*/
+    /*font-size: calc(1.6vw);*/
+    /*font-weight: bold;*/
+    /*color: #645035;*/
+/*}*/
+
+/*.question_body_container{*/
+    /*top: 14%;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*height: 86%;*/
+    /*overflow-y: auto;*/
+/*}*/
+
+/*.question_list_item{*/
+    /*position: relative;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+/*}*/
+
+/*.option_btn{*/
+    /*top: 9%;*/
+    /*left: 2.7%;*/
+    /*width: 7.2%;*/
+    /*height: 8.4%;*/
+    /*text-align: center;*/
+    /*font-size: calc(1.8vw);*/
+    /*font-weight: bold;*/
+    /*z-index: 100;*/
+    /*color: white;*/
+    /*background: url(../../../images/teacher_work/testing/cishudi.png) no-repeat;*/
+/*}*/
+
+/*.prob_type_img{*/
+    /*top: 8.2%;*/
+    /*left: 22.1%;*/
+    /*width: 18.3%;*/
+    /*height: 8.9%;*/
+    /*background-size: contain !important;*/
+    /*!*background: url("../../../images/teacher_work/deliver/question_type.png") no-repeat;*!*/
+/*}*/
+
+/*.prob_img{*/
+    /*top: 19.8%;*/
+    /*left: 15.7%;*/
+    /*width: 30.1%;*/
+    /*height: 56.4%;*/
+    /*background-size: contain !important;*/
+    /*!*background: url("../../../images/teacher_work/deliver/prob_img.png") no-repeat;*!*/
+/*}*/
+
+/*.speaker_btn{*/
+    /*top: 82.9%;*/
+    /*left: 26.9%;*/
+    /*width: 7.6%;*/
+    /*height: 7.3%;*/
+    /*cursor: pointer;*/
+    /*background-size: contain !important;*/
+    /*background: url("../../../images/teacher_work/deliver/speaker_btn.png") no-repeat;*/
+/*}*/
+
+/*.seperate_container{*/
+    /*top:13.6%;*/
+    /*left:49.3%;*/
+    /*width: 0.7%;*/
+    /*height: 78.4%;*/
+    /*background-color: #22552c;*/
+/*}*/
+
+/*.answer_container{*/
+    /*top:19.1%;*/
+    /*left:52.3%;*/
+    /*width: 33.9%;*/
+    /*height: 60.7%;*/
+/*}*/
+
+/*.answer_item{*/
+    /*position: relative!important;*/
+    /*display: inline-block;*/
+    /*width: 100%;*/
+    /*vertical-align: middle;*/
+    /*height: 13%;*/
+    /*z-index: 100;*/
+    /*margin-bottom:6%;*/
+/*}*/
+
+/*.answer_title{*/
+    /*font-size: calc(2vw);*/
+    /*color: #fff;*/
+    /*font-weight: bold;*/
+    /*height: 100%;*/
+    /*width: 10%;*/
+/*}*/
+
+/*.answer_bg{*/
+    /*left: 13%;*/
+    /*width: 87%;*/
+    /*height: 100%;*/
+    /*background-color: #22552c;*/
+    /*border-radius: calc(0.7vw);*/
+/*}*/
+/*.answer_bg[item_sel='1']{*/
+    /*left: 13%;*/
+    /*width: 87%;*/
+    /*height: 100%;*/
+    /*background-color: #0ff300;*/
+    /*border-radius: calc(0.7vw);*/
+/*}*/
+
+/*.answer_btn{*/
+    /*top: 13%;*/
+    /*!* left: 20.7%; *!*/
+    /*width: 100%;*/
+    /*height: 60%;*/
+    /*text-align: center;*/
+    /*vertical-align: middle;*/
+    /*z-index: 100;*/
+    /*background-size: contain !important;*/
+    /*background: url("../../../images/teacher_work/deliver/yes_img.png") no-repeat;*/
+/*}*/
+
+/*.answer_btn[itemid='2']{*/
+    /*top: 13%;*/
+    /*!* left: 20.7%; *!*/
+    /*width: 100%;*/
+    /*height: 60%;*/
+    /*text-align: center;*/
+    /*vertical-align: middle;*/
+    /*z-index: 100;*/
+    /*background-size: contain !important;*/
+    /*background: url("../../../images/teacher_work/deliver/no_img.png") no-repeat ;*/
+/*}*/
+
+/*.answer_text{*/
+    /*width: 100%;*/
+    /*height: 30%;*/
+    /*font-size: calc(10vh);*/
+    /*font-weight: bold;*/
+    /*color: #ffffff;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.play_container{*/
+    /*top: 45%;*/
+    /*!* left: 70%; *!*/
+    /*width: 100%;*/
+    /*height: 46%;*/
+    /*text-align: center;*/
+    /*background-size: contain !important;*/
+    /*background: url(../../../images/teacher_work/deliver/ans.png);*/
+/*}*/
+
+/*.display_btn{*/
+    /*top: 83.1%;*/
+    /*left: 66.8%;*/
+    /*width: 8.0%;*/
+    /*height: 7.1%;*/
+    /*z-index: 100;*/
+    /*background-size: contain !important;*/
+    /*background: url("../../../images/teacher_work/deliver/display_btn.png") no-repeat;*/
+/*}*/
+
+/*.add_btn{*/
+    /*top: 5%;*/
+    /*left: 14.7%;*/
+    /*width: 20%;*/
+    /*height: 75%;*/
+    /*z-index:100;*/
+    /*cursor: pointer;*/
+    /*background: url("../../../images/teacher_work/deliver/tianjiatimufanwei2.png") no-repeat;*/
+/*}*/
+
+/*.add_btn:hover{*/
+    /*background: url("../../../images/teacher_work/deliver/tianjiatimufanwei.png") no-repeat;*/
+/*}*/
+/*.question_footer{*/
+    /*top:86.4%;*/
+    /*width: 100%;*/
+    /*height: 9.3%;*/
+/*}*/
+
+/*.close_btn{*/
+    /*top: 5%;*/
+    /*left: 44.7%;*/
+    /*width: 11%;*/
+    /*height: 75%;*/
+    /*z-index: 100;*/
+    /*cursor: pointer;*/
+    /*background: url(../../../images/teacher_work/testing/guanbi2.png) no-repeat;*/
+/*}*/
+
+/*.close_btn:hover{*/
+    /*background: url("../../../images/teacher_work/testing/guanbi.png") no-repeat;*/
+/*}*/
+
+
+/*::-webkit-scrollbar {*/
+    /*width: 10px!important;*/
+/*}*/
+
+/*!* Track bar Background *!*/
+/*::-webkit-scrollbar-track {*/
+    /*background: rgba(230,230,230,1);*/
+    /*border-radius: 10px!important;*/
+/*}*/
+
+/*!* Handle *!*/
+/*::-webkit-scrollbar-thumb {*/
+    /*border-radius: 0!important;*/
+    /*background: rgba(1, 205, 175, .5);*/
+/*}*/
+
+/*!* Handle on hover *!*/
+/*::-webkit-scrollbar-thumb:hover {*/
+    /*background: rgba(1, 205, 175, 1);*/
+/*}*/
+
+
+div{
+    position: absolute;
+    background-size: 100% 100%!important;
+}
+
+.bg {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%!important;
+    background: url("../../../images/teacher_work/testing/bg.png") no-repeat;
+}
+
+.question_container{
+    left: 17%;
+    width: 66%;
+    height: 100%;
+    background: transparent;
+}
+
+.title_container{
+    top: 13%;
+    /* left: 20.7%; */
+    width: 100%;
+    height: 5%;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 100;
+    background-size: contain !important;
+    display:none;
+}
+
+.question_title{
+    z-index:100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/testing/zuoyexiangqingbiaoti.png") no-repeat;
+}
+
+.question_list_container{
+    top: 21%;
+    left: 0%;
+    width: 100%;
+    height: 60%;
+
+}
+
+.question_head_container{
+    top: 1%;
+    width: 100%;
+    left: 0%;
+    height: 9.5%;
+    /*background: url("../../../images/teacher_work/testing/changtiap3.png") no-repeat;*/
+}
+
+.time_text_container{
+    top: 0%;
+    width: 35%;
+    left: 65%;
+    height: 79%;
+    font-size: calc(1.5vw);
+    font-weight: 500;
+    color: white;
+}
+
+.question_body_container{
+    top: 14%;
+    left: 0;
+    width: 100%;
+    height: 86%;
+    overflow-y: auto;
+}
+
+.question_list_item{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.option_btn{
+    top: 2%;
+    left: 2.7%;
+    width: 10.2%;
+    height: 6.4%;
+    text-align: center;
+    font-size: calc(1.4vw);
+    font-weight: bold;
+    z-index: 100;
+    color: white;
+    background: url(../../../images/teacher_work/testing/cishudi.png) no-repeat;
+}
+
+.prob_type_img{
+    top: 2.2%;
+    left: 18%;
+    width: 27%;
+    height: 10%;
+    background-size: contain !important;
+    /*background: url("../../../images/teacher_work/deliver/question_type.png") no-repeat;*/
+}
+
+.prob_img{
+    top: 14.8%;
+    left: 11.7%;
+    width: 38.1%;
+    height: 71.4%;
+    background-size: contain !important;
+    /*background: url("../../../images/teacher_work/deliver/prob_img.png") no-repeat;*/
+}
+
+.speaker_btn{
+    top: 86.9%;
+    left: 26.9%;
+    width: 8.5%;
+    height: 10.3%;
+    cursor: pointer;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/speaker_btn.png") no-repeat;
+}
+
+.seperate_container{
+    top: 9%;
+    left: 50.5%;
+    width: 0.7%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: #22552c;
+}
+
+.answer_container{
+    top: 16.1%;
+    left: 55.3%;
+    width: 36.9%;
+    height: 65.7%;
+}
+
+.answer_item{
+    position: relative!important;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    height: 13%;
+    z-index: 100;
+    margin-bottom:6%;
+}
+
+.answer_title{
+    font-size: calc(2vw);
+    color: #fff;
+    font-weight: bold;
+    height: 100%;
+    width: 10%;
+}
+
+.answer_bg{
+    left: 13%;
+    width: 87%;
+    height: 100%;
+    background-color: #22552c;
+    border-radius: calc(0.7vw);
+}
+.answer_bg[item_sel='1']{
+    left: 13%;
+    width: 87%;
+    height: 100%;
+    background-color: #0ff300;
+    border-radius: calc(0.7vw);
+}
+
+.answer_btn{
+    top: 13%;
+    /* left: 20.7%; */
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/yes_img.png") no-repeat;
+}
+
+.answer_btn[itemid='2']{
+    top: 13%;
+    /* left: 20.7%; */
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/no_img.png") no-repeat ;
+}
+
+.answer_text{
+    width: 100%;
+    height: 30%;
+    font-size: calc(3vw);
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+.play_container{
+    top: 45%;
+    /* left: 70%; */
+    width: 100%;
+    height: 46%;
+    text-align: center;
+    background-size: contain !important;
+    background: url(../../../images/teacher_work/deliver/ans.png);
+}
+
+.display_btn{
+    top: 88.1%;
+    left: 70.8%;
+    width: 9%;
+    height: 9%;
+    z-index: 100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/display_btn.png") no-repeat;
+}
+
+.add_btn{
+    top: 5%;
+    left: 14.7%;
+    width: 20%;
+    height: 75%;
+    z-index:100;
+    cursor: pointer;
+    background: url("../../../images/teacher_work/deliver/tianjiatimufanwei2.png") no-repeat;
+}
+
+.add_btn:hover{
+    background: url("../../../images/teacher_work/deliver/tianjiatimufanwei.png") no-repeat;
+}
+.question_footer{
+    top: 82%;
+    width: 100%;
+    height: 3.5%;
+}
+
+.close_btn{
+    top: 0%;
+    left: 45%;
+    width: 10%;
+    height: 100%;
+    z-index: 100;
+    cursor: pointer;
+    background: url(../../../images/teacher_work/testing/guanbi.png) no-repeat;
+}
+
+.close_btn:hover{
+    background: url("../../../images/teacher_work/testing/guanbi2.png") no-repeat;
+}
+
+::-webkit-scrollbar {
+    width: 10px!important;
+}
+
+/* Track bar Background */
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,1);
+    border-radius: 20px!important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 20px!important;
+    background: rgba(1, 205, 175, .5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(1, 205, 175, 1);
+}
+
+
+

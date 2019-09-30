@@ -1,0 +1,231 @@
+
+div, a {
+    background-size: 100% 100% !important;
+}
+
+#courseview-content {
+    position: absolute;
+    left: 0;
+    top: calc(52vh);
+    transform: translateY(-50%);
+    width: 100%;
+    height: calc(69vh);
+}
+
+#courseview-content .courseview-nav {
+    position: absolute;
+    left: 8.7%;
+    top: 50%;
+    width: 2.4%;
+    height: calc(57vh);
+    bottom: calc(-33vh);
+    transform: translateY(-50%);
+}
+
+.courseview-nav .mainnav-item {
+    position: relative;
+    height: 25%;
+    width: 100%;
+    background-size: 100% 95% !important;
+    padding: 0;
+    transition: all .3s ease-in-out;
+}
+
+.mylesson-staticmedia {
+    position: absolute;
+    left: 12.2%;
+    width: 38.4%;
+    height: calc(62vh);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: calc(.5vw);
+    font-size: calc(1.3vw);
+    padding: 2.5% 1%;
+    display: none;
+}
+
+.media-item {
+    position: relative;
+    display: inline-block;
+    margin: 1.5% 8% 1.5% 0;
+    padding: 0;
+    width: 17%;
+    height: 19.5%;
+    border-radius: calc(1vw);
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.media-item[item_type='1'] {
+    background: url(../../images/taiyang/mylesson/file1.png);
+}
+
+.media-item[item_type='2'] {
+    background: url(../../images/taiyang/mylesson/file2.png);
+}
+
+.media-item[item_type='3'],
+.media-item[item_type='4'],
+.media-item[item_type='5'] {
+    background: url(../../images/taiyang/mylesson/file3.png);
+}
+
+.media-item:hover {
+    transform: scale(1.05);
+    /*border: 1px solid white;*/
+}
+
+.media-item .media-title {
+    position: absolute;
+    top: 98%;
+    left: -25%;
+    width: 150%;
+    text-align: center;
+    font-size: calc(1.1vw);
+    color: dimgrey;
+    user-select: none;
+}
+
+.media-item .item-checked {
+    position: absolute;
+    left: 94%;
+    top: 4%;
+    width: 32%;
+    height: 34%;
+    transform: translate(-50%, -50%);
+    background: url(../../images/taiyang/mylesson_prepare/icon_check.png);
+}
+
+.media-item .media-submenu {
+    position: absolute;
+    left: 120%;
+    top: 50%;
+    width: 50%;
+    height: 75%;
+    transform: translate(-50%, -50%);
+    background: url(../../images/taiyang/mylesson_prepare/item_bg.png);
+    display: none;
+}
+
+.media-submenu .btn-view,
+.media-submenu .btn-delete-temp,
+.media-submenu .btn-select,
+.media-submenu .btn-selcancel {
+    position: absolute;
+    background: url(../../images/taiyang/mylesson_prepare/btn_view.png);
+    left: 56.5%;
+    width: 67%;
+    height: 28%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+.media-submenu .btn-view:hover {
+    background: url(../../images/taiyang/mylesson_prepare/btn_view_hover.png);
+}
+
+.media-submenu .btn-select,
+.media-submenu .btn-selcancel {
+    background: url(../../images/taiyang/mylesson_prepare/btn_select.png);
+    top: 70%;
+}
+
+.media-submenu .btn-select:hover {
+    background: url(../../images/taiyang/mylesson_prepare/btn_select_hover.png);
+}
+.media-submenu .btn-selcancel{
+    background: url(../../images/taiyang/mylesson_prepare/btn_selcancel.png);
+}
+
+.media-submenu .btn-selcancel:hover{
+    background: url(../../images/taiyang/mylesson_prepare/btn_selcancel_hover.png);
+}
+.media-submenu .btn-delete-temp {
+    background: url(../../images/taiyang/mylesson_prepare/btn_delete.png);
+    top: 50%;
+    height: 50%;
+    width: 55%;
+}
+
+.media-submenu .btn-delete-temp:hover {
+    background: url(../../images/taiyang/mylesson_prepare/btn_delete_hover.png);
+}
+
+.mylesson-tmpmedia {
+    position: absolute;
+    left: 56.1%;
+    width: 37.8%;
+    height: calc(58vh);
+    top: 42%;
+    transform: translateY(-50%);
+    border-radius: calc(.5vw);
+    font-size: calc(1.3vw);
+    padding: 2.5% 1%;
+    display: none;
+}
+
+.media-upload,
+.media-ok,
+.media-cancel {
+    position: absolute;
+    left: 75%;
+    width: 6%;
+    height: 7%;
+    top: 92%;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    background: url(../../images/taiyang/mylesson_prepare/btn_upload.png);
+}
+
+.media-upload:hover {
+    background: url(../../images/taiyang/mylesson_prepare/btn_upload_hover.png);
+}
+
+.media-ok, .media-cancel {
+    width: 8.2%;
+    left: 41%;
+    top: 91%;
+    background: url(../../images/taiyang/mylesson_prepare/btn_ok.png);
+}
+
+.media-ok:hover {
+    background: url(../../images/taiyang/mylesson_prepare/btn_ok_hover.png);
+}
+
+.media-cancel {
+    left: 64%;
+    background: url(../../images/taiyang/mylesson_prepare/btn_cancel.png);
+}
+
+.media-cancel:hover {
+    background: url(../../images/taiyang/mylesson_prepare/btn_cancel_hover.png);
+}
+
+.uploading_backdrop {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.9;
+    z-index: 10000;
+}
+
+#wait_ajax_loader {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    z-index: 15000
+}
+
+#progress_percent {
+    position: absolute;
+    top: 43%;
+    left: 56.5%;
+    font-size: 18px;
+    color: #fff;
+    z-index: 17000
+}

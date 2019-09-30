@@ -1,0 +1,5 @@
+# Use PHP7 Single php.ini as default
+AddHandler application/x-httpd-php70s .php
+RewriteEngine on
+RewriteCond $1 !^(index\.php|assets|ads|uploads|chrome|opera|apollo|h5ar|guoxue|robots\.txt)
+RewriteRule ^(.*)$ index.php?/$1 [L,QSA]

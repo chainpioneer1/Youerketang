@@ -1,0 +1,443 @@
+﻿<!doctype html>
+<html html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <link rel="stylesheet" href="./css/style.css" media="screen"/>
+    <link rel="stylesheet" href="./css/vplayer.css"/>
+    <link rel="stylesheet" href="./css/bootstrap.css"/>
+    <script type="text/javascript" src="./js/plugin/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/my-lib.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/data.js" charset="utf-8"></script>
+
+    <style>
+        .title-wrap {
+            position: absolute;
+            left: 17.24%;
+            top: 6.23%;
+            width: 20%;
+            height: 4.67%
+        }
+
+        .title-wrap #script_name {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: none;
+            font-size: 24px
+        }
+
+        .title-wrap #script_name:hover, .title-wrap #script_name:focus {
+            border: none;
+            outline: none
+        }
+
+        .print-wrap {
+            position: absolute;
+            left: 66.56%;
+            top: 4.15%;
+            width: 5.26%;
+            height: 7.16%;
+        }
+
+        .print-wrap img {
+            width: 100%;
+            height: 100%
+        }
+
+        .save-wrap {
+            position: absolute;
+            left: 96%;
+            top: 95%;
+            width: 13%;
+            height: 10%;
+            transform: translate(-50%, -50%);
+            cursor:pointer;
+        }
+
+        .save-wrap img {
+            width: 100%;
+            height: 100%
+        }
+
+        .content-wrap {
+            position: absolute;
+            left: 13%;
+            top: 0%;
+            width: 87%;
+            height: 90%;
+        }
+
+        .content-wrap canvas {
+            width: 100%;
+            height: 100%
+        }
+
+        .toolbar {
+            position: absolute;
+            left: 1%;
+            top: 3%;
+            width: 15%;
+            height: 85%;
+        }
+
+        .toolbar img {
+            width: 100%;
+            height: 100%
+        }
+
+        .toolbar a.color_palete {
+            position: absolute;
+            left: 4.17%;
+            width: 23.33%;
+            height: 7%;
+            border-radius: calc(.5vw);
+            cursor: pointer
+        }
+
+        .toolbar a.pencil_tool {
+            position: absolute;
+            left: 40%;
+            width: 19.58%;
+            height: 18.24%;
+            cursor: pointer
+        }
+
+        .toolbar a#pencil_back {
+            position: absolute;
+            top: 4.6%;
+            left: 39.17%;
+            width: 23.33%;
+            height: 7.14%;
+            cursor: pointer
+        }
+
+        .toolbar a#pencil_erase {
+            position: absolute;
+            top: 13.52%;
+            left: 39.17%;
+            width: 22.08%;
+            height: 10.97%;
+            cursor: pointer
+        }
+
+        .toolbar a#pencil_bucket {
+            position: absolute;
+            top: 26.44%;
+            left: 39.17%;
+            width: 23.33%;
+            height: 7.14%;
+            cursor: pointer
+        }
+
+        .character-wrap {
+            position: absolute;
+            left: 75.52%;
+            top: 8.93%;
+            width: 15.26%;
+            height: 77.67%
+        }
+
+        .character-wrap img {
+            width: 100%;
+            height: 100%
+        }
+
+        .character-btn-prev {
+            position: absolute;
+            left: 77.42%;
+            top: 76.63%;
+            width: 5.36%;
+            height: 7.16%
+        }
+
+        .character-btn-prev img {
+            width: 100%;
+            height: 100%
+        }
+
+        .character-btn-next {
+            position: absolute;
+            left: 83.42%;
+            top: 76.63%;
+            width: 5.36%;
+            height: 7.16%
+        }
+
+        .character-btn-next img {
+            width: 100%;
+            height: 100%
+        }
+
+        .characters-page {
+            height: 100%
+        }
+
+        .character-elem {
+            width: 100%;
+            height: 33%;
+            margin-bottom: 3%
+        }
+
+        .character-elem img {
+            width: 100%
+        }
+
+        #upper-sheet {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10
+        }
+
+    </style>
+</head>
+<body style="background: transparent;">
+
+<div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;background:#00a8d5">
+    <!--<img src="images/makehead/bg.png" style="width: 100%; height: 100%">-->
+</div>
+
+<div class="save-wrap">
+    <a id="makehead_save" onclick="save_head();">
+        <img src="images/makehead/save.png" width="50px">
+    </a>
+</div>
+<div class="print-wrap" style="display: none">
+    <a id="makehead_print"><img src="images/makehead/print.png" width="50px"></a>
+</div>
+
+<div class="content-wrap">
+    <!--<div style="display:none; position: absolute;width:75%;height:12%;bottom:-13%;left:12.5%;text-align: center;display: table">-->
+    <!--<h2 class="character-name" style="display:none!important;font-size: 1.4em;vertical-align: middle"></h2>-->
+    <!--</div>-->
+    <canvas id="sheet"></canvas>
+    <canvas id="upper-sheet"></canvas>
+</div>
+
+<div class="toolbar">
+    <div style="position: relative; width: 100%; height: 100%">
+        <img src="images/makehead/pencil_btn.png">
+        <a class="color_palete" id="color_f54040" style="top: 4.6%; background-color: #f54040"></a>
+        <a class="color_palete" id="color_f5d540" style="top: 14.54%; background-color: #f5d540"></a>
+        <a class="color_palete" id="color_62f540" style="top: 24.11%; background-color: #62f540"></a>
+        <a class="color_palete" id="color_40eff5" style="top: 34.06%; background-color: #40eff5"></a>
+        <a class="color_palete" id="color_405ef5" style="top: 44.13%; background-color: #405ef5"></a>
+        <a class="color_palete" id="color_de40f5" style="top: 54.08%; background-color: #de40f5"></a>
+        <a class="color_palete" id="color_405ef4" style="top: 64.41%; background-color: #405ef4"></a>
+        <a class="color_palete" id="color_000000" style="top: 74.36%; background-color: #000000"></a>
+        <a class="color_palete" id="color_fffffc" style="top: 84.06%; background-color: #fffffc"></a>
+        <a class="pencil_tool" id="pencil_light" style="bottom: 40%">
+            <img src="images/makehead/pencil-light.png"></a>
+        <a class="pencil_tool" id="pencil_middle" style="bottom: 20%">
+            <img src="images/makehead/pencil-middle.png"></a>
+        <a class="pencil_tool" id="pencil_weight" style="bottom: 0%">
+            <img src="images/makehead/pencil-weight.png"></a>
+        <a id="pencil_back"><img src="images/makehead/back.png"></a>
+        <a id="pencil_erase"><img src="images/makehead/erase.png"></a>
+        <a id="pencil_bucket"><img src="images/makehead/bucket.png"></a>
+        <!-----------Save Button position----------------->
+    </div>
+</div>
+<div style="display: none">
+    <div class="character-wrap" style="display: none;">
+
+        <div style="position: relative; width: 100%; height: 100%">
+            <img src="images/makehead/character-frame.png">
+            <div id="characters" style="position: absolute; left: 8.87%; top: 11.49%; width: 81.23%; height: 73.13%">
+
+            </div>
+        </div>
+    </div>
+    <div class="character-btn-prev" style="display: none;">
+        <a id="pageup"><img src="images/makehead/page_prev.png"></a>
+    </div>
+    <div class="character-btn-next" style="display: none;">
+        <a id="pagedown"><img src="images/makehead/page_next.png"></a>
+    </div>
+
+    <div class="btn_wrap" style="display: none">
+        <div class="btn_elem" style="left: 0.88%; top: 14.95%">
+            <a id="btn_comment"><img height="50px" src="images/btn-comment.png"></a><br>
+        </div>
+        <div class="btn_elem" style="left: 0.88%; top: 33.35%">
+            <a id="btn_words"><img height="50px" src="images/btn-words.png"></a><br>
+        </div>
+        <div class="btn_elem" style="left: 0.88%; top: 51.52%">
+            <a id="btn_print"><img height="50px" src="images/btn-print.png"></a>
+        </div>
+        <div class="btn_elem" style="left: 0.88%; top: 68.95%">
+            <a id="btn_scriptread"><img height="50px" src="images/btn-scriptread.png"></a>
+        </div>
+        <div class="btn_elem" style="left: 94.94%; top: 14.95%">
+            <a id="btn_translate"><img height="50px" src="images/btn-translate.png"></a><br>
+        </div>
+        <div class="btn_elem" style="left: 94.94%; top: 33.35%">
+            <a id="btn_song"><img height="50px" src="images/btn-song.png"></a>
+        </div>
+        <div class="btn_elem" style="left: 94.94%; top: 51.52%">
+            <a id="btn_scriptmake"><img height="50px" src="images/btn-scriptmake.png"></a>
+        </div>
+        <div class="btn_elem" style="left: 94.94%; top: 68.95%">
+            <a id="btn_headmake"><img height="50px" src="images/btn-headmake_hover.png"></a>
+        </div>
+    </div>
+
+</div>
+<style>
+    #dbheadModal {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        background-color: rgba(0, 0, 0, 0.5)
+    }
+
+    .save-modal-content {
+        position: relative;
+        width: 100%;
+        height: 100%
+    }
+
+    .save-modal-bg {
+        position: absolute;
+        left: 33.38%;
+        top: 26.89%;
+        width: 33.22%;
+        height: 40.81%
+    }
+
+    #head_save_btn {
+        position: absolute;
+        left: 42.03%;
+        top: 54.72%;
+        width: 6.77%;
+        height: 6.64%;
+        cursor: pointer
+    }
+
+    #head_save_btn img {
+        width: 100%;
+        height: 100%
+    }
+
+    #head_save_close_btn {
+        position: absolute;
+        left: 51.3%;
+        top: 54.72%;
+        width: 6.77%;
+        height: 6.64%;
+        cursor: pointer
+    }
+
+    #head_save_close_btn img {
+        width: 100%;
+        height: 100%
+    }
+
+    .save-modal-content h4 {
+        position: absolute;
+        left: 35.67%;
+        top: 30.42%;
+        width: 28.80%;
+        height: 4.15%;
+        font-size: 24px;
+        color: #fff
+    }
+
+    .save-modal-content input {
+        position: absolute;
+        left: 37.34%;
+        top: 41.35%;
+        width: 25.31%;
+        height: 5.4%;
+        font-size: 24px
+    }
+</style>
+<div id="dbheadModal" style="display: none">
+    <div class="save-modal-content">
+        <img class="save-modal-bg" src="images/read-dlg-bg.png">
+        <h4 class="modal-title" id="dbfilenameModalLabel" style="text-align: center"></h4>
+        <input type="text" class="form-control" id="dbfilename" name="dbfilename">
+        <a id="head_save_btn"><img src="images/yes-btn.png"></a>
+        <a id="head_save_close_btn"><img src="images/no-btn.png"></a>
+    </div>
+</div>
+
+<style>
+    .word-wrap {
+        position: absolute;
+        left: 5%;
+        top: 10%;
+        width: 39.17%;
+        height: 65.42%;
+        z-index: 100
+    }
+
+    .word-wrap img {
+        width: 100%;
+        height: 100%
+    }
+
+    .word_sec {
+        position: absolute;
+        left: 7%;
+        top: 17%;
+        width: 87%;
+        height: 76%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        font-size: 0.8rem;
+        color: #fff;
+    }
+
+    #words_close {
+        position: absolute;
+        right: 6%;
+        top: 6.5%;
+        width: 3.72%;
+        height: 4.44%;
+    }
+
+    #words_close img {
+        width: 100%;
+        height: 100%
+    }
+</style>
+<div class="word-wrap" style="display: none">
+    <div style="position: relative; width: 100%; height: 100%">
+        <img src="images/word-bg.png">
+        <div class="word_sec">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 left-block"></div>
+                <div class="col-md-6 col-sm-6 col-xs-12 right-block"></div>
+            </div>
+        </div>
+        <a id="words_close"><img src="images/word-close-btn.png"></a>
+    </div>
+
+</div>
+
+<!---------------------pdf function------------------->
+<script src="./js/pdf/jspdf.js"></script>
+<script src="./js/pdf/pdf_generator.js"></script>
+<script src="./js/pdf/jspdf.debug.js"></script>
+<script src="./js/pdf/libs/png_support/zlib.js"></script>
+<script src="./js/pdf/libs/png_support/png.js"></script>
+<script src="./js/pdf/libs/deflate.js"></script>
+<script src="./js/pdf/js/basic.js"></script>
+<script src="./js/pdf/plugins/standard_fonts_metrics.js"></script>
+
+<script type="text/javascript" src="./js/html2canvas/html2canvas.js"></script>
+<script type="text/javascript" src="./js/plugin/fabric.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/button.js"></script>
+<script type="text/javascript" src="./js/words.js"></script>
+<script type="text/javascript" src="./js/makehead.js"></script>
+</body>
+</html>

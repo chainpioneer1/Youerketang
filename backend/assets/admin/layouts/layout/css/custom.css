@@ -1,0 +1,399 @@
+/* here you can put your own css to customize and override the theme */
+/*
+  global common css
+
+*/
+
+div, label, a, span, p,
+h1, h2, h3, h4, h5, h6,
+button, td, th, tr {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+
+.right-floated {
+    float: right;
+}
+
+.left-floated {
+    float: left;
+}
+
+.right-aligned {
+    text-align: right;
+    display: inline-block;
+}
+
+.center-aligned {
+    text-align: center;
+    display: inline-block;
+}
+
+.left-aligned {
+    text-align: left;
+    display: inline-block;
+}
+
+.page-header.navbar {
+    background-color: #009965;
+    border-bottom: 1px solid black;
+}
+
+.page-wrapper {
+    background-color: white;
+}
+
+.page-header-fixed .page-container {
+    margin-left: 30px;
+}
+
+.page-sidebar {
+    background-color: transparent;
+    width: 150px !important;
+}
+
+.page-sidebar .page-sidebar-menu > li,
+.page-sidebar-closed.page-sidebar-fixed
+.page-sidebar:hover .page-sidebar-menu > li {
+    margin: 10px 0;
+}
+
+.page-sidebar-closed.page-sidebar-fixed
+.page-sidebar:hover .page-sidebar-menu > li > a,
+.page-sidebar .page-sidebar-menu > li > a {
+    border-radius: 5px;
+    border: 1px solid grey;
+    background: white;
+    padding: 2px 0;
+    margin: 0;
+    text-align: center;
+}
+
+.page-content-wrapper .page-content {
+    margin-left: 150px;
+    padding-top: 0 !important;
+}
+
+.menu-selected {
+    background: #caffa0 !important;
+}
+
+.menu-title {
+    background: #009965 !important;
+    border: 1px solid #009965 !important;
+    color: white !important;
+    padding: 5px 10px !important;
+    font-size: 12pt !important;
+    text-align: left !important;
+}
+
+.menu-title i {
+    color: white !important;
+}
+
+.portlet-body div {
+    text-align: center;
+}
+
+.portlet-body table thead tr th {
+    background: #009965;
+    color: white;
+}
+
+.portlet-body table thead tr th,
+.portlet-body table tbody tr td {
+    margin: 0 !important;
+    padding: 10px 0 !important;
+    vertical-align: middle !important;
+}
+
+.input-small {
+    width: calc(8vw) !important;
+}
+
+.navbar-nav > li > a {
+    padding-bottom: 14px;
+    color: white;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    background-color: #01774e !important;
+}
+
+.page-header.navbar .menu-toggler > span, .page-header.navbar .menu-toggler > span:before, .page-header.navbar .menu-toggler > span:after {
+    background: white;
+}
+
+.page-header.navbar
+.top-menu .navbar-nav >
+li.dropdown >
+.dropdown-toggle:last-child {
+    padding-right: 5px;
+}
+
+.page-title-string {
+    position: relative;
+    min-height: 50px;
+    line-height: 50px;
+    transform: translateY(-50%);
+    top: 25px;
+    font-size: 28px;
+    font-weight: 600;
+    float: left;
+    color: white;
+}
+
+.page-header.navbar .top-menu .navbar-nav > li.dropdown-user > .dropdown-toggle > .username {
+    color: white;
+}
+
+.page-header.navbar .top-menu .navbar-nav > li.dropdown .dropdown-toggle:hover {
+    background-color: #01774e;
+}
+
+.mt-checkbox, .mt-radio {
+    padding-left: 25px;
+    margin: 3px 0;
+    padding-right: 0px;
+
+}
+
+div[data-type="mainMenuCheck"] {
+    text-align: left;
+    background: #eee;
+    border-radius: 5px;
+}
+
+div[data-type="mainMenuCheck"] .mt-checkbox > span {
+    border-color: #aaa;
+}
+
+div[data-type="mainMenuCheck"] .mt-checkbox > span:after {
+    border-color: #aaa;
+}
+
+div[data-type="mainMenuCheck"] .mt-checkbox.mt-checkbox-outline > input:checked ~ span,
+div[data-type="mainMenuCheck"] .mt-checkbox.mt-checkbox-outline > span {
+    border: 1px solid #aaa;
+}
+
+input[type=file] {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    outline: 1px solid black;
+    -webkit-box-shadow: 1px 1px 2px black;
+    -moz-box-shadow: 1px 1px 2px black;
+    box-shadow: 1px 1px 2px black;
+}
+
+.form-group div .img_preview {
+    position: relative;
+    display: inline-block;
+    background-size: 100% 100% !important;
+    width: 110px;
+    height: 35px;
+    vertical-align: middle;
+    line-height: 30px;
+    background: lightgrey;
+}
+
+.form-group div .img_preview[item_type='1'] {
+    background-size: 100% 250% !important;
+    border-radius: 5px;
+}
+
+.form-group div .img_preview[item_type='4'] {
+    background-size: 100% 100% !important;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    position: absolute;
+    left: 25%;
+    height: 75px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.form-group div .img_preview[item_type='7'] {
+    background-size: 100% 100% !important;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    position: absolute;
+    left: 75%;
+    height: 75px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.form-group div .img_preview[item_type='5'] {
+    background-size: 100% 100% !important;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    position: absolute;
+    left: 75%;
+    height: 75px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+div.fileinput-new[item_name='nameview1'],
+div.fileinput-new[item_name='nameview2'],
+div.fileinput-new[item_name='nameview3'],
+div.fileinput-new[item_name='nameview4'],
+div.fileinput-new[item_name='nameview6'],
+div.fileinput-new[item_name='nameview7'],
+div.fileinput-new[item_name='nameview5'] {
+    display: inline-block;
+    width: 65%;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.uploading_backdrop {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: 12000;
+}
+
+#wait_ajax_loader {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    z-index: 15000
+}
+
+#progress_percent {
+    position: absolute;
+    top: 43%;
+    left: 56.5%;
+    font-size: 18px;
+    color: #fff;
+    z-index: 17000
+}
+
+.modal-header .modal-title {
+    text-align: center;
+}
+
+.modal-sub-title {
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 3px;
+}
+
+.pagination-num {
+    padding: 0 10px;
+}
+
+.pagination-bar {
+    position: relative;
+    text-align: center;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    color: #888;
+    margin: 2px;
+    padding: 3px;
+    border-radius: 3px;
+    background: transparent;
+    min-width: 25px;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    background: #eee;
+    color: #009965;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+    background-color: #009965;
+    border-color: #009965;
+}
+
+.pagination > li > div,
+.pagination > li > input {
+    position: relative;
+    background: transparent;
+    padding: 6px 2px;
+    margin: 2px;
+    line-height: 1.2;
+    color: #888;
+    width: auto;
+    float: left;
+    text-align: center;
+}
+
+.pagination > li > input {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    margin: 2px 0;
+    border: 1px solid #ddd;
+
+}
+
+.usage-tab-item {
+    background: rgba(153, 204, 153, 1);
+    border-radius: 5px;
+    border: 1px solid #888;
+    color: white;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    margin: 0 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.usage-tab-item:hover {
+    background: rgba(153, 204, 153, .8);
+}
+
+.usage-tab-item[data-sel="1"] {
+    background: rgba(0, 153, 102, 1);
+}
+
+div.main-frame {
+    display: none;
+    margin-bottom: 20px;
+}
+
+div.main-frame .frame-title {
+    font-size: 18px;
+}
+
+.main-frame .canvas {
+    height: 100px;
+}

@@ -1,0 +1,131 @@
+body {
+    overflow: hidden;
+}
+
+div, a {
+    position: absolute;
+    background-size: 100% 100% !important;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    background: transparent;
+}
+
+.page-root {
+    top: calc(11vh);
+    left: 0;
+    width: calc(100vw);
+    height: calc(89vh);
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.content-info {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 0;
+    width: calc(95vw);
+    margin: 0;
+    padding: 0;
+    height: calc(21.5vw);
+    background: url(../../images/frontend/community/content/content_teacher_bg.png);
+}
+
+.content-info-student {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 0;
+    width: calc(95vw);
+    margin: 0;
+    padding: 0;
+    height: calc(21.5vw);
+    background: url(../../images/frontend/community/content/content_student_bg.png);
+}
+
+.content-username,
+.content-class,
+.content-title,
+.content-description {
+    padding: 1.4% 0;
+    height: 4%;
+    width: 19%;
+    border-radius: calc(.7vw);
+    top: 13%;
+    left: 12.5%;
+    font-size: calc(1.5vw);
+}
+
+.content-class{
+    top:36.5%;
+}
+.content-title{
+    top: 40%;
+    left: 12.5%;
+}
+.content-description{
+    left:56%;
+    width:40%;
+    height:80%;
+}
+
+.content-student-username,
+.content-student-class,
+.content-student-title,
+.content-student-description {
+    padding: 1.3% 0;
+    height: 4%;
+    width: 19%;
+    border-radius: calc(.7vw);
+    top: 14%;
+    left: 9.5%;
+    font-size: calc(1.5vw);
+}
+
+.content-student-class{
+    top: 38.5%;
+    left: 13%;
+}
+.content-student-title{
+    top: 64%;
+    left: 13.5%;
+}
+.content-student-description{
+    left:56%;
+    width:40%;
+    height:80%;
+}
+
+
+
+.content-view-image,
+.content-view-video{
+    position:relative;
+    display:inline-block;
+    top:calc(1.5vw);
+    left:50%;
+    transform:translateX(-50%);
+    width:calc(94vw);
+    height:calc(60vw);
+    background: white;
+    margin-bottom:calc(2vw);
+}
+
+.content-view-image{
+    position:relative;
+    border-radius: calc(.5vw);
+    background:#8edbf2;
+    padding:calc(.4vw) 0;
+    height:calc(62vw);
+    text-align: center;
+}
+.content-image-item{
+    position:relative;
+    display:inline-block;
+    width:calc(29.5vw);
+    height:calc(29.5vw);
+    margin:calc(.4vw);
+    background: #cff5fe;
+    border-radius:calc(.4vw);
+}

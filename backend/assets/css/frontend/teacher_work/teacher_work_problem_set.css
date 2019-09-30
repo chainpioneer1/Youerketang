@@ -1,0 +1,531 @@
+div{
+    position: absolute;
+    background-size: 100% 100%!important;
+}
+
+.bg {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%!important;
+    background: url("../../../images/teacher_work/deliver/bg.png") no-repeat;
+}
+
+.deliver_container{
+    left:5.3%;
+    width: 89.1%;
+    height: 100%;
+    background: url("../../../images/teacher_work/deliver/bg1.png") no-repeat;
+}
+
+.title_container{
+    top: 13%;
+    /* left: 20.7%; */
+    width: 100%;
+    height: 5%;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 100;
+    background-size: contain !important;
+}
+
+.class_title{
+    z-index:100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/xuanzebuzhizuoye.png") no-repeat;
+}
+
+.class_list_container{
+    top:30.9%;
+    left:5.0%;
+    width: 89.8%;
+    height: 66.4%;
+    z-index: 100;
+}
+
+.class_list_item{
+    position: relative!important;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    height: 13%;
+}
+
+.check_container{
+    top:34.5%;
+    left:8.6%;
+    width: calc(1.5vw);
+    height: calc(1.5vw);
+    cursor: pointer;
+    background: url("../../../images/teacher_work/deliver/uncheck.png") no-repeat;
+}
+
+.check_classname_container{
+    top:22.4%;
+    left: 13.2%;
+    width:86.8%;
+    height: 58.6%;
+    font-size: calc(2.1vw);
+    font-weight: bold;
+    color:#67562b;
+    cursor: pointer;
+}
+
+.next_container{
+    top:87%;
+    left:79.7%;
+    width: 15.6%;
+    height: 7%;
+    z-index:100;
+    cursor: pointer;
+    background: url("../../../images/teacher_work/deliver/xiayibu22.png") no-repeat;
+}
+
+.next_container:hover{
+    background: url("../../../images/teacher_work/deliver/xiayibu33.png") no-repeat;
+}
+
+.name_title{
+    background: url("../../../images/teacher_work/deliver/zuoyemingchengming.png") no-repeat;
+
+}
+
+.input_container {
+    top: 37.7%;
+    left: 24.2%;
+    width: 52.1%;
+    height: 6.7%;
+    z-index: 100;
+    background: url("../../../images/teacher_work/deliver/zuoyemingcheng.png") no-repeat;
+}
+
+#uname{
+    position: absolute;
+    top: 5%;
+    left: 32%;
+    width: 62%;
+    height: 90%;
+    z-index: 100;
+    font-size: calc(2vw);
+    font-weight: bold;
+}
+
+.name_remove_btn{
+    position: absolute;
+    top: 30%;
+    left: 95%;
+    width: calc(1.2vw);
+    height: calc(1.2vw);
+    background-size: contain !important;
+    background: url(../../../images/teacher_work/deliver/dacha.png) no-repeat;
+    cursor: pointer;
+}
+
+.course_list_title{
+    background: url(../../../images/teacher_work/deliver/neirongfanwei.png) no-repeat;
+}
+
+.course_list_container{
+    left:10.3%;
+    top:26.7%;
+    width:80.8%;
+    height: 39.4%;
+    z-index:100;
+}
+
+.course_bg_container{
+    left: 4%;
+    top: 1.7%;
+    width: 90.8%;
+    height: 94.4%;
+    z-index:100;
+    background: url("../../../images/teacher_work/deliver/pingyinzuoye.png") no-repeat;
+}
+
+.course_list_item{
+    position: relative!important;
+    display: inline-block;
+    width: calc(21vw);
+    vertical-align: middle;
+    height: 17%;
+    margin-right: 3.8%;
+    margin-bottom: 1%;
+    cursor: pointer;
+}
+
+.course_check_container{
+    top: 20%;
+    width: calc(2vw);
+    height: calc(2vw);
+    background: url(../../../images/teacher_work/deliver/uncheck.png) no-repeat;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.course_name_container{
+    left:15%;
+    width:86.8%;
+    height: 100%;
+    font-size: calc(2.3vw);
+    font-weight: bold;
+    color:white;
+}
+
+.question_container{
+    left:5.3%;
+    width: 89.1%;
+    height: 100%;
+    background: url("../../../images/teacher_work/deliver/bg2.png") no-repeat;
+}
+
+.question_title{
+    background: url("../../../images/teacher_work/deliver/buzhizuoye.png") no-repeat;
+}
+
+.all_option_btn[itemflag='0']{
+    left: 78.7%;
+    width: 10%;
+    height: 109%;
+    z-index:100;
+    cursor: pointer;
+    background: url("../../../images/teacher_work/deliver/quanxuanru2.png") no-repeat;
+}
+
+.all_option_btn[itemflag='0']:hover{
+    background: url("../../../images/teacher_work/deliver/quanxuanru.png") no-repeat;
+}
+.all_option_btn[itemflag='1']{
+    left: 78.7%;
+    width: 10%;
+    height: 109%;
+    z-index:100;
+    cursor: pointer;
+    background: url("../../../images/teacher_work/deliver/quanyichu.png") no-repeat;
+}
+
+.all_option_btn[itemflag='1']:hover{
+    background: url("../../../images/teacher_work/deliver/quanyichu2.png") no-repeat;
+}
+
+.test_time_container{
+    top: 19%;
+    left: 60.2%;
+    width: 18%;
+    height: 95%;
+    background: url("../../../images/teacher_work/deliver/yujishij.png") no-repeat;
+}
+
+#timetext{
+    left: 39.6%;
+    width: 42%;
+    height: 100%;
+    font-size: calc(1.5vw);
+    font-weight: bold;
+}
+
+.question_list_container{
+    top: 19.4%;
+    left: 4.6%;
+    width: 91.2%;
+    height: 66.7%;
+    overflow-y: auto;
+}
+
+.question_list_item{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.option_btn{
+    top: 9%;
+    left: 2.7%;
+    width: 8.6%;
+    height: 8.4%;
+    z-index:100;
+    cursor: pointer;
+    background: url("../../../images/teacher_work/deliver/xuanru.png") no-repeat;
+}
+
+.prob_type_img{
+    top: 8.2%;
+    left: 22.1%;
+    width: 18.3%;
+    height: 8.9%;
+    background-size: contain !important;
+    /*background: url("../../../images/teacher_work/deliver/question_type.png") no-repeat;*/
+}
+
+.prob_img{
+    top: 19.8%;
+    left: 15.7%;
+    width: 30.1%;
+    height: 56.4%;
+    background-size: contain !important;
+    /*background: url("../../../images/teacher_work/deliver/prob_img.png") no-repeat;*/
+}
+
+.speaker_btn{
+    top: 82.9%;
+    left: 26.9%;
+    width: 7.6%;
+    height: 7.3%;
+    cursor: pointer;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/speaker_btn.png") no-repeat;
+}
+
+.seperate_container{
+    top:13.6%;
+    left:49.3%;
+    width: 0.7%;
+    height: 78.4%;
+    background-color: #22552c;
+}
+
+.answer_container{
+    top:19.1%;
+    left:52.3%;
+    width: 33.9%;
+    height: 60.7%;
+}
+
+.answer_item{
+    position: relative!important;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    height: 13%;
+    z-index: 100;
+    margin-bottom:6%;
+}
+
+.answer_title{
+    font-size: calc(2vw);
+    color: #fff;
+    font-weight: bold;
+    height: 100%;
+    width: 10%;
+}
+
+.answer_bg{
+    left: 13%;
+    width: 87%;
+    height: 100%;
+    background-color: #22552c;
+    border-radius: calc(0.7vw);
+}
+
+.answer_btn{
+    top: 13%;
+    /* left: 20.7%; */
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/yes_img.png") no-repeat;
+}
+
+.answer_btn[itemid='2']{
+    top: 13%;
+    /* left: 20.7%; */
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/no_img.png") no-repeat ;
+}
+
+.answer_text{
+    width: 100%;
+    height: 30%;
+    font-size: calc(8vw);
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+.play_container{
+    top: 45%;
+    /* left: 70%; */
+    width: 100%;
+    height: 46%;
+    text-align: center;
+    background-size: contain !important;
+    background: url(../../../images/teacher_work/deliver/ans.png);
+}
+
+.display_btn{
+    top: 83.1%;
+    left: 66.8%;
+    width: 8.0%;
+    height: 7.1%;
+    z-index: 100;
+    background-size: contain !important;
+    background: url("../../../images/teacher_work/deliver/display_btn.png") no-repeat;
+}
+
+.add_btn{
+    top: 5%;
+    left: 14.7%;
+    width: 20%;
+    height: 75%;
+    z-index:100;
+    cursor: pointer;
+    background: url("../../../images/teacher_work/deliver/tianjiatimufanwei2.png") no-repeat;
+}
+
+.add_btn:hover{
+    background: url("../../../images/teacher_work/deliver/tianjiatimufanwei.png") no-repeat;
+}
+.question_footer{
+    top:86.4%;
+    width: 100%;
+    height: 9.3%;
+}
+.question_next_btn{
+    top: 5%;
+    left: 76%;
+    width: 19.6%;
+    height: 73%;
+    z-index:100;
+    cursor: pointer;
+    background: url("../../../images/teacher_work/deliver/xuanhaolexiayibu.png") no-repeat;
+}
+
+.question_next_btn:hover{
+    background: url("../../../images/teacher_work/deliver/xuanhaolexiayibu2.png") no-repeat;
+}
+.layout_job_btn{
+    top: 5%;
+    left: 80%;
+    width: 16.6%;
+    height: 73%;
+    z-index:100;
+    cursor: pointer;
+    background: url("../../../images/teacher_work/deliver/buzhizuoyeanniu.png") no-repeat;
+}
+
+.layout_job_btn:hover{
+    background: url("../../../images/teacher_work/deliver/buzhizuoyeanniu2.png") no-repeat;
+}
+
+.ans_info_msg{
+    top: 48.1%;
+    left: 30.7%;
+    width: 43.5%;
+    height: 6.4%;
+    z-index:100;
+    background: url("../../../images/teacher_work/deliver/shurutishi.png") no-repeat;
+}
+
+.display_status{
+    top: 14%;
+    left: 56%;
+    width: 19.6%;
+    height: 73%;
+    z-index: 100;
+    font-size: calc(2vw);
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    display: none;
+}
+
+.confirm_container{
+    left:5.3%;
+    width: 89.1%;
+    height: 100%;
+    background: url("../../../images/teacher_work/deliver/bg1.png") no-repeat;
+}
+
+.confirm_win_container{
+    top: 19.4%;
+    left: 4.6%;
+    width: 91.2%;
+    height: 66.7%;
+}
+
+.confirm_bg{
+    top: 13%;
+    left: 7%;
+    width: 39.6%;
+    height: 22%;
+    background: url("../../../images/teacher_work/deliver/shijian2.png") no-repeat;
+}
+
+.confirm_date_container{
+    top: 26.6%;
+    left: 22%;
+    width: 25%;
+    height: calc(5.5vh);
+    /*background: red;*/
+    border-radius: calc(1vw);
+    /*background: url("../../../images/teacher_work/deliver");*/
+}
+
+.confirm_class_name{
+    top: 12%;
+    left: 22%;
+    width: 70%;
+    height: 10%;
+    font-size: calc(2vw);
+    font-weight: bold;
+    color: #614c31;
+}
+
+.datetime_text{
+    width: 100%;
+    height: calc(5.5vh);
+    line-height: calc(5.5vh);
+    font-size: calc(1.6vw);
+    font-weight: bold;
+    color: #614c31;
+    /* text-align: center; */
+    top: 0%;
+    left:0%;
+}
+
+.confirm_title{
+    background: url("../../../images/teacher_work/deliver/querenbuzhizuoye.png") no-repeat;
+}
+.confirm_next_btn {
+    top: 87%;
+    left: 79%;
+    width: 16%;
+    height: 7%;
+    z-index: 100;
+    cursor: pointer;
+    background: url("../../../images/teacher_work/deliver/querenbuzhi.png") no-repeat;
+}
+
+.confirm_next_btn:hover{
+    background: url("../../../images/teacher_work/deliver/querenbuzhi2.png") no-repeat;
+}
+
+#success_modal{
+    width: 100%;
+    height:100%;
+    background: url("../../../images/teacher_work/deliver/success_bg.png") no-repeat;
+}
+
+#return_success_btn{
+    top: 50.4%;
+    left: 45.4%;
+    width: 9.1%;
+    height: 7.1%;
+    background: url("../../../images/teacher_work/deliver/fanhuianniu.png") no-repeat;
+}
+
+.datetimepicker div{
+    position:relative;
+}

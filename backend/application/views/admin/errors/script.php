@@ -1,0 +1,1 @@
+<script src="<?= base_url('assets/admin/global/scripts/datatable.js')?>" type="text/javascript"></script>

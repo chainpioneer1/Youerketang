@@ -1,0 +1,6 @@
+
+div {
+    background-size:100% 100%!important;
+    position:absolute;
+    transition: all .2s ease-in-out;
+}

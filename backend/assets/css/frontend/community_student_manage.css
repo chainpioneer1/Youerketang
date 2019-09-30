@@ -1,0 +1,787 @@
+.courseview-nav {
+    position: absolute;
+    left: 6%;
+    top: 53%;
+    width: 3.4%;
+    height: calc(57vh);
+    transform: translateY(-50%);
+}
+.courseview-nav .mainnav-item {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    background-size: 100% 80% !important;
+    padding: 0;
+    transition: all .3s ease-in-out;
+}
+.previous_Btn, .next_Btn {
+    position: absolute;
+    left: 39%;
+    bottom: 15%;
+    width: 8.8%;
+    height: 5.9%;
+    background: url(../../images/frontend/community/prev.png) no-repeat;
+    background-size: 100% 100% !important;
+}
+
+.next_Btn {
+    left: 56.8%;
+    background: url(../../images/frontend/community/next.png) no-repeat;
+}
+.previous_Btn,
+.next_Btn {
+    left: 33.3%;
+    bottom: 8.2%;
+    width: 10.6%;
+    height: 7.9%;
+}
+
+.next_Btn {
+    left: 54.8%;
+}
+.search-bar {
+    position: absolute;
+    top: 19.4%;
+    height: 6.5%;
+    left: 52.8%;
+    width: 79%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    background-size: 100% 100% !important;
+}
+
+.search-bar .search-keyword,
+.search-bar .select-searchtype,
+.search-bar .select-searchtype-hover,
+.search-bar .btn-newtask,
+.search-bar .btn-back2view,
+.search-bar .btn-uploadwork,
+.search-bar .btn-newproduct {
+    position: absolute;
+    top: 50%;
+    height: 100%;
+    transform: translateY(-50%);
+    background: transparent;
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+}
+
+.search-bar .search-keyword {
+    width: 41%;
+    left: 0;
+    border-radius: calc(.6vw);
+    background: #caf2fd;
+}
+
+.search-keyword input,
+.search-keyword .btn-search {
+    background: transparent;
+    position: absolute;
+    height: 95%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 84%;
+    margin: 0;
+    padding: 0 3%;
+    border-radius: calc(.6vw);
+    background-size: 100% 100% !important;
+    border: none;
+    transition: all .3s ease-in-out;
+    box-shadow: none;
+    font-size: calc(4vh);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px dodgerblue;
+}
+
+.search-keyword .btn-search {
+    left: auto;
+    right: 0;
+    width: 16%;
+    height: 100%;
+    background: url(../../images/frontend/community/btn_search.png);
+}
+
+.search-keyword .btn-search:hover {
+    background: url(../../images/frontend/community/btn_search_hover.png);
+}
+
+.search-bar .select-searchtype {
+    left: 42%;
+    width: 12%;
+    transition: none;
+    background: url(../../images/frontend/community/sel_bg_list.png);
+}
+
+.search-bar .select-searchtype-hover {
+    display: none;
+    left: 42%;
+    width: 12%;
+    height: 300%;
+    top: 150%;
+    transition: none;
+    background: url(../../images/frontend/community/sel_bg_list_hover.png);
+}
+.search-bar .btn-newtask,
+.search-bar .btn-back2view,
+.search-bar .btn-uploadwork,
+.search-bar .btn-newproduct {
+    left: auto;
+    right: 0;
+    width: 12%;
+    background: url(../../images/frontend/community/btn_additem.png);
+}
+
+.search-bar .btn-newtask:hover {
+    background: url(../../images/frontend/community/btn_additem_hover.png);
+}
+.teachertask-list .search-bar,
+.teachertask-sharing .search-bar {
+    top: 6.6%;
+    height: 8.3%;
+    left: 50%;
+    width: 95%;
+}
+.sel-tasktime,
+.sel-taskname,
+.sel-mark
+{
+    position: relative;
+    height: 20%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 84%;
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+    background: url(../../images/frontend/community/sel_taskname.png);
+}
+.sel-taskname:hover {
+    background: url(../../images/frontend/community/sel_taskname_hover.png);
+}
+
+.sel-tasktime {
+    background: url(../../images/frontend/community/sel_tasktime.png);
+}
+
+.sel-tasktime:hover {
+    background: url(../../images/frontend/community/sel_tasktime_hover.png);
+}
+
+.sel-mark {
+    background: url(../../images/frontend/community/sel_mark.png);
+}
+
+.sel-mark:hover {
+    background: url(../../images/frontend/community/sel_mark_hover.png);
+}
+
+.btn-preview,
+.btn-task-upload,
+.btn-share,
+.btn-unshare,
+.btn-update,
+.btn-submit,
+.btn-restore-submit,
+.btn-deploy {
+    position: relative;
+    display: inline-block;
+    float: none;
+    width: calc(4vw);
+    height: 100%;
+    font-size: calc(3vh);
+    background: white;
+    vertical-align: middle;
+    background: url(../../images/frontend/community/btn_preview.png);
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+}
+
+.btn-submit{
+    background: url(../../images/frontend/community/btn_submit.png);
+}
+.btn-submit:hover {
+    background: url(../../images/frontend/community/btn_submit_hover.png);
+}
+
+.btn-restore-submit {
+    background: url(../../images/frontend/community/btn_restore_submit.png);
+    width:calc(7.5vw);
+}
+.btn-restore-submit:hover {
+    background: url(../../images/frontend/community/btn_restore_submit_hover.png);
+}
+
+
+.btn-preview:hover {
+    background: url(../../images/frontend/community/btn_preview_hover.png);
+}
+
+.btn-task-upload {
+    background: url(../../images/frontend/community/btn_task_upload.png);
+}
+
+.btn-task-upload:hover {
+    background: url(../../images/frontend/community/btn_task_upload_hover.png);
+}
+
+.btn-update {
+    background: url(../../images/frontend/community/btn_upload_edit.png);
+    width: calc(7.5vw);
+}
+
+.btn-update:hover {
+    background: url(../../images/frontend/community/btn_upload_edit_hover.png);
+}
+
+.btn-deploy {
+    background: url(../../images/frontend/community/btn_deploy.png);
+}
+
+.btn-deploy:hover {
+    background: url(../../images/frontend/community/btn_deploy_hover.png);
+}
+
+.teachertask-list, .teachertask-sharing {
+    position: absolute;
+    top: 52.9%;
+    left: 52.8%;
+    transform: translate(-50%, -50%);
+    width: 83%;
+    height: 77%;
+    background: transparent;
+    /* background: url(../../images/frontend/community/comm_bg_newtask.png); */
+    background-size: 100% 100% !important;
+}
+
+.community_list_wrapper {
+    position: absolute;
+    top: 21.4%;
+    height: 53%;
+    left: 49.8%;
+    width: 95%;
+    transform: translateX(-50%);
+}
+.my-task-item-wrapper {
+    position: relative;
+    width: 100%;
+    left: 0;
+    height: calc(7vh);
+    margin: calc(3vh) 0;
+    padding: 0;
+    background-color: #caf2fd;
+    border-radius: calc(3vh);
+}
+.my-task-title{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 18%;
+    height: calc(5vh);
+    top: 53%;
+    left: 10%;
+    font-size: calc(3vh);
+    text-align: center;
+    vertical-align: middle;
+}
+.my-task-deadline
+{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: calc(5vh);
+    top: 50%;
+    left: 32%;
+    font-size: calc(3vh);
+    text-align: center;
+    vertical-align: middle;
+
+}
+.my-task-operation
+{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: calc(5vh);
+    top: 50%;
+    left: 59%;
+    font-size: calc(3vh);
+    text-align: left;
+    vertical-align: middle;
+
+}
+.my-task-view
+{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 9%;
+    height: calc(5vh);
+    top: 50%;
+    left: 78%;
+    font-size: calc(3vh);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.check-item-mark
+{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: calc(5vh);
+    top: 50%;
+    left: 92%;
+    font-size: calc(3vh);
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.community_new_task,
+.community_upload_work,
+.community_task_check {
+    position: absolute;
+    top: 52.9%;
+    left: 52.8%;
+    transform: translate(-50%, -50%);
+    width: 83%;
+    height: 77%;
+    background: url(../../images/frontend/community/comm_bg_newtask.png);
+    background-size: 100% 100% !important;
+    /*display: none;*/
+
+}
+
+.community_new_task input,
+.community_new_task textarea,
+.community_new_task .new-task-class,
+.community_new_task .new-task-addcontents,
+.new-task-btn-save,
+.new-task-btn-cancel {
+    position: absolute;
+    top: 11.5%;
+    left: 30%;
+    width: 34%;
+    height: 8%;
+    transform: translateY(-50%);
+    background: white;
+    border-radius: calc(.7vw);
+    border: none;
+    outline: none;
+    padding: calc(1vh) calc(1vw);
+    transition: all .3s ease-in-out;
+    -webkit-background-size: 100% 100% !important;
+    background-size: 100% 100% !important;
+}
+
+.community_new_task .new-task-class {
+    padding: 0;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px dodgerblue;
+}
+
+.new-task-class .add-class-input {
+    top: 50%;
+    left: 0;
+    height: 100%;
+    width: 80%;
+}
+
+.new-task-class .add-class-btn {
+    position: absolute;
+    top: 0%;
+    left: 80%;
+    height: 100%;
+    width: 20%;
+    border-radius: calc(.7vw);
+    background: url(../../images/frontend/community/btn_selclass.png);
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+}
+
+.new-task-class .add-class-btn:hover {
+    background: url(../../images/frontend/community/btn_selclass_hover.png);
+}
+
+.community_new_task .new-task-name {
+    top: 23%;
+}
+
+.community_new_task .new-task-desc {
+    top: 49%;
+    width: 53%;
+    height: 33%;
+    resize: none;
+}
+
+.community_new_task .new-task-addcontents {
+    top: 49%;
+    left: 83.5%;
+    width: calc(3.5vw + 20px);
+    height: 33%;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.new-task-addcontents .new-task-content,
+.new-task-addcontents .new-task-add-btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: calc(3.5vw);
+    height: calc(6.5vh);
+    margin-bottom: calc(.1vh);
+    background: url(../../images/frontend/community/btn_plus.png);
+    background-size: 100% 100% !important;
+}
+
+.new-task-addcontents .new-task-content {
+    display: inline-block;
+    height: calc(4.5vh);
+}
+
+.new-task-addcontents .new-task-content[item_type="1"] {
+    background: url(../../images/frontend/community/itemtype1.png);
+}
+
+.new-task-addcontents .new-task-content[item_type="1"]:hover {
+    background: url(../../images/frontend/community/itemtype1_hover.png);
+}
+
+.new-task-addcontents .new-task-content[item_type="2"] {
+    background: url(../../images/frontend/community/itemtype2.png);
+}
+
+.new-task-addcontents .new-task-content[item_type="2"]:hover {
+    background: url(../../images/frontend/community/itemtype2_hover.png);
+}
+
+.new-task-addcontents .new-task-add-btn {
+    margin: 0;
+}
+
+.community_new_task .new-task-deadtime {
+    top: 72%;
+}
+
+.new-task-btn-save,
+.new-task-btn-cancel {
+    top: 91%;
+    width: 10.5%;
+    transform: translate(-50%, -50%);
+    left: 40%;
+    border-radius: 0;
+    background: url(../../images/frontend/community/btn_savetask.png);
+}
+
+.new-task-btn-save:hover {
+    background: url(../../images/frontend/community/btn_savetask_hover.png);
+}
+
+.new-task-btn-cancel {
+    left: 60%;
+    border-radius: 0;
+    background: url(../../images/frontend/community/btn_cancel.png);
+}
+
+.new-task-btn-cancel:hover {
+    background: url(../../images/frontend/community/btn_cancel_hover.png);
+}
+.teachertask-sharing .previous_Btn,
+.teachertask-sharing .next_Btn {
+    left: 33.3%;
+    bottom: 8.2%;
+    width: 10.6%;
+    height: 7.9%;
+}
+
+.teachertask-sharing .next_Btn {
+    left: 54.8%;
+}
+
+.teachertask-sharing .select-searchtype {
+    background: url(../../images/frontend/community/sel_bg_share.png);
+}
+
+.teachertask-sharing .select-searchtype-hover {
+    height: 230%;
+    top: 115%;
+    background: url(../../images/frontend/community/sel_bg_share_hover.png);
+}
+
+.sel-sharetime,
+.sel-sharetitle {
+    position: relative;
+    height: 25%;
+    top: 54%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 84%;
+    background-size: 100% 100% !important;
+    transition: all .3s ease-in-out;
+    background: url(../../images/frontend/community/sel_sharetitle.png);
+}
+
+.sel-sharetitle:hover {
+    background: url(../../images/frontend/community/sel_sharetitle_hover.png);
+}
+
+.sel-sharetime {
+    background: url(../../images/frontend/community/sel_teacher_share_time.png);
+}
+
+.sel-sharetime:hover {
+    background: url(../../images/frontend/community/sel_teacher_share_time_hover.png);
+}
+
+.search-bar .btn-uploadwork {
+    background: url(../../images/frontend/community/btn_uploadwork.png);
+}
+
+.search-bar .btn-uploadwork:hover {
+    background: url(../../images/frontend/community/btn_uploadwork_hover.png);
+}
+
+
+.teachertask-sharing .community_task_check {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: url(../../images/frontend/community/comm_student_share.png);
+}
+
+.sharing-title,
+.sharing-author,
+.sharing-time,
+.sharing-operation {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: calc(5vh);
+    top: 50%;
+    left: 50%;
+    font-size: calc(3vh);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sharing-title {
+    width:17%;
+    left: 9.5%;
+    cursor: pointer;
+}
+
+.sharing-author {
+    left: 47.5%;
+}
+
+.sharing-time {
+    left: 83.5%;
+}
+
+.sharing-operation {
+    left: 86%;
+    text-align: right;
+}
+
+.btn-share {
+    background: url(../../images/frontend/community/btn_share.png);
+}
+
+.btn-share:hover {
+    background: url(../../images/frontend/community/btn_share_hover.png);
+}
+
+.btn-unshare {
+    width: 40%;
+    background: url(../../images/frontend/community/btn_unshare.png);
+}
+
+.btn-unshare:hover {
+    background: url(../../images/frontend/community/btn_unshare_hover.png);
+}
+
+.community_task_check .task-item-container {
+    position: absolute;
+    top: 58%;
+    left: calc(50%);
+    transform: translate(-50%, -50%);
+    width: calc(94%);
+    height: 72%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.task-check-item {
+    position: relative;
+    width: 100%;
+    left: 0;
+    height: calc(7vh);
+    margin: calc(3vh) 0;
+    padding: 0;
+    background-color: #caf2fd;
+    border-radius: calc(3vh);
+
+}
+
+.check-item-student,
+.check-item-status,
+.check-item-content,
+.check-item-mark {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: calc(5vh);
+    top: 50%;
+    left: 50%;
+    font-size: calc(3vh);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.check-item-student {
+    left: 12.5%;
+    top: 60%;
+}
+
+.my-task-title {
+    left: 10.5%;
+    top: 60%;
+    cursor: pointer;
+}
+
+.check-item-status {
+    left: 35%;
+    top: 60%;
+}
+
+.check-item-content {
+    left: 59.5%;
+}
+
+.check-item-content .btn-view {
+    position: relative;
+    display: inline-block;
+    width: 44%;
+    height: 100%;
+    transform: translateY(-50%);
+    top: 50%;
+    background-size: 100% 100% !important;
+    background: url(../../images/frontend/community/btn_viewcontent.png);
+}
+
+.check-item-content .btn-view:hover {
+    background: url(../../images/frontend/community/btn_viewcontent_hover.png);
+}
+
+.check-item-mark {
+    left: 92%;
+    width: 14%;
+}
+
+.check-item-mark .check-item-star {
+    position: relative;
+    display: inline-block;
+    width: calc(1.6vw);
+    height: calc(1.6vw);
+    transform: translateY(-50%);
+    top: 50%;
+    margin: 0;
+    padding: 0 calc(.2vw);
+    background-size: 100% 100% !important;
+    background: url(../../images/frontend/community/status_star_hover.png);
+}
+
+.community_upload_work {
+    background: url(../../images/frontend/community/comm_bg_uploadwork.png);
+}
+
+.community_upload_work input,
+.community_upload_work textarea,
+.community_upload_work .new-work-addcontents,
+.community_upload_work .new-work-btn-save,
+.community_upload_work .new-work-btn-cancel {
+    position: absolute;
+    top: 18%;
+    left: 31%;
+    width: 34%;
+    height: 8%;
+    transform: translateY(-50%);
+    background: white;
+    border-radius: calc(.7vw);
+    border: none;
+    outline: none;
+    padding: calc(1vh) calc(1vw);
+    transition: all .3s ease-in-out;
+    -webkit-background-size: 100% 100% !important;
+    background-size: 100% 100% !important;
+    font-size: calc(1.5vw);
+}
+
+.community_upload_work .new-work-desc {
+    top: 45%;
+    width: 53%;
+    height: 33%;
+    resize: none;
+}
+
+.community_upload_work .new-work-addcontents {
+    top: 71%;
+    left: 31%;
+    width: calc(44vw);
+    height: calc(6.5vh + 20px);
+    overflow: hidden;
+    overflow-x: auto;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.new-work-content,
+.new-work-add-btn {
+    position: relative;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: calc(3.5vw);
+    height: calc(6.8vh);
+    margin-bottom: calc(.1vh);
+    background: url(../../images/frontend/community/btn_plus.png);
+    background-size: 100% 100% !important;
+}
+
+.new-work-content {
+    display: inline-block;
+    width: calc(4.5vw);
+}
+
+.new-work-addcontents .new-work-content[item_type="1"] {
+    background: url(../../images/frontend/community/itemtype1.png);
+}
+
+.new-work-addcontents .new-work-content[item_type="1"]:hover {
+    background: url(../../images/frontend/community/itemtype1_hover.png);
+}
+
+.new-work-addcontents .new-work-content[item_type="2"] {
+    background: url(../../images/frontend/community/itemtype2.png);
+}
+
+.new-work-addcontents .new-work-content[item_type="2"]:hover {
+    background: url(../../images/frontend/community/itemtype2_hover.png);
+}
+
+.new-work-addcontents .new-work-add-btn {
+    margin: 0;
+}

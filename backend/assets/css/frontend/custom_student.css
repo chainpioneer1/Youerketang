@@ -1,0 +1,1429 @@
+body, html {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+body {
+    display: none;
+}
+
+a:hover, a:active {
+    text-decoration: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+div, a {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+}
+
+a, img, div, span {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    display: block;
+}
+
+.bg {
+    background: url(../../images/frontend/home/bg.png);
+    width: 100%;
+    height: 100%;
+}
+
+.top-bar {
+    width: 100%;
+    height: calc(5vw);
+    top: 0;
+    left: 0;
+}
+
+.top-back {
+    left: 2%;
+    width: 4.2%;
+    height: 80%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: url(../../images/frontend/back.png);
+}
+
+.top-back:hover {
+    background: url(../../images/frontend/back_hover.png);
+}
+
+.top-logout,
+.top-btn-minimize,
+.top-btn-close {
+    left: 82.5%;
+    width: 3.8%;
+    height: 45%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: url(../../images/frontend/logout.png);
+}
+
+.top-logout {
+    top: 58%;
+}
+
+.top-logout:hover {
+    background: url(../../images/frontend/logout_hover.png);
+}
+
+.top-profile {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 82.45%;
+    width: calc(7.8vw);
+    height: calc(4.5vw);
+    border-radius: 0;
+    border: none;
+    background: url(../../images/frontend/profile.png);
+}
+
+.top-btn-close {
+    left: 95%;
+    height: 76%;
+    background: url(../../images/frontend/close.png);
+}
+
+.top-btn-close:hover {
+    background: url(../../images/frontend/close_hover.png);
+}
+
+.top-btn-minimize {
+    left: 90.7%;
+    height: 76%;
+    background: url(../../images/frontend/min.png);
+}
+
+.top-btn-minimize:hover {
+    background: url(../../images/frontend/min_hover.png);
+}
+
+.top-close-bg {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    display: none;
+}
+
+.top-close-modal {
+    width: 55%;
+    height: 65%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: url(../../images/frontend/modal-bg.png);
+}
+
+.top-btn-yes,
+.top-btn-no {
+    width: 22%;
+    height: 12%;
+    top: 60%;
+    left: 35%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: url(../../images/frontend/yes.png);
+}
+
+.top-btn-yes:hover {
+    background: url(../../images/frontend/yes_hover.png);
+}
+
+.top-btn-no {
+    left: 65%;
+    background: url(../../images/frontend/cancel.png);
+}
+
+.top-btn-no:hover {
+    background: url(../../images/frontend/cancel_hover.png);
+}
+
+
+.main-content {
+    position: relative;
+    left: 0%;
+    top: 24%;
+    width: 100%;
+    height: 54%;
+    text-align: center;
+}
+
+.course-content {
+    position: absolute;
+    left: 6%;
+    width: 94%;
+    height: 100%;
+    text-align: left;
+}
+
+.main-content .nav-btn {
+    display: inline-block;
+    position: relative;
+    width: 21%;
+    height: 100%;
+    margin: calc(1vw);
+    transition: all .2s ease-in-out;
+    background: url(../../images/student/home/nav_bg.png);
+}
+
+.lock-bg {
+    width: 100%;
+    height: 100%;
+    background: url(../../images/student/home/lock_bg.png);
+}
+
+.nav-item {
+    left: 5%;
+    top: 7%;
+    width: 81%;
+    height: 87%;
+}
+
+.before-btn {
+    display: none;
+    left: 3%;
+    top: 43%;
+    width: 6%;
+    height: 16%;
+    z-index: 2;
+    background: url(../../images/student/home/prev.png);
+}
+
+.after-btn {
+    display: none;
+    left: 82%;
+    top: 43%;
+    width: 6%;
+    height: 16%;
+    z-index: 2;
+    background: url(../../images/student/home/next.png);
+}
+
+.warning {
+    display: none;
+    left: 40%;
+    top: 20%;
+    width: 20%;
+    height: 60%;
+    z-index: 10;
+    background: url(../../images/student/home/warning.png);
+}
+
+form {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: white;
+}
+
+input {
+    position: absolute;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: black;
+    padding: 0 calc(1.5vw);
+    font-size: calc(2vw);
+    height: 5.5%;
+    line-height: calc(5.5vh);
+    border-radius: calc(1vw);
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.login_form #username,
+.login_form #password {
+    left: 33%;
+    width: 34.2%;
+    height: 8%;
+    font-size: calc(1.6vw);
+}
+
+.login_form #username {
+    top: 28%;
+}
+
+.login_form #password {
+    top: 40%;
+}
+
+.login-err {
+    color: red;
+    font-size: calc(2vw);
+    font-weight: 600;
+    top: 79%;
+    left: 50%;
+    width: 100%;
+    height: 10%;
+    display: none;
+    pointer-events: none;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.login-logo {
+    top: 22%;
+    left: 35%;
+    width: 30%;
+    height: 23%;
+    background: url(../../images/logo.png);
+}
+
+.login-btn {
+    left: 32.7%;
+    top: 58%;
+    width: 35%;
+    height: 8%;
+    background: url(../../images/student/signin/login.png);
+}
+.login-btn:hover {
+    background: url(../../images/student/signin/login_hover.png);
+}
+
+.register-btn {
+    top: 60%;
+    background: url(../../images/student/signin/register.png);
+}
+.register-btn:hover {
+    background: url(../../images/student/signin/register_hover.png);
+}
+
+.back2login-btn {
+    top: 67%;
+    height: 4%;
+    width: 9%;
+    left: 19%;
+    background: url(../../images/student/signin/back2login.png);
+}
+
+.back2login-btn:hover {
+    background: url(../../images/student/signin/back2login_hover.png);
+}
+
+.warning-msg {
+    top: 90%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 17%;
+    text-align: center;
+    height: 4%;
+    color: red;
+    font-size: calc(1.8vw);
+    font-weight: 600;
+    pointer-events: none;
+    display: none;
+}
+
+.next-btn {
+    left: 32.5%;
+    top: 80%;
+    width: 35%;
+    height: 8%;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    background: url(../../images/student/signin/finish.png);
+}
+
+.next-btn:hover {
+    background: url(../../images/student/signin/finish_hover.png);
+}
+
+.finish-btn {
+    left: 32.5%;
+    top: 60%;
+    width: 35%;
+    height: 8%;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    background: url(../../images/student/signin/finish.png);
+}
+
+.finish-btn:hover {
+    background: url(../../images/student/signin/finish_hover.png);
+}
+
+.register-txt, .forgot-txt {
+    top: 86%;
+    height: 4%;
+    font-size: calc(1.8vw);
+    color: black;
+}
+
+.register-txt {
+    left: 32.7%;
+    width: 9%;
+}
+
+.forgot-txt {
+    left: 60%;
+    width: 8%;
+}
+
+.bg_signup0 {
+    width: 79.8%;
+    left: 10.1%;
+    top: 3.85%;
+    height: 90.5%;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.bg_signup1 {
+    width: 64%;
+    left: 18%;
+    top: 20%;
+    height: 48%;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.frame[item_type="1"] {
+    top: 19.5%;
+    left: 37.5%;
+    width: 30.2%;
+    height: 53.5%;
+}
+
+.frame[item_type="2"] {
+    top: 19.5%;
+    left: 37.5%;
+    width: 30.2%;
+    height: 53.5%;
+}
+
+.frame input {
+    width: 100%;
+    height: 15%;
+    line-height: calc(5.7vh);
+    font-size: calc(1.6vw) !important;
+    font-weight: 600;
+    padding: 0 calc(.5vw);
+}
+
+.frame #userphone {
+    top: 0;
+}
+
+.frame #verifycode {
+    top: 20.8%;
+    width: 61%;
+}
+
+.frame #password {
+    left: 0;
+    top: 42.3%;
+    width: 100%;
+}
+
+.frame #username {
+    left: 0;
+    top: 63.6%;
+    width: 100%;
+}
+
+.frame #activationcode {
+    top: calc(var(--input1-height) * 4 + 2%);
+}
+
+.submit-verify {
+    left: 60%;
+    top: 20.5%;
+    width: 40%;
+    height: 15.3%;
+    background: url(../../images/student/signin/sendcode.png);
+}
+
+.submit-verify:hover {
+    background: url(../../images/student/signin/sendcode_hover.png);
+}
+
+.frame .edit-profile-btn {
+    top: 90%;
+    left: 50%;
+    width: 23%;
+    height: 15%;
+    background: url(../../images/student/signin/editprofile.png);
+}
+
+.frame .edit-profile-btn:hover {
+    background: url(../../images/student/signin/editprofile_hover.png);
+}
+
+.profile_form .frame {
+    top: 30.5%;
+    left: 30.4%;
+    width: 21.3%;
+    height: 29.4%;
+    display: none;
+}
+
+.register_form .frame[item_type="2"] {
+    top: 30.5%;
+    left: 24.7%;
+    width: 27.6%;
+    height: 37.5%;
+}
+
+.frame div {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+:root {
+    --input1-height: 26.9%;
+    --input2-height: 21%;
+}
+
+.frame #account {
+    top: 0;
+}
+
+.frame #cpassword {
+    top: calc(var(--input1-height) * 2);
+}
+
+.frame #activationcode {
+    top: calc(var(--input1-height) * 3);
+}
+
+.frame #city {
+    top: var(--input2-height);
+    width: 38.3%;
+}
+
+.frame #district {
+    top: var(--input2-height);
+    left: 62.5%;
+    width: 38%;
+}
+
+.frame #school {
+    top: calc(var(--input2-height) * 2);
+}
+
+.frame #phonenumber {
+    top: calc(var(--input2-height) * 3);
+}
+
+.frame #email {
+    top: calc(var(--input2-height) * 4 + 1%);
+}
+
+.frame #classname {
+    top: 4%;
+    left: 8%;
+    width: 135%;
+    height: 23%;
+}
+
+.frame .create-class-btn {
+    top: 35%;
+    left: 30%;
+    width: 125%;
+    height: 75%;
+    background: url(../../images/frontend/signin/createclass.png);
+}
+
+.frame .create-class-btn:hover {
+    background: url(../../images/frontend/signin/createclass_hover.png);
+}
+
+.frame .go2home-btn {
+    top: 151%;
+    left: 145%;
+    width: 84%;
+    height: 27%;
+    background: url(../../images/frontend/signin/go2home.png);
+}
+
+.frame .go2home-btn:hover {
+    background: url(../../images/frontend/signin/go2home_hover.png);
+}
+
+.frame[item_type="5"],
+.frame[item_type="6"] {
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 71%;
+    height: 60%;
+}
+
+.frame .class-list-container {
+    /*background: #0008;*/
+    top: 26%;
+    width: 100%;
+    height: 57%;
+    overflow: hidden;
+    overflow-y: auto;
+    cursor: default;
+}
+
+.class-list-container table {
+    width: 100%;
+}
+
+.class-list-container table td {
+    position: relative;
+    margin: 0;
+    padding-top: .5%;
+    line-height: calc(2.5vw);
+    text-align: left;
+    vertical-align: middle;
+    font-size: calc(1.8vw);
+    font-weight: 600;
+    color: #624d35;
+}
+
+.class-list-container table td input {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0 5%;
+    width: 100%;
+    /*background: white;*/
+    font-size: calc(1.8vw);
+    font-weight: 600;
+    text-align: left;
+    color: #624d35;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.class-list-container table td .classitem-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: transparent;
+}
+
+.class-list-container table td .publish-txt {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 41%;
+    height: 55%;
+    cursor: pointer;
+    background: url(../../images/frontend/profile/publish.png);
+}
+
+.class-list-container table td .publish-txt[item_status="1"] {
+    width: 27%;
+    cursor: default;
+    background: url(../../images/frontend/profile/published.png);
+}
+
+.class-list-container table td .delete-txt {
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    margin: 0;
+    padding: 0;
+    width: 27%;
+    height: 55%;
+    cursor: pointer;
+    background: url(../../images/frontend/profile/delete.png);
+}
+
+.class-list-container table td .delete-txt:hover {
+    background: url(../../images/frontend/profile/delete_hover.png);
+}
+
+.frame .class-list-head {
+    left: 8%;
+    width: 90%;
+    top: 2%;
+    height: calc(5vh);
+    font-size: calc(1.8vw);
+    font-weight: 600;
+    color: #3c3630;
+}
+
+.frame .class-list-head div,
+.frame .class-list-head div span {
+    position: relative;
+    display: inline-block;
+    height: calc(5vh);
+    line-height: calc(5vh);
+    cursor: default;
+    /*-webkit-transition: none !important;*/
+    /*-moz-transition: none !important;*/
+    /*-ms-transition: none !important;*/
+    /*-o-transition: none !important;*/
+    /*transition: none !important;*/
+}
+
+.frame .class-list-head .downloadaccount-btn {
+    position: absolute;
+    display: block;
+    left: 80%;
+    width: 20%;
+    top: 0;
+    cursor: pointer;
+}
+
+.frame .class-list-head .downloadaccount-btn:hover {
+    color: #9be53a;
+}
+
+.addclass-txt {
+    top: 2.5%;
+    left: 77%;
+    height: 6%;
+    width: 12%;
+    background: url(../../images/frontend/signin/addclass.png);
+}
+
+.addclass-txt:hover {
+    background: url(../../images/frontend/signin/addclass_hover.png);
+}
+
+.editclass-btn {
+    position: relative;
+    display: inline-block;
+    width: 23%;
+    height: calc(2.5vw);
+    background: url(../../images/frontend/signin/edit.png);
+}
+
+.editclass-btn:hover {
+    background: url(../../images/frontend/signin/edit_hover.png);
+}
+
+.view-detail {
+    position: absolute;
+    left: 19%;
+    top: 25%;
+    width: 55%;
+    height: 50%;
+    background: url(../../images/frontend/signin/invitecode.png);
+}
+
+.view-detail:hover {
+    background: url(../../images/frontend/signin/invitecode_hover.png);
+}
+
+.addclass-modal,
+.updateclass-modal,
+.changepass-modal,
+.deletestudent-modal,
+.classinfo-modal {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.modal-bg {
+    top: 56%;
+    left: 50%;
+    width: 30%;
+    height: 28%;
+    background: url(../../images/frontend/signin/bg_modal2.png);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.addclass-modal input {
+    top: 14%;
+    left: 37.2%;
+    height: 20%;
+    width: 55%;
+    font-size: calc(2.2vw);
+    font-weight: 600;
+    color: #604a32;
+    padding: 0 5%;
+}
+
+.deletestudent-modal .modal-btn,
+.addclass-modal .modal-btn {
+    position: absolute;
+    left: 0;
+    top: 55%;
+    width: 100%;
+    height: 23%;
+    text-align: center;
+}
+
+.modal-btn .btn-confirm,
+.modal-btn .btn-cancel {
+    position: relative;
+    display: inline-block;
+    width: 27%;
+    height: 100%;
+    margin: 0 5%;
+    background: url(../../images/frontend/signin/confirm.png);
+}
+
+.modal-btn .btn-confirm:hover {
+    background-color: lightgrey;
+    background: url(../../images/frontend/signin/confirm_hover.png);
+}
+
+.modal-btn .btn-cancel {
+    background: url(../../images/frontend/signin/cancel.png);
+}
+
+.modal-btn .btn-cancel:hover {
+    background-color: lightgrey;
+    background: url(../../images/frontend/signin/cancel_hover.png);
+}
+
+.classinfo-modal .modal-bg {
+    top: 53%;
+    width: 45%;
+    height: 42%;
+    text-align: center;
+    background: url(../../images/frontend/signin/bg_modal1.png);
+}
+
+.classinfo-modal .classinfo-content {
+    position: absolute;
+    top: 4%;
+    left: 3%;
+    width: 94%;
+    height: 20%;
+    line-height: 1.5;
+    text-align: left;
+    font-size: calc(1.4vw);
+    font-weight: 600;
+    color: #604a32;
+}
+
+.classinfo-modal .classinfo-name {
+    color: #ff6000;
+    display: inline-block;
+}
+
+.classinfo-modal .classinfo-detail {
+    position: absolute;
+    top: 25%;
+    left: 8%;
+    width: 84%;
+    height: 70%;
+    /*background: url(../../images/frontend/signin/download_info.png);*/
+}
+
+.classinfo-detail .classinfo-code {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    width: 50%;
+    height: 20%;
+    text-align: left;
+    font-size: calc(2.5vw);
+    font-weight: 600;
+    color: white;
+}
+
+.classinfo-modal .btn-close {
+    position: absolute;
+    top: 0%;
+    left: 98%;
+    width: calc(3vw);
+    height: calc(3vw);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: url(../../images/frontend/signin/close.png);
+}
+
+.classinfo-modal .btn-close:hover {
+    background: url(../../images/frontend/signin/close_hover.png);
+}
+
+.classinfo-modal .btn-download {
+    position: absolute;
+    top: 33%;
+    left: 82%;
+    width: 8%;
+    height: 8%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: url(../../images/frontend/signin/download.png);
+}
+
+.classinfo-modal .btn-download:hover {
+    background: url(../../images/frontend/signin/download_hover.png);
+}
+
+.profile_form .frame[item_type="1"],
+.profile_form .frame[item_type="2"] {
+    top: 24%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 68%;
+    height: 57%;
+}
+
+.profile-btn,
+.manageclass-btn {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 47%;
+    background: url(../../images/frontend/profile/profile.png);
+}
+
+.profile-btn .user-account,
+.profile-btn .user-name {
+    top: 35%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 55%;
+    width: 45%;
+    height: calc(3vw);
+    line-height: calc(3vw);
+    font-size: calc(2.2vw);
+    font-weight: 600;
+    color: #4e3b24;
+}
+
+.profile-btn .user-name {
+    top: 65%;
+}
+
+.profile-btn .user-icon {
+    top: 50%;
+    left: 25%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: calc(10vw);
+    height: calc(10vw);
+    background: url(../../images/frontend/profile/usericon.png);
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.manageclass-btn {
+    top: 55%;
+    background: url(../../images/frontend/profile/manageclass.png);
+}
+
+.frame[item_type="2"] .frame-bg {
+    top: 47%;
+    left: 78%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 42%;
+    height: 71%;
+    cursor: default;
+}
+
+.frame[item_type="2"] .user-icon {
+    left: 15%;
+    top: 22%;
+    width: 19%;
+    height: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: url(../../images/frontend/profile/usericon.png);
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: default;
+}
+
+.frame-bg input {
+    font-size: calc(1.7vw);
+    font-weight: 600;
+    color: #4e3b24;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: calc(.8vw);
+    padding: 0 1%;
+}
+
+.frame-bg #user_account {
+    left: 24%;
+    top: 9%;
+    width: 50%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.frame-bg #user_name,
+.frame-bg #user_nickname {
+    left: 25%;
+    top: 27%;
+    width: 50%;
+}
+
+.frame-bg #user_school {
+    left: 25%;
+    top: 53%;
+    width: 50%;
+}
+
+.frame-bg #user_class {
+    left: 37%;
+    top: 69%;
+    width: 50%;
+}
+
+.frame-bg #user_city,
+.frame-bg #user_address {
+    top: 47%;
+}
+
+.frame-bg #user_city,
+.frame-bg #user_address {
+    width: 17%;
+}
+
+.frame-bg #user_address {
+    left: 29%;
+}
+
+.frame-bg #user_phone,
+.frame-bg #gender {
+    top: 70%;
+}
+
+.frame-bg #user_email {
+    top: 93%;
+    width: 38%;
+}
+
+.frame-bg #gender {
+    left: 74%;
+}
+
+.frame-bg .gender {
+    left: 75%;
+    top: 70%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 80%;
+    height: 1%;
+    margin: 0;
+    padding: 0;
+}
+
+.gender .checkIcon,
+.gender .checkText {
+    position: relative;
+    display: inline-block;
+    top: 0;
+    width: calc(3.5vh);
+    height: calc(3.5vh);
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    transform-origin: top left;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: url(../../images/frontend/profile/check0.png);
+    font-size: calc(2.2vw);
+    font-weight: 600;
+    color: #523e27;
+}
+
+.gender .checkIcon[item_val="1"] {
+    background: url(../../images/frontend/profile/check1.png);
+}
+
+.gender .checkText {
+    margin-right: 5%;
+    background: transparent;
+    -webkit-transform: translateY(-75%);
+    -moz-transform: translateY(-75%);
+    -ms-transform: translateY(-75%);
+    -o-transform: translateY(-75%);
+    transform: translateY(-75%);
+    /*background: url(../../images/frontend/profile/txt_male.png);*/
+}
+
+.frame .logout-btn,
+.frame .changepassword-btn {
+    left: 16%;
+    width: 23%;
+    height: 13%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.frame .changepassword-btn {
+    top: 59%;
+    background: url(../../images/student/profile/changepass.png);
+}
+
+.frame .changepassword-btn:hover {
+    background: url(../../images/student/profile/changepass_hover.png);
+}
+
+.frame .logout-btn {
+    top: 78%;
+    background: url(../../images/student/profile/logout.png);
+}
+
+.frame .logout-btn:hover {
+    background: url(../../images/student/profile/logout_hover.png);
+}
+
+.frame div.update-class-btn {
+    top: 70%;
+}
+
+.updateclass-modal .modal-bg,
+.changepass-modal .modal-bg,
+.deletestudent-modal .modal-bg {
+    top: 71.5%;
+    left: 60%;
+    width: 25%;
+    height: 30%;
+    text-align: center;
+    background: url(../../images/frontend/profile/modal_bg_password.png);
+}
+
+.changepass-modal input {
+    top: 7%;
+    left: 38%;
+    height: calc(4vh);
+    line-height: calc(4vh);
+    width: 56%;
+    font-size: calc(2.2vw);
+    font-weight: 600;
+    color: #604a32;
+    padding: 0 2%;
+    /*background: lightgrey;*/
+}
+
+.changepass-modal .npassword {
+    top: 42%;
+}
+
+.changepass-modal .cpassword {
+    top: 62%;
+}
+
+.changepass-modal .modal-btn {
+    position: absolute;
+    left: 0;
+    top: 80%;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+}
+
+.updateclass-modal .modal-btn .btn-confirm,
+.changepass-modal .modal-btn .btn-confirm,
+.changepass-modal .modal-btn .btn-cancel {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    margin: 0 1%;
+    background: url(../../images/frontend/profile/savepass.png);
+}
+
+.changepass-modal .modal-btn .btn-confirm:hover {
+    background-color: lightgrey;
+    background: url(../../images/frontend/profile/savepass_hover.png);
+}
+
+.changepass-modal .modal-btn .btn-cancel {
+    background: url(../../images/frontend/profile/cancel.png);
+}
+
+.changepass-modal .modal-btn .btn-cancel:hover {
+    background-color: lightgrey;
+    background: url(../../images/frontend/profile/cancel_hover.png);
+}
+
+.deletestudent-modal .modal-bg {
+    top: 50%;
+    left: 50%;
+    height: 26%;
+    width: 28%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: url(../../images/frontend/profile/modal_bg_delete.png);
+}
+
+.deletestudent-modal .modal-content {
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    font-size: calc(1.5vw);
+    box-shadow: none;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.deletestudent-modal .modal-btn .btn-confirm {
+    background: url(../../images/frontend/profile/ok.png);
+}
+
+.deletestudent-modal .modal-btn .btn-confirm:hover {
+    background: url(../../images/frontend/profile/ok_hover.png);
+}
+
+.updateclass-modal div.modal-bg {
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 50%;
+    background: #fcfaeb;
+    border: none;
+    text-align: center;
+    -webkit-box-shadow: 0 0 3px #999;
+    -moz-box-shadow: 0 0 3px #999;
+    box-shadow: 0 0 3px #999;
+}
+
+.updateclass-modal div.modal-bg div {
+    width: 100%;
+    font-family: "Microsoft YaHei UI";
+}
+
+.updateclass-modal div.modal-bg input {
+    left: 10%;
+    top: 50%;
+    width: 80%;
+    height: 12%;
+    outline: none;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    font-family: "Microsoft YaHei UI";
+    background: white;
+}
+
+.updateclass-modal div.modal-bg .modal-btn {
+    top: 75%;
+    width: 100%;
+    height: 12%;
+}
+
+.updateclass-modal div.modal-bg .modal-btn a {
+    width: 25%;
+    font-family: "Microsoft YaHei UI";
+    background: #ff655b;
+    color: white;
+    font-size: calc(1.5vw);
+    line-height: calc(6vh);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.updateclass-modal div.modal-bg .modal-btn a:hover {
+    background: #666;
+}
+
+
+/* ************* custom scroll bar ********** */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Track bar Background */
+::-webkit-scrollbar-track {
+    /*box-shadow:inset 2px 2px 1px rgba(52,150,182,1);*/
+    background: rgba(97, 75, 52, 0);
+    border-radius: calc(2vw);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: calc(2vw);
+    background: rgba(97, 75, 52, 0);
+    /*background:url(../images/main/scoll_icon.png) no-repeat;*/
+    background-size: 100% 100% !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(97, 75, 52, 0);
+    /*background:url(../images/main/scoll_icon.png) no-repeat;*/
+    background-size: 100% 100% !important;
+}
+
+#custom-scroll {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    width: 6%;
+    height: 65%;
+    /*background: url(assets/images/scroll-bg.png);*/
+}
+
+.scroll-thumb {
+    position: absolute;
+    top: 7.4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 7%;
+    /*background: url(assets/images/scroll-thumb.png);*/
+    pointer-events: none;
+}
+
+.scroll-read {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 91%;
+    -webkit-border-radius: calc(3vw);
+    -moz-border-radius: calc(2vw);
+    border-radius: calc(2vw);
+    /*background: url(assets/images/scroll-read.png);*/
+    pointer-events: none;
+    clip: rect(0px, 0px, 0px, 0px);
+}
+
+.progressing_area {
+    width: 100%;
+    height: 100%;
+}
+
+.uploading_backdrop {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.9;
+    z-index: 10000;
+}
+
+#wait_ajax_loader {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    z-index: 15000
+}
+
+#progress_percent {
+    position: absolute;
+    top: 43%;
+    left: 56.5%;
+    font-size: 18px;
+    color: #fff;
+    z-index: 17000
+}
+
+.expire_time {
+    left: 8%;
+    top: 39.5%;
+    color: #c76600;
+    font-weight: 600;
+    font-size: calc(1.2vw);
+}

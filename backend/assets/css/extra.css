@@ -1,0 +1,229 @@
+.home-header h1{
+    font-size: 25px;
+    color: #999;
+    text-align: center;
+}
+
+#imaginary_container{
+    margin-top:20px; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+    border-right:0;
+    box-shadow:0 0 0;
+    border-color:#ccc;
+    height: 45px;
+    font-size: 20px;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+    font-size: 20px;
+}
+.select-category{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: #999;
+}
+
+a.view-all{
+    float: right;
+    cursor: pointer;
+}
+
+.title-image{
+    display: inline-block;
+}
+.page-title{
+    display: inline-block;
+    margin-left: 20px;
+    width: 85%;
+    vertical-align: top;
+}
+.page-title h3{
+    margin: 0 0 10px 0;
+    color: #333;
+}
+.page-title p{
+    font-size: 16px;
+    color: #999;
+}
+#video-detail{
+    padding-top: 10px !important;
+}
+.ext-info1{
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #999;
+    padding: 10px 10px 10px 20px;
+}
+
+.carousel-fade{
+    border: 1px solid #ccc;
+    background-color: #eee;
+}
+.carousel-fade .carousel-control {
+    width: 70px;
+}
+.carousel-fade .left.carousel-control {
+    opacity: 1;
+    transition-property: opacity;
+    background-image: none;
+}
+.carousel-fade .right.carousel-control {
+    opacity: 1;
+    transition-property: opacity;
+    background-image: none;
+}
+.carousel-fade .left.carousel-control span, .carousel-fade .right.carousel-control span{
+    border-radius: 20px;
+    border: 1px solid #999;
+    background-color: #ccc;
+}
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+.carousel-fade .carousel-control .glyphicon-chevron-left, .carousel-fade .carousel-control .glyphicon-chevron-right, .carousel-fade .carousel-control .icon-next, .carousel-fade .carousel-control .icon-prev{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 35px;
+    text-shadow: none;
+}
+
+
+.carousel-fade .item{
+    text-align: center;
+}
+.carousel-fade .item img{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: 1px solid #eee;
+}
+.carousel-fade .carousel-indicators{
+    top: 10px;
+}
+.carousel-fade .carousel-indicators li{
+    border-color: #999;
+}
+.carousel-fade .carousel-indicators .active{
+    background-color: #f00;
+}
+
+
+.info-ul span{
+    font-weight: bold;
+    font-size: 18px;
+    color: #888;
+}
+
+.download-ext{
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 0;
+}
+.download-ext .ext-left{
+    float: left;
+    display: inline-block;
+    background-color: #eee;
+    padding: 10px 0 10px 10px;
+}
+.download-ext .ext-body{
+    float: left;
+    display: inline-block;
+    padding: 18px 0 0 15px;
+}
+.download-ext .ext-sep{
+    float: left;
+    display: inline-block;
+    border-left: 26px solid #eee;
+    border-top: 26px solid #f9f9f9;
+    border-bottom: 26px solid #f9f9f9;
+    border-right: none;
+}
+.download-ext .ext-body h1 a{
+    color: #0691bc;
+}
+
+.download-older{
+
+}
+.download-older table{
+    width: 100%;
+}
+.download-older table tr{
+    border-bottom: 2px solid #fff;
+}
+.download-older table thead tr th{
+    padding: 5px 5px 5px 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+.download-older table tbody tr td{
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+}
+.download-older table .downtbl-version{
+    background-color: #eee;
+    width: 50%;
+
+}
+.download-older table .downtbl-size{
+    background-color: #f9f9f9;
+    width: 30%;
+}
+.download-older table .downtbl-down{
+    background-color: #0691bc;
+    width: 20%;
+    color: #fff;
+    text-align: center;
+}
+
+.comments-wrap{
+    padding-top: 20px;
+}
+.comment-img{
+    display: inline-block;
+    float: left;
+}
+.comment-img .profile-img{
+    width: 35px;
+    height: 35px;
+    border: 2px solid #fff;
+    box-shadow: -1px 1px 5px #b2b2b2;
+}
+.comment-content{
+    display: inline-block;
+    float: left;
+}
+.comment-content .comment-header{
+    margin-bottom: 10px;
+}
+.comment-content .comment-header .author-name{
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+.comment-content .comment-header .modified{
+    font-size: 14px;
+    color: #666;
+    margin-left: 20px;
+}
+.comment-content .comment-header .user-rating{
+    margin-left: 20px;
+}
+.comment-content .comment-body{
+    margin-bottom: 20px;
+}
+.comment-content .comment-body p{
+    color: #666;
+}

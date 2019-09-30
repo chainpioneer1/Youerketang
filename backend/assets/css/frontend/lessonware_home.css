@@ -1,0 +1,360 @@
+div {
+    background-size: 100% 100% !important;
+}
+
+.title_container {
+    position: absolute;
+    top: 24.5%;
+    left: 20%;
+    width: 30%;
+    height: 5%;
+    text-align: center;
+}
+
+#title_input {
+    position: relative;
+    vertical-align: middle;
+    margin-right: 1%;
+    font-size: calc(1.8vw);
+    font-weight: bold;
+    width: 28%;
+    color: black;
+    text-align: right;
+    border: none;
+    border-radius: calc(.5vw);
+    outline: none;
+    background: transparent;
+    display: inline-block;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.title_edit {
+    position: relative;
+    display: inline-block;
+    width: calc(1.3vw);
+    height: calc(1.3vw);
+    cursor: pointer;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/title_edit.png);
+    vertical-align: middle;
+}
+
+.title_edit:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware2/title_edit_clicked.png);
+}
+
+.preview-btn {
+    position: absolute;
+    top: 25.8%;
+    left: 50.8%;
+    width: 5.7%;
+    height: 3.5%;
+    cursor: pointer;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/preview.png);
+}
+
+.preview-btn:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware2/preview_clicked.png);
+}
+
+.lessonware_home_container {
+    position: absolute;
+    top: 29.5%;
+    left: 17.5%;
+    width: 38.7%;
+    height: 57.5%;
+    overflow-y: auto;
+}
+
+.home_list_item {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 20%;
+    margin: 3% 2.5%;
+    /*margin-left: 2.5%;*/
+    overflow-y: auto;
+    transition: all .2s ease-in-out;
+}
+
+.delete_home_item_btn {
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: calc(1.7vw);
+    height: calc(3.1vh);
+    cursor: pointer;
+    background: url(../../../assets/images/multiply.png);
+}
+
+input {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.home_list_item_label {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: calc(1.3vw);
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 10%;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    pointer-events: none;
+}
+
+.home_list_item_label:hover {
+    color: #223dfc
+}
+
+.home_list_item_icon {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: calc(6.5vh);
+    /*margin-right: 5%;*/
+    pointer-events: none;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/tubiao1.png);
+}
+
+.cancel_btn,.save_btn {
+    position: absolute;
+    left: 29.8%;
+    top: 88.1%;
+    width: 5.5%;
+    height: 3.4%;
+    cursor: pointer;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/cancel.png);
+}
+
+.cancel_btn:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware2/cancel_clicked.png);
+}
+
+.save_btn {
+    left: 37.8%;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/save.png);
+}
+
+.save_btn:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware2/save_clicked.png);
+}
+
+.lessonware_home_course_container {
+    position: absolute;
+    width: 17.5%;
+    height: 66.7%;
+    top: 22.7%;
+    left: 66.3%;
+}
+
+.source_btn,.local_btn {
+    position: absolute;
+    width: 50%;
+    height: 10.5%;
+    cursor: pointer;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/source_btn.png);
+}
+
+/*.source_btn:hover {*/
+    /*background: url(../../../assets/images/resource/lessonware/lessonware2/source_btn_clicked.png);*/
+/*}*/
+
+.local_btn {
+    left: 50%;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/local.png);
+}
+
+/*.local_btn:hover {*/
+    /*background: url(../../../assets/images/resource/lessonware/lessonware2/local_clicked.png);*/
+/*}*/
+
+.course_source_container {
+    position: absolute;
+    top: 10.5%;
+    width: 100%;
+    height: 89.5%;
+}
+
+.course_list_container {
+    position: absolute;
+    top: 5.7%;
+    width: 61.3%;
+    height: 90%;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.course_list_item {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: calc(3.2vh);
+    margin-top: 3%;
+}
+
+.course_list_item_label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: absolute;
+    font-size: calc(1.3vw);
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: calc(4.3vh);
+    line-height: calc(4.3vh);
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    vertical-align: middle;
+}
+
+.course_list_item_label:hover {
+    color: #01cdaf;
+}
+
+.course_list_item_play_btn {
+    position: absolute;
+    line-height: calc(4.3vh);
+    top: 25%;
+    left: 81%;
+    width: calc(2.3vh);
+    height: calc(2.3vh);
+    margin-right: 5%;
+    cursor: pointer;
+    vertical-align: middle;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/play_btn.png);
+}
+.course_list_item_play_btn:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware2/play_btn_clicked.png);
+}
+
+.lesson_list_container {
+    position: absolute;
+    left: 61.3%;
+    width: 38.7%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.lesson_list_item {
+    position: relative;
+    font-size: calc(1.3vw);
+    text-align: center;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    font-weight: 600;
+    border-left: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+    color: black;
+    transition: all .2s ease-in-out;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/xiaodibai.png);
+    padding: 0;
+    height: calc(4.6vh);
+    line-height: calc(4.6vh);
+    cursor: pointer;
+}
+
+.lesson_list_item:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware2/xiaodibai_clicked.png);
+}
+
+.course_local_container {
+    position: absolute;
+    display: none;
+    top: 12.5%;
+    width: 100%;
+    height: 87.5%;
+}
+
+.added_course_list_container {
+    position: absolute;
+    top: 4.5%;
+    width: 62.3%;
+    height: 90%;
+    overflow-y: auto;
+}
+
+.upload_container {
+    position: absolute;
+    left: 62.3%;
+    width: 37.7%;
+    height: 100%;
+}
+
+.upload_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 9%;
+    cursor: pointer;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/shangchuan.png);
+}
+
+.upload_btn:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware2/shangchuan.png);
+}
+
+.lessonware_toolset {
+    position: absolute;
+    top: 25.0%;
+    left: 7.4%;
+    width: 55.5%;
+    height: 64.4%;
+    border-radius: 1.5%;
+}
+
+#lw_delete_modal {
+    position: absolute;
+    top: 44.3%;
+    left: 25.3%;
+    width: 24.4%;
+    height: 23.0%;
+    background-size: 100% 100% !important;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/modal.png);
+}
+
+#delete_lw_item_btn,
+#no_lw_item_btn {
+    position: absolute;
+    top: 63.2%;
+    left: 26%;
+    width: 18.7%;
+    height: 15.1%;
+    cursor: pointer;
+    background-size: 100% 100% !important;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/yes.png) no-repeat;
+}
+
+#delete_lw_item_btn:hover{
+    background: url(../../../assets/images/resource/lessonware/lessonware2/yes_clicked.png) no-repeat;
+}
+
+#no_lw_item_btn {
+    left: 53.6%;
+    background: url(../../../assets/images/resource/lessonware/lessonware2/no.png) no-repeat;
+}
+#no_lw_item_btn:hover {
+    background: url(../../../assets/images/resource/lessonware/lessonware2/no_clicked.png) no-repeat;
+}

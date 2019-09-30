@@ -1,0 +1,106 @@
+.bg {
+    background: url(../../images/student/pinyin/bg.png);
+}
+
+.work-btn {
+    left: 89.8%;
+    top: 63%;
+    width: 10%;
+    height: 22%;
+    background: url(../../images/student/pinyin/work_btn.png);
+}
+
+.classroom_list_container {
+    position: absolute;
+    width: 67.8%;
+    height: 50%;
+    top: 24%;
+    left: 16.9%;
+    overflow-y: auto;
+}
+
+.list_item {
+    position: relative;
+    display: inline-block;
+    width: 23%;
+    height: calc(22.8vh);
+    line-height: calc(8.8vh);
+    background-size: 100% 100% !important;
+    margin: 0 2% 2% 0;
+    vertical-align: middle;
+    transition: all .2s ease-in-out;
+    cursor:pointer;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,.3);
+    background: url(../../images/student/pinyin/course_bg.png);
+}
+
+.main_item_info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    color: white;
+}
+
+.item_infobar {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    font-size: calc(1.6vw);
+    line-height: calc(4vh);
+    text-align: center;
+}
+
+.progress_bg {
+    position: absolute;
+    left: 10%;
+    top: 65%;
+    width: 80%;
+    height: 10%;
+    background: url(../../images/student/pinyin/progress_bg.png);
+}
+
+.progress_bar {
+    position: absolute;
+    left: 10%;
+    top: 65%;
+    height: 10%;
+    background: url(../../images/student/pinyin/progress_bar.png);
+}
+
+.progress_info {
+    display: none;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    width: 30%;
+    height: 15%;
+    line-height: calc(3vh);
+    font-size: calc(1.5vw);
+    color: black;
+    text-align: center;
+    background: transparent;
+}
+
+.main_item_info[item_type="self"]{
+    color: white;
+    text-align: center;
+    font-size:calc(1.8vw);
+    font-weight: 500;
+    background:url(../../images/classroom/blank.png);
+}
+
+.main_item_info[item_type="self"]:hover{
+    background:url(../../images/classroom/blank_clicked.png);
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw);
+    height: calc(100vh);
+}

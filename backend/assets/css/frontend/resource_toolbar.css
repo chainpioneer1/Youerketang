@@ -1,0 +1,43 @@
+.main-resource-toolbar{
+    position: absolute;
+    top: 12%;
+    left: 22.7%;
+    width: 55%;
+    height: 6.5%;
+    z-index: 1000;
+}
+
+.nav-education, .nav-lessonware, .nav-learning{
+    width: 19.5%;
+    height: 100%;
+    left: 0%;
+    background: url(../../../assets/images/resource/education/menu1.png);
+    background-size: 100% 100% !important;
+    cursor: pointer;
+    position: absolute;
+}
+
+.nav-education:hover{
+    background: url(../../../assets/images/resource/education/menu1_clicked.png);
+}
+
+.nav-lessonware{
+    left: 39.6%;
+    background: url(../../../assets/images/resource/education/menu2.png);
+}
+
+.nav-lessonware:hover{
+    background: url(../../../assets/images/resource/education/menu2_clicked.png);
+}
+
+
+.nav-learning{
+    left: auto;
+    right: 0;
+    background: url(../../../assets/images/resource/education/menu3.png);
+}
+
+.nav-learning:hover{
+    background: url(../../../assets/images/resource/education/menu3_clicked.png);
+}
+

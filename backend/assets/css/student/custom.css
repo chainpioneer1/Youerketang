@@ -1,0 +1,489 @@
+.bg {
+    background: url(../../images/student/home/bg.png);
+}
+
+.load-bg {
+    position: fixed;
+    width: calc(100vw);
+    height: calc(100vh);
+    left:0;
+    top:0;
+}
+
+.top-bar {
+    width: 100%;
+    height: calc(10vh);
+    top: 0;
+    left: 0;
+}
+
+.top-back {
+    left: 3%;
+    width: calc(8vh);
+    height: calc(8vh);
+    top: calc(6vh);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: url(../../images/student/back.png);
+}
+
+.top-back:hover {
+    background: url(../../images/student/back_hover.png);
+}
+
+.top-profile {
+    top: calc(5.5vh);
+    left: 91%;
+    width: calc(8vh);
+    height: calc(8vh);
+    border-radius: 50%;
+    border: none;
+    background: url(../../images/student/profile.png);
+}
+
+.nav {
+    width: 27%;
+    height: 48%;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+}
+
+:root {
+    --home-bg-color: rgba(0, 0, 0, 0);
+    --home-bg-hover-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav[itemid="1"] {
+    left: 14%;
+    top: 17.5%;
+    background: var(--home-bg-color);
+}
+
+.nav[itemid="1"]:hover {
+    background: var(--home-bg-hover-color);
+}
+
+.nav[itemid="2"] {
+    left: 56%;
+    top: 15.5%;
+    width: 29%;
+    height: 51%;
+    background: var(--home-bg-color);
+}
+
+.nav[itemid="2"]:hover {
+    background: var(--home-bg-hover-color);
+}
+
+.success-modal {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../../images/student/signin/bg_success.png);
+    display: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #e0c178;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #e0c178;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #e0c178;
+}
+
+.changepass-modal .modal-bg {
+    top: 59.5%;
+    left: 28%;
+}
+
+.work-top-nav {
+    position: absolute;
+    top: 25%;
+    width: 39%;
+    height: 5%;
+    left: 35.2%;
+    text-align: center;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.work-top-nav a {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: calc(5vw);
+}
+
+.work-task {
+    background: url(../../images/student/work/work_task.png);
+}
+.work-task:hover {
+    background: url(../../images/student/work/work_task_hover.png);
+}
+
+.work-history {
+    background: url(../../images/student/work/work_history.png);
+}
+.work-history:hover {
+    background: url(../../images/student/work/work_history_hover.png);
+}
+
+.work-wrong {
+    background: url(../../images/student/work/work_wrong.png);
+}
+.work-wrong:hover {
+    background: url(../../images/student/work/work_wrong_hover.png);
+}
+
+.work-frame {
+    left: 50.4%;
+    top: 64%;
+    width: 68%;
+    height: 48%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.task-list-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.task-list-container .task-item {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 10%;
+    line-height: calc(5vh);
+    margin: 18px 0 0 0;
+    background: white;
+}
+
+.task-item .task-info {
+    position: absolute;
+    height: 100%;
+    color: black;
+    font-size: calc(1.2vw);
+    font-weight: 600;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.task-item .task-info[item_col="1"] {
+    left: 11%;
+    width: 22%;
+}
+
+.task-item .task-info[item_col="2"] {
+    left: 33%;
+    width: 22%;
+}
+
+.task-item .task-info[item_col="3"] {
+    left: 61%;
+    width: 34%;
+}
+
+.task-item .task-info[item_col="4"] {
+    left: 89%;
+    width: 22%;
+}
+
+.task-item .task-info[item_hover="1"] {
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.task-item .task-info[item_hover="1"]:hover {
+    color: #fdc209;
+}
+
+.work-frame[item_type="2"] {
+    width: 77%;
+    height: 72%;
+    top: 49.5%;
+    left: 49%;
+}
+
+.work-frame .problem-item {
+    width: 100%;
+    height: 100%;
+}
+
+.problem-item div {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.problem-item .prob-num {
+    top: 4%;
+    left: 49.5%;
+    width: 10%;
+    height: calc(6.5vh);
+    line-height: calc(6.5vh);
+    color: white;
+    text-align: center;
+    font-size: calc(2.1vw);
+    font-weight: 600;
+    border-radius: calc(3vw);
+    background: #975419;
+}
+
+.problem-item .prob-type,
+.problem-item .prob-img,
+.problem-item .prob-sound {
+    left: 26%;
+}
+
+.problem-item .prob-type {
+    top: 4%;
+    height: calc(5vh);
+    line-height: calc(5vh);
+    width: 20%;
+    text-align: center;
+    color: rgba(100, 100, 100, 1);
+    font-size: calc(1.6vw);
+    font-weight: 600;
+}
+
+.problem-item .prob-img {
+    top: 50%;
+    width: 44%;
+    height: 75%;
+    border-radius: calc(5vw);
+}
+
+.problem-item .prob-sound {
+    top: 96%;
+    width: 9%;
+    height: 8%;
+    cursor: pointer;
+    background: url(../../images/student/work/play.png);
+}
+
+.problem-item .prob-sound:hover {
+    background: url(../../images/student/work/play4.png);
+}
+
+.btn-prob-back {
+    top: 10%;
+    left: 5%;
+    width: 4.3%;
+    height: 8%;
+    cursor: pointer;
+    background: url(../../images/student/work/back1.png);
+}
+
+.problem-item .ans-img {
+    left: 77%;
+    width: 38%;
+    height: 8%;
+    top: 21%;
+    cursor: pointer;
+    display: none;
+    background: url(../../images/student/work/option.png);
+}
+
+.problem-item .ans-img:hover,
+.problem-item .ans-img[item_sel="1"] {
+    background: url(../../images/student/work/option_hover.png);
+}
+
+.problem-item .ans-img[item_type="2"] {
+    top: 35%;
+}
+
+.problem-item .ans-img[item_type="3"] {
+    top: 49%;
+}
+
+.problem-item .ans-img[item_type="4"] {
+    top: 63%;
+}
+
+.problem-item .ans-img div {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    opacity:.6;
+    pointer-events: none;
+}
+
+.problem-item .btn-prob-submit {
+    left: 75%;
+    width: 10%;
+    height: 8%;
+    top: 92%;
+    cursor: pointer;
+    background: url(../../images/student/work/apply.png);
+}
+
+.problem-item .ans-txt {
+    left: 75%;
+    width: 45%;
+    height: calc(20vh);
+    line-height: calc(10vh);
+    top: 25%;
+    color: white;
+    text-align: center;
+    font-size: calc(4vw);
+    font-weight: 600;
+}
+
+.problem-item .ans-record {
+    left: 66.5%;
+    width: 9.5%;
+    height: 18.5%;
+    top: 58%;
+    cursor: pointer;
+    background: url(../../images/student/work/record.png);
+}
+
+.problem-item .ans-record:hover {
+    background: url(../../images/student/work/record1.png);
+}
+
+.problem-item .ans-replay {
+    left: 84%;
+    width: 9.5%;
+    height: 18.5%;
+    top: 58%;
+    cursor: pointer;
+    background: url(../../images/student/work/replay.png);
+}
+
+.problem-item .ans-replay[item_sel="1"] {
+    background: url(../../images/student/work/replay_pause.png);
+}
+
+.right-modal,
+.wrong-modal {
+    top: 49%;
+    left: 61.8%;
+    width: 13%;
+    height: 25%;
+    display: none;
+    background: url(../../images/student/work/right.png);
+}
+
+.wrong-modal {
+    width: 15%;
+    left: 60.8%;
+    background: url(../../images/student/work/wrong.png);
+}
+
+.wrong-modal .ans-right {
+    top: 86%;
+    left: 81%;
+    width: 20%;
+    height: calc(2vh);
+    line-height: calc(2vh);
+    text-align: center;
+    color: white;
+    font-size: calc(2vw);
+    font-weight: 600;
+}
+
+.work-frame .problem-result {
+    width: 100%;
+    height: 100%;
+}
+
+.star-set {
+    top: 55%;
+    left: 50%;
+    width: 30%;
+    height: calc(3vw);
+    line-height: calc(3vw);
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.star-set .star-item {
+    position: relative;
+    display: inline-block;
+    width: calc(2.5vw);
+    height: calc(2.5vw);
+    background: url(../../images/student/work/star0.png);
+}
+
+.star-set .star-item[item_type="1"] {
+    background: url(../../images/student/work/star1.png);
+}
+
+.problem-result .btn-finish {
+    top: 82%;
+    left: 50%;
+    width: 15%;
+    height: 17%;
+    background: url(../../images/student/work/finish.png);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor:pointer;
+}
+
+.problem-result[item_type="2"] .star-set {
+    top: 60%;
+}
+
+.problem-result .btn-goupdate {
+    top: 40%;
+    left: 50%;
+    width: 12%;
+    height: 13%;
+    background: url(../../images/student/work/goupdate.png);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+

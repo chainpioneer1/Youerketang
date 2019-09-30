@@ -1,0 +1,116 @@
+.share_content_btn{ position: absolute; left: 88.5%; top:58.5%;width: 4.2%; height: 11.7%;}
+.work_view_area
+{
+    position: absolute;
+    top:21%;
+    left: 23%;
+    width: 54%;
+    height:66.3%;
+    overflow: auto;
+    display: table;
+    /*background-color: #c0b696;*/
+}
+.scriptPrint_Icon
+{
+    position: absolute;
+    top:19.2%;
+    right:14.8%;
+    width:4.73%;
+    height:5.46%;
+}
+.headImgPrint_Icon
+{
+    position: absolute;
+    top:19.2%;
+    right:14.8%;
+    width:7.9%;
+    height:5.46%;
+}
+.scriptwork-content{
+    font:normal 22px "Arial Negreta", "Arial Normal", "Arial";
+    /*padding-left:80px;*/
+}
+.modal-backdrop.fade.in {
+    opacity: 0.2;
+    filter: alpha(opacity=100);
+}
+
+/*****************************/
+.dubbing-content{ position: absolute; left: 12.1%; top: 16.4%; width: 72.8%; height: 77.5%}
+.dubbing-content img {position: absolute;top:5%;width:87%;height:79%;left:8.9%;}
+/*.player{ position: absolute; left: 33.28%; top: 63.54%; width: 39.11%; height: 5.65% }*/
+#pButton{ position: absolute; left: 28.68%; top: 84.2%; width: 2.71%; height: 4.81% }
+#pButton img{ width: 100%; height: 100% }
+#timeline{ position: absolute; left: 32.02%; top: 86%; width: 37.65%; height: 1.02% }
+#playhead{ position: absolute; left: 32.4%; top: 85.25%; width: 1.41%; height: 2.5% }
+
+.shooting-content { position: absolute; left:12.1%; top: 16.4%; width: 72.75%; height: 75.2%;background-color: #0000C0 }
+.shooting-content video{ width: 100%; height: 100% }
+.shooting_share_content
+{
+    position: absolute;
+    left: 88.5%;
+    top: 58.5%;
+    width: 4.2%;
+    height: 11.7%;
+}
+
+
+
+#headImage_wrapper {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media (max-height:346px) {
+    .elem-txt,.scriptwork_title  {font-size:14px !important;}
+    
+}
+@media (min-height:347px) and (max-height: 390px){
+    .elem-txt,.scriptwork_title  {font-size:16px!important;}
+}
+@media (min-height:391px) and (max-height: 480px){
+    .elem-txt,.scriptwork_title  {font-size:18px!important;}
+}
+@media (min-height:481px) and (max-height: 504px){
+    .elem-txt,.scriptwork_title  {font-size:20px!important;}
+}
+@media (min-height:505px) and (max-height: 533px){
+    .elem-txt,.scriptwork_title  {font-size:22px!important;}
+}
+@media (min-height:534px) and (max-height: 600px){
+    .elem-txt,.scriptwork_title  {font-size:23px!important;}
+}
+@media (min-height:601px) and (max-height: 640px){
+    .elem-txt,.scriptwork_title  {font-size:24px!important;}
+}
+@media (min-height:641px) and (max-height: 695px){
+    .elem-txt,.scriptwork_title  {font-size:26px!important;}
+}
+@media (min-height:696px) and (max-height: 768px){
+    .elem-txt,.scriptwork_title  {font-size:28px!important;}
+}
+@media (min-height:769px) and (max-height: 812px){
+    .elem-txt,.scriptwork_title  {font-size:30px!important;}
+}
+@media (min-height:813px) and (max-height: 960px){
+    .elem-txt,.scriptwork_title  {font-size:32px!important;}
+}
+@media (min-height:961px) and (max-height: 1024px){
+    .elem-txt,.scriptwork_title  {font-size:34px!important;}
+}
+@media (min-height:1025px) and (max-height: 1280px){
+    .elem-txt,.scriptwork_title  {font-size:36px!important;}
+}
+@media (min-height:1281px) and (max-height: 1366px){
+    .elem-txt,.scriptwork_title  {font-size:38px!important;}
+}
+@media (min-height:1367px) and (max-height: 1440px){
+
+}
+@media (min-height:1441px){
+
+
+}
+

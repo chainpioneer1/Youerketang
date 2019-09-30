@@ -1,0 +1,312 @@
+/*.background_image {*/
+/*position: fixed;*/
+/*top: 0;*/
+/*left: 0;*/
+/*width: 100%;*/
+/*height: 100%;*/
+/*background-size: contain*/
+/*}*/
+div, a {
+    background-size: 100% 100% !important;
+}
+
+#mylesson-content {
+    position: absolute;
+    left: 0;
+    top: calc(50vh);
+    transform: translateY(-50%);
+    width: 100%;
+    height: calc(66vh);
+}
+
+.mylesson-title {
+    position: absolute;
+    left: 10.5%;
+    width: 17%;
+    height: 100%;
+    top: 0;
+}
+
+.mylesson-title .title-add {
+    position: absolute;
+    top: 0;
+    height: 9%;
+    width: 100%;
+    background: url(../../images/taiyang/mylesson/btn_add.png) no-repeat;
+    background-size: 28% 55% !important;
+    padding: 0 2%;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.mylesson-title .title-add:hover {
+    background: url(../../images/taiyang/mylesson/btn_add_hover.png) no-repeat;
+}
+
+.mylesson-title .title-panel {
+    position: absolute;
+    top: 10%;
+    width: 99%;
+    height: 82%;
+    text-align: center;
+    overflow-y: auto;
+    display: none;
+}
+
+.title-panel .title-item {
+    position: relative;
+    display: inline-block;
+    width: 98%;
+    margin: 0;
+    margin-top: 1%;
+    padding: 2%;
+    height: calc(5.5vh);
+    background: #00a8d5;
+    border-radius: calc(.5vw);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.title-item .title-edit {
+    position: absolute;
+    background: transparent;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2%;
+    width: 50%;
+    height: 76%;
+    color: white;
+    padding: 0 2%;
+    border-radius: calc(.4vw);
+    box-shadow: none;
+    border: none;
+    font-size: calc(2.4vh);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition:all .3s ease-in-out;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow : ellipsis;
+}
+
+.title-item .title-edit:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px #cff5fe;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.title-item .btn-navigate{
+    position:absolute;
+    background:transparent;
+    left:0;
+    top:0;
+    width:50%;
+    height:100%;
+    cursor:pointer;
+}
+
+.title-item .btn-editdone,
+.title-item .btn-update,
+.title-item .btn-delete {
+    position: absolute;
+    background: url(../../images/taiyang/mylesson/btn_update.png);
+    left: 53%;
+    width: 22%;
+    height: 76%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor:pointer;
+}
+
+.title-item .btn-delete {
+    left: 76.5%;
+    background: url(../../images/taiyang/mylesson/btn_del.png);
+}
+
+.title-item .btn-update:hover {
+    background: url(../../images/taiyang/mylesson/btn_update_hover.png);
+}
+
+.title-item .btn-delete:hover {
+    background: url(../../images/taiyang/mylesson/btn_del_hover.png);
+}
+
+.title-item .btn-editdone{
+    background: url(../../images/taiyang/mylesson/btn_editdone.png);
+}
+.title-item .btn-editdone:hover{
+    background: url(../../images/taiyang/mylesson/btn_editdone_hover.png);
+}
+
+.title-bottom .arrow-up,
+.title-bottom .arrow-down {
+    position: absolute;
+    width: 13%;
+    height: 4%;
+    left: 18%;
+    top: 96%;
+    transform: translateY(-50%);
+    background: url(../../images/taiyang/mylesson/arrowup.png);
+    cursor:pointer;
+}
+
+.title-bottom .arrow-down {
+    background: url(../../images/taiyang/mylesson/arrowdown.png);
+    left: 68%;
+}
+
+.title-bottom .arrow-up:hover {
+    background: url(../../images/taiyang/mylesson/arrowup_hover.png);
+}
+
+.title-bottom .arrow-down:hover {
+    background: url(../../images/taiyang/mylesson/arrowdown_hover.png);
+}
+
+.mylesson-media {
+    position: absolute;
+    left: 33.7%;
+    width: 59%;
+    height: 87.5%;
+    top: 44.5%;
+    padding: 1% .5%;
+    transform: translateY(-50%);
+    overflow-y: auto;;
+    display:none;
+}
+
+.mylesson-media .media-item {
+    position: relative;
+    display: inline-block;
+    margin: 2.7%;
+    padding: 0;
+    width: 11%;
+    height: 20.3%;
+    border-radius: calc(1vw);
+    transition: all .3s ease-in-out;
+    cursor:pointer;
+}
+
+.mylesson-media .media-item[item_type='1'] {
+    background: url(../../images/taiyang/mylesson/file1.png);
+}
+
+.mylesson-media .media-item[item_type='2'] {
+    background: url(../../images/taiyang/mylesson/file2.png);
+}
+
+.mylesson-media .media-item[item_type='3'],
+.mylesson-media .media-item[item_type='4'],
+.mylesson-media .media-item[item_type='5'] {
+    background: url(../../images/taiyang/mylesson/file3.png);
+}
+
+.mylesson-media .media-item:hover {
+    transform: scale(1.05);
+}
+
+.media-item .media-title {
+    position: absolute;
+    top: 98%;
+    left: -25%;
+    width: 150%;
+    text-align: center;
+    font-size: calc(1.1vw);
+    color: dimgrey;
+    user-select: none;
+}
+
+.edit-area .media-edit,
+.edit-area .media-done,
+.edit-area .media-add {
+    position: absolute;
+    left: 63.2%;
+    width: 8%;
+    height: 8.5%;
+    top: 97%;
+    padding: 1.5% .5%;
+    transform: translate(-50%, -50%);
+    background: url(../../images/taiyang/mylesson/btn_edit.png);
+    display: none;
+    cursor:pointer;
+}
+
+.edit-area .media-edit:hover {
+    transition:all .3s ease-in-out;
+    background: url(../../images/taiyang/mylesson/btn_edit_hover.png);
+}
+
+.edit-area .media-add {
+    width: 5%;
+    height: 9.5%;
+    top: 82%;
+    background: url(../../images/taiyang/mylesson/btn_addmedia.png);
+}
+
+.edit-area .media-add:hover {
+    transition:all .3s ease-in-out;
+    background: url(../../images/taiyang/mylesson/btn_addmedia_hover.png);
+}
+
+.edit-area .media-done {
+    left: 89%;
+    background: url(../../images/taiyang/mylesson/btn_done.png);
+}
+
+.edit-area .media-done:hover {
+    transition:all .3s ease-in-out;
+    background: url(../../images/taiyang/mylesson/btn_done_hover.png);
+}
+
+#mylesson-content .media-submenu {
+    background: url(../../images/taiyang/mylesson/btn_panel.png);
+    position: absolute;
+    width: calc(8.9vw);
+    height: calc(5.4vh);
+    text-align: center;
+    top: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.media-submenu .btn-prev,
+.media-submenu .btn-next,
+.media-submenu .btn-delete {
+    position: absolute;
+    background: url(../../images/taiyang/mylesson/btn_next.png);
+    left: 50%;
+    width: 28%;
+    height: 50%;
+    top: 59%;
+    transform: translate(-50%, -50%);
+}
+
+.media-submenu .btn-prev {
+    background: url(../../images/taiyang/mylesson/btn_prev.png);
+    left: 19%;
+}
+
+.media-submenu .btn-delete {
+    background: url(../../images/taiyang/mylesson/btn_delmedia.png);
+    left: 81%;
+}
+
+.media-submenu .btn-prev:hover {
+    background: url(../../images/taiyang/mylesson/btn_prev_hover.png);
+}
+
+.media-submenu .btn-next:hover {
+    background: url(../../images/taiyang/mylesson/btn_next_hover.png);
+}
+
+.media-submenu .btn-delete:hover {
+    background: url(../../images/taiyang/mylesson/btn_delmedia_hover.png);
+}

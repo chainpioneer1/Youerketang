@@ -1,0 +1,112 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.background_image {
+    position: fixed;
+    top: 0;left: 0;
+    width:100%;
+    height:100%;
+    background-size: contain
+}
+.teacher_assign_class {
+    position: absolute;
+    left: 9.3%;
+    top: 33%;
+    width: 9%;
+    height:41%;
+}
+.member_item {
+    text-decoration: none !important;
+    color: #000;
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    /*position: absolute;*/
+    top: 26%;
+    font-size:19px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.member_item_wrapper
+{
+    margin-top: 28px;
+    padding-left: 15px;
+    text-align: left;
+    position: relative;
+    width:100%;
+    display: table;
+}
+.custom_classlist_btn{
+    display: block;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0);
+    border:0;
+    width: 100%;
+    height: 100%;
+}
+.class_member_tbl_area { position: relative;}
+#teacher_manage_class{ text-align: center; min-height: 550px}
+
+#prevPage_Btn,#nextPage_Btn
+{
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+.content_type_list
+{
+    display: inline-block;
+    margin-right: 30px;
+    background-color:#ff9;
+}
+.left-block-member,
+.right-block-member
+{
+    text-align: center;
+    display: inline-block;
+    margin-left:3%;
+    width: 47%;
+}
+.left-block-member { left:0;}
+.right-block-member { left: 50%;}
+
+#class_member_area { width: 66%; left: 22%; top: 18%; height: 70%;}
+
+.class_name_btn_wrapper { border:0; display: flex; align-items: center; justify-content: center; height: 20%; margin-top: 3%;}
+.course_type_menu {position: absolute;left:29.5%;top:1.06%;width:34.1667%;height:8.7%;}
+.course_type_menu img{width:100%;height: 100%;}
+.course_type_menu a{ display: block; position: absolute; }
+
+.switch{ position: absolute; left: 38.8%; top: 0.9%; width: 21.61%; height: 7.87%; }
+.switch img{ width: 100%; height: 100% }
+
+.hdmenu{ position: absolute; left: 70.47%; top: 0.6%; width: 18%; height: 8.8%; }
+.hdmenu img{ width: 100%; height: 100% }
+.hdmenu a{ display: block; position: absolute; }
+
+.exit-btn{ position: absolute; left: 88.75%; top: 2.3%; width: 5.31%; height: 4.81%; }
+.exit-btn img{ width: 100%; height: 100% }
+
+.return_btn{width: 3.7%; height: 7.6%; position: absolute; right: 1.7%; top:1.3%}
+
+.previous_Btn
+{
+    position: absolute;
+    left: 40%;
+    bottom: -1%;
+    width: 9.5%;
+    height: 6.2%;
+}
+.next_Btn
+{
+    position: absolute;
+    left: 53.7%;
+    bottom:-1%;
+    width: 9.5%;
+    height: 6.2%;
+}
+
+.home_btn{width:4.2%;height:7.5%;position: absolute;left:1.7%;top:1.5%;}

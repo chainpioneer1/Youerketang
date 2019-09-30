@@ -1,0 +1,61 @@
+.classroom_list_container {
+    position: absolute;
+    width: 67.8%;
+    height: 50%;
+    top: 24%;
+    left: 16.9%;
+    overflow-y: auto;
+}
+
+.list_item {
+    position: relative;
+    display: inline-block;
+    width: 23%;
+    height: calc(22.8vh);
+    line-height: calc(8.8vh);
+    background-size: 100% 100% !important;
+    margin: 0 2% 2% 0;
+    vertical-align: middle;
+    transition: all .2s ease-in-out;
+    cursor:pointer;
+}
+
+.main_item_info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    color: white;
+}
+
+.item_infobar {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    line-height: calc(4.5vh);
+    font-size: calc(1vw);
+    text-align: center;
+}
+
+.main_item_info[item_type="self"]{
+    color: white;
+    text-align: center;
+    font-size:calc(1.8vw);
+    font-weight: 500;
+    background:url(../../images/classroom/blank.png);
+}
+
+.main_item_info[item_type="self"]:hover{
+    background:url(../../images/classroom/blank_clicked.png);
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw);
+    height: calc(100vh);
+}

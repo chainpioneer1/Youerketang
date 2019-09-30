@@ -1,0 +1,86 @@
+.task-list-container .task-item {
+    border-bottom: 1px solid #22502b;
+}
+
+.task-item .task-info[item_hover="1"]:hover {
+    color: #2eb92a;
+}
+.task-item .task-info[item_col="2"] {
+    left: 42%;
+}
+.task-item .task-info[item_col="3"] {
+    left: 71%;
+}
+
+.task-info .star-item{
+    position: relative;
+    display: inline-block;
+    width:10%;
+    top:0%;
+    height:45%;
+    margin:0 .5%;
+    background: url(../../images/student/work/star0.png);
+}
+.task-info .star-item[item_type="1"]{
+    background: url(../../images/student/work/star1.png);
+}
+.problem-item .prob-num {
+    background: #23562e;
+}
+
+.problem-item .ans-img {
+    pointer-events: none;
+    background: url(../../images/student/work/history-option.png);
+}
+
+.problem-item .ans-img[item_sel="1"] {
+    background: url(../../images/student/work/history-option_hover.png);
+}
+
+.problem-item .btn-prob-prev,
+.problem-item .btn-prob-next {
+    left: 66.5%;
+    width: 12%;
+    height: 8%;
+    top: 93.3%;
+    cursor: pointer;
+    background: url(../../images/student/work/prev.png);
+}
+
+.problem-item .btn-prob-prev:hover {
+    background: url(../../images/student/work/prev_hover.png);
+}
+
+.problem-item .btn-prob-next {
+    left: 84.5%;
+    background: url(../../images/student/work/next.png);
+}
+
+.problem-item .btn-prob-next:hover {
+    left: 84.5%;
+    background: url(../../images/student/work/next_hover.png);
+}
+
+.problem-item .prob-sound {
+    background: url(../../images/student/work/history-play.png);
+}
+
+.problem-item .prob-sound:hover {
+    background: url(../../images/student/work/history-play4.png);
+}
+
+.problem-item .ans-record {
+    pointer-events: none;
+    background: url(../../images/student/work/history-record.png);
+}
+
+.problem-item .ans-record:hover {
+    background: url(../../images/student/work/history-record1.png);
+}
+.problem-item .ans-replay {
+    background: url(../../images/student/work/history-replay.png);
+}
+
+.problem-item .ans-replay[item_sel="1"] {
+    background: url(../../images/student/work/history-replay_pause.png);
+}

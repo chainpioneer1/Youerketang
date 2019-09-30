@@ -1,0 +1,53 @@
+.videoContent{
+    position: absolute;
+    top: 15.9%;
+    left: 18.9%;
+    width: 73%;
+    height: 73%;
+    z-index: 1000;
+}
+
+#videoPlayer{
+    width: 100%;
+    height: 100%;
+}
+
+.frame{
+    position: absolute;
+    top: 2.2%;
+    left: 15.5%;
+    width: 80.0%;
+    height: 95.4%;
+    z-index: 10000;
+    background-size: 100% 100% !important;
+    pointer-events: none;
+}
+
+.tree{
+    pointer-events: none;
+    position: absolute;
+    top: 13.6%;
+    width: 20.3%;
+    height: 86.4%;
+    z-index: 10001;
+    background-size: 100% 100% !important;
+}
+
+.title{
+    position: absolute;
+    background-size: contain!important;
+    left: 56.5%;
+    top: 7%;
+    width: 50%;
+    height: 4.3%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%) !important;
+    text-align: center;
+    color:white;
+    font-size:calc(2.5vw);
+    font-weight:600;
+    z-index: 10001;
+}

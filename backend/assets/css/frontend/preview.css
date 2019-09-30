@@ -1,0 +1,95 @@
+div{
+    background-size: 100% 100%!important;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+.preview_list_container {
+    position: absolute;
+    width: 16.5%;
+    height: 56.1%;
+    top: 24.3%;
+    left: 1.1%;
+    overflow-y: auto;
+}
+
+.frame{
+    position: absolute;
+    width: 80%;
+    height: 95.4%;
+    top: 2.1%;
+    left: 15.6%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.title{
+    position: absolute;
+    width: 20.5%;
+    height: 6.9%;
+    top: 6.4%;
+    left: 46.2%;
+    color: white;
+    font-size: calc(2.3vw);
+    z-index: 10000;
+    text-align: center;
+}
+
+.preview_list_item {
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    color: white;
+    font-size: calc(2.1vw);
+    margin-bottom: 4%;
+    padding: 3% 5%;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    background-size: 100% 100% !important;
+    background:url(../../../assets/images/resource/preview/item_frame.png);
+}
+
+iframe {
+    position: absolute;
+    top: 15.5%;
+    left: 18.8%;
+    width: 73.2%;
+    height: 73.3%;
+    z-index: 100;
+}
+
+.prev_btn,
+.next_btn{
+    position: absolute;
+    top: 15%;
+    left: 5.6%;
+    width: 8.1%;
+    height: 7.9%;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    background:url(../../../assets/images/resource/preview/above_arrow.png);
+}
+
+.prev_btn:hover{
+    background:url(../../../assets/images/resource/preview/above_arrow_clicked.png);
+}
+
+.next_btn{
+    top:81.7%;
+    background:url(../../../assets/images/resource/preview/below_arrow.png);
+}
+
+.next_btn:hover{
+    background:url(../../../assets/images/resource/preview/below_arrow_clicked.png);
+}
+
+.pdf_container{
+    position: absolute;
+    top: 15.5%;
+    left: 18.8%;
+    width: 73.2%;
+    height: 73.3%;
+    z-index: 100;
+}

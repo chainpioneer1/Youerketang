@@ -1,0 +1,105 @@
+.background_image { position: fixed; top: 0;left: 0; width:100%;height:100%; background-size: contain; z-index: -2; }
+.bg_content_area{position: absolute;left:7.6%;top:8.4%;width:84.7%;height:86.7%;}
+.bg_content_area img {width:100%;height:100%}
+
+#search_content_box {position: absolute;top:16.48%;left:9.79%;width:28.1%;height:4.7%;font-size:1.8rem }
+#content_search_btn {position: absolute;top:16.4%;left:38.5%;width:2.7%;height: 4.9%}
+.teacher_assign_class
+{
+    position: absolute;
+    left: 0;
+    top: 27%;
+    width: 7.5%;
+    height: 41%;
+    text-align: -webkit-center;
+    overflow: auto;
+}
+
+.class_name_btn_wrapper
+{
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    margin-top: 3%;
+}
+.custom_classlist_btn {
+    display: block;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0);
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+#class_member_area {
+    width: 80%;
+    left: 9%;
+    top: 23%;
+    height: 70%;}
+.class_member_tbl_area { position: relative;}
+
+.member_item {
+    text-decoration: none !important;
+    color: #505050;
+    font-weight:bold;
+    font-style: normal;
+    /*position: absolute;*/
+    top: 26%;
+    font-size:28px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.member_item_wrapper
+{
+    margin-top: 28px;
+    padding-left: 15px;
+    text-align: left;
+    position: relative;
+    width:100%;
+    display: table;
+}
+.class_member_tbl_area { position: relative;}
+#teacher_manage_class{ text-align: center; min-height: 550px}
+
+#prevPage_Btn,#nextPage_Btn
+{
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.left-block-member,
+.right-block-member
+{
+    text-align: center;
+    display: inline-block;
+    margin-left:3%;
+    width: 47%;
+}
+.left-block-member { left:0;}
+.right-block-member { left: 50%;}
+
+.exit-btn{ position: absolute; left: 88.75%; top: 2.3%; width: 5.31%; height: 4.81%; }
+.exit-btn img{ width: 100%; height: 100% }
+
+.return_btn{width: 3.7%; height: 7.6%; position: absolute; right: 1.7%; top:1.3%}
+
+.previous_Btn
+{
+    position: absolute;
+    left: 47%;
+    bottom: 12.6%;
+    width: 7.5%;
+    height: 5.2%;
+}
+.next_Btn
+{
+    position: absolute;
+    left: 56.7%;
+    bottom: 12.6%;
+    width: 7.5%;
+    height: 5.2%;
+}

@@ -1,15 +1,39 @@
+<?php
+$ctrlRoot = 'admin/usermanage';
+$category = '课件';
+$mainModel = 'tbl_users';
+?>
 <style>
-    #main_tbl th, td {
+    table th, td {
         text-align: center;
         vertical-align: middle;
     }
 
+    #tbl_activation,
+    #tbl_class {
+        margin: 5px 2.5% 10px 2.5%;
+        width: 95%;
+    }
 </style>
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content" style="min-height: 1305px;">
-        <h1 class="page-title"><?php echo $this->lang->line('panel_title_21'); ?>
+        <h1 class="page-title"><?php
+            $title = '';
+            switch ($pageType) {
+                case 'student':
+                    $title = '学生账户管理';
+                    break;
+                case 'teacher':
+                    $title = '教师账户管理';
+                    break;
+                case 'paid_status':
+                    $title = '用户购买统计';
+                    break;
+            }
+            echo $title;
+            ?>
             <small></small>
         </h1>
         <div class="row">
@@ -151,17 +175,32 @@
                         <table class="table table-striped table-bordered table-hover" id="main_tbl">
                             <thead>
                             <tr>
-                                <th><?php echo $this->lang->line('account'); ?></th>
-                                <th><?php echo $this->lang->line('activation_code'); ?></th>
-                                <th><?php echo $this->lang->line('name'); ?></th>
-                                <th><?php echo $this->lang->line('gender'); ?></th>
-                                <th><?php echo $this->lang->line('class'); ?></th>
-                                <th><?php echo $this->lang->line('area'); ?></th>
-                                <th><?php echo $this->lang->line('school_name'); ?></th>
-                                <th><?php echo $this->lang->line('user_type'); ?></th>
-                                <th><?php echo $this->lang->line('contact_info'); ?></th>
-                                <th><?php echo $this->lang->line('create_time'); ?></th>
-                                <th><?php echo $this->lang->line('operation'); ?></th>
+                                <?php if ($pageType == 'teacher') { ?>
+                                    <th><?php echo $this->lang->line('account'); ?></th>
+                                    <th>昵称</th>
+                                    <th>所在区</th>
+                                    <th>机构名称</th>
+                                    <th>注册时间</th>
+                                    <th>最后登录一次时间</th>
+                                    <th><?php echo $this->lang->line('operation'); ?></th>
+                                <?php } else if ($pageType == 'student') { ?>
+                                    <th><?php echo $this->lang->line('account'); ?></th>
+                                    <th>昵称</th>
+                                    <th>所在区</th>
+                                    <th>机构名称</th>
+                                    <th>关联教师账号</th>
+                                    <th>注册时间</th>
+                                    <th><?php echo $this->lang->line('operation'); ?></th>
+                                <?php } else { ?>
+                                    <th><?php echo $this->lang->line('account'); ?></th>
+                                    <th>昵称</th>
+                                    <th>所在区</th>
+                                    <th>机构名称</th>
+                                    <th>当前有效课程数量</th>
+                                    <th>课程目录</th>
+                                    <th>课程最快到期时间</th>
+                                    <th><?php echo $this->lang->line('operation'); ?></th>
+                                <?php } ?>
                             </tr>
                             </thead>
                             <tbody><?= $tbl_content ?></tbody>
@@ -178,101 +217,90 @@
 <!-- END CONTENT -->
 
 <!------- Edit User Modal -------------->
-<div id="item_update_modal" class="modal fade" tabindex="-1" data-width="700">
+<div id="item_update_modal" class="modal fade" tabindex="-1" data-width="900">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-        <h4 class="modal-title"><?php echo $this->lang->line('update_user'); ?></h4>
+        <h4 class="modal-title">用户信息</h4>
     </div>
     <div class="modal-body">
         <form class="form-horizontal" enctype="multipart/form-data"
               action="" id="item_edit_submit_form" role="form"
               method="post" accept-charset="utf-8">
             <div class="form-body">
+                <div class="row" style="background: #eee;padding: 5px 20px;">基本资料</div>
                 <div class="form-group">
-                    <label class="col-md-offset-0 col-md-2 control-label"><?php echo $this->lang->line('name'); ?>
-                        :</label>
+                    <label class="col-md-offset-0 col-md-2 control-label">账号:</label>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="user_name" value="">
+                        <label type="text" class="control-label" name="user_account" value=""></label>
                     </div>
-                    <label class="col-md-offset-1 col-md-2 control-label"><?php echo $this->lang->line('gender'); ?>
-                        :</label>
+                    <label class="col-md-offset-0 col-md-2 control-label">昵称:</label>
                     <div class="col-md-3">
-                        <select class="form-control" name="gender">
-                            <option value="1"><?php echo $this->lang->line('male'); ?></option>
-                            <option value="2"><?php echo $this->lang->line('female'); ?></option>
-                        </select>
+                        <label type="text" class="control-label" name="user_name" value=""></label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-offset-0 col-md-2 control-label"><?php echo $this->lang->line('user_type'); ?>
-                        :</label>
+                    <label class="col-md-offset-0 col-md-2 control-label">所在区:</label>
                     <div class="col-md-3">
-                        <label class="control-label" name="user_type" value="">werwer</label>
+                        <label class="control-label" name="user_city" value=""></label>
                     </div>
-                    <label class="col-md-offset-1 col-md-2 control-label user-code" ><?php echo $this->lang->line('user_code'); ?>
-                        :</label>
+                    <label class="col-md-offset-0 col-md-2 control-label user-code">机构名称:</label>
                     <div class="col-md-3">
-                        <label class="control-label" name="code" value="">werwer</label>
+                        <label class="control-label" name="user_school" value=""></label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-offset-0 col-md-2 control-label"><?php echo $this->lang->line('account'); ?>
-                        :</label>
+                    <label class="col-md-offset-0 col-md-2 control-label">当前可用数量:</label>
                     <div class="col-md-3">
-                        <label class="control-label" name="user_account"
-                               style="font-weight:bold;">34563456</label>
+                        <label class="control-label" name="active_possible"></label>
                     </div>
-                    <label class="col-md-offset-1 col-md-2 control-label"><?php echo $this->lang->line('school'); ?>
-                        :</label>
+                    <label class="col-md-offset-0 col-md-2 control-label">购买记录:</label>
                     <div class="col-md-3">
-                        <label class=" control-label" name="user_school"
-                               onchange="choiceSchool('edit')">asdfasdf</label>
+                        <label class=" control-label" name="active_total"></label>
                     </div>
+                </div>
+
+                <div class="row" style="background: #eee;padding: 5px 20px;">项目详情</div>
+                <div class="form-group">
+                    <table class="table table-striped table-bordered table-hover" id="tbl_activation">
+                        <thead>
+                        <tr>
+                            <th>课程名称</th>
+                            <th>授权码</th>
+                            <th>激活时间</th>
+                            <th>到期时间</th>
+                            <th>状态</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="row user-class-title" style="background: #eee;padding: 5px 20px;">班级详情（<span>二年级3班</span>）
                 </div>
                 <div class="form-group">
-                    <label class="col-md-offset-0 col-md-2 control-label"><?php echo $this->lang->line('password'); ?>
-                        :</label>
-                    <div class="col-md-3">
-                        <label class="control-label" name="user_password">*****<a
-                                    onclick="expandPasswordBox()"
-                                    style="color:red;font-weight: bold;text-decoration: none;">
-                                <?php echo $this->lang->line('update_password'); ?></a></label>
-                    </div>
-                    <label class="col-md-offset-1 col-md-2 control-label"><?php echo $this->lang->line('class'); ?>:</label>
-                    <div class="col-md-3">
-                        <label class="control-label" name="user_class">34563456</label>
-                    </div>
+                    <table class="table table-striped table-bordered table-hover" id="tbl_class">
+                        <thead>
+                        <tr>
+                            <th>学生账号</th>
+                            <th>用户昵称</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-offset-0 col-md-2 control-label" id="newPasswordLabel"></label>
-                    <div class="col-md-3">
-                        <input type="password" style="font-size:30px;display:none" class="form-control"
-                               name="password" id="edit_usernewpassword" value=""
-                               onkeyup="confirmNewPassword()">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-offset-0 col-md-2 control-label" id="confirmPasswordLabel"></label>
-                    <div class="col-md-3">
-                        <input type="password" style="font-size:30px;display:none" class="form-control"
-                               name="cpassword" id="edit_userrepeatpassword" value=""
-                               onkeyup="confirmNewPassword()">
-                    </div>
-                </div>
+
             </div>
         </form>
+        <div class="form-group">
             <div class="form-group">
-                <div class="form-group">
-                    <div class="row" style="margin-top:30px;">
-                        <div class="col-md-10"></div>
-                        <div class="col-md-1">
-                            <input type="text" hidden name="user_id" value=""><!--this is unit_id-->
-                            <button class="btn green"
-                                    id="update_perform"><?php echo $this->lang->line('save'); ?></button>
-                        </div>
+                <div class="row" style="margin-top:30px;">
+                    <div class="col-md-offset-10 col-md-1">
+                        <input type="text" hidden name="user_id" value=""><!--this is unit_id-->
+                        <button class="btn green" onclick="$('#item_update_modal').modal('hide');">关闭</button>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 </div>
 <!------- Edit User Modal -------------->
@@ -294,9 +322,24 @@
     </div>
 </div>
 
+<!----publish modal-->
+<div id="publish-modal" class="modal fade" tabindex="-1" data-width="400">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title"><?php echo $this->lang->line('message'); ?></h4>
+    </div>
+    <div class="modal-body" style="text-align:center;">
+        <h4 class="modal-title"></h4>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn green" onclick="publishPerform(this);"
+                data-type="yes"><?php echo $this->lang->line('ok'); ?></button>
+    </div>
+</div>
+
 <script>
 
-    $('a.nav-link[menu_id="40"]').addClass('menu-selected');
+    $('a.nav-link[menu_id="<?= $roleName; ?>"]').addClass('menu-selected');
 
     var prevstr = "<?php echo $this->lang->line('PrevPage');?>";
     var nextstr = "<?php echo $this->lang->line('NextPage');?>";
@@ -402,15 +445,15 @@
         $('#item_update_modal').find('form input[name="user_id"]').val(item_id);
         $('#item_update_modal').find('form input[name="user_name"]').val(item.user_name);
         $('#item_update_modal').find('form select[name="gender"]').val(item.gender);
-        $('#item_update_modal').find('form label[name="user_type"]').html((item.user_type==1)?'教师':'学生');
+        $('#item_update_modal').find('form label[name="user_type"]').html((item.user_type == 1) ? '教师' : '学生');
         $('#item_update_modal').find('form label[name="code"]').html(item.code);
         $('#item_update_modal').find('form label[name="user_account"]').html(item.user_account);
         $('#item_update_modal').find('form label[name="user_school"]').html(item.user_school);
         $('#item_update_modal').find('form label[name="user_class"]').html(item.user_class);
 
-        if(item.code==''){
+        if (item.code == '') {
             $('#item_update_modal').find('form label.user-code').hide();
-        }else{
+        } else {
             $('#item_update_modal').find('form label.user-code').show();
         }
 
@@ -424,6 +467,76 @@
             backdrop: 'static',
             keyboard: false
         });
+    }
+
+    function view_item(self) {
+        var item = JSON.parse(self.getAttribute('item_info'));
+        var item_id = item.id;
+        ///ajax process for view detail
+        $.ajax({
+            type: "post",
+            url: baseURL + "<?=$ctrlRoot?>/getUserDetails",
+            dataType: "json",
+            data: {id: item_id},
+            success: function (res) {
+                if (res.status == 'success') {
+                    var item = res.data.item;
+                    var activation = res.data.activationItems;
+                    var available = activation.filter(function(a){
+                        return a.used_status ==1;
+                    });
+                    var classItems = res.data.classItems;
+                    var students = res.data.allStudents;
+
+                    $('#item_update_modal').find('form label[name="user_account"]').html(item.user_account);
+                    $('#item_update_modal').find('form label[name="user_name"]').html(item.user_name);
+                    $('#item_update_modal').find('form label[name="user_city"]').html(item.user_city);
+                    $('#item_update_modal').find('form label[name="user_school"]').html(item.user_school);
+                    $('#item_update_modal').find('form label[name="active_possible"]').html(available.length);
+                    $('#item_update_modal').find('form label[name="active_total"]').html(activation.length);
+
+                    var content_html = '';
+                    var statusStr = ['', '正常', '已过期'];
+                    for (var i = 0; i < activation.length; i++) {
+                        var aitem = activation[i];
+                        content_html += '<tr>';
+                        content_html += '<td>' + aitem.site_name + '</td>';
+                        content_html += '<td>' + aitem.code + '</td>';
+                        content_html += '<td>' + aitem.activate_time + '</td>';
+                        content_html += '<td>' + aitem.expire_time + '</td>';
+                        content_html += '<td>' + statusStr[aitem.used_status] + '</td>';
+                        content_html += '</tr>';
+                    }
+                    $('#tbl_activation tbody').html(content_html);
+
+                    if (classItems.length > 0) {
+                        $('.user-class-title span').html(classItems[0].class_name);
+                    }
+
+                    content_html = '';
+                    for (var i = 0; i < students.length; i++) {
+                        var aitem = students[i];
+                        content_html += '<tr>';
+                        content_html += '<td>' + aitem.user_account + '</td>';
+                        content_html += '<td>' + aitem.user_name + '</td>';
+                        content_html += '</tr>';
+                    }
+                    content_html += '<tr>';
+                    content_html += '<td>总计</td>';
+                    content_html += '<td>' + students.length + '</td>';
+                    content_html += '</tr>';
+                    $('#tbl_class tbody').html(content_html);
+
+                    $("#item_update_modal").modal({
+                        backdrop: 'static',
+                        keyboard: false
+                    });
+                } else {//failed
+                    alert(res.data);
+                }
+            }
+        });
+
     }
 
     function update_perform(self) {
@@ -475,14 +588,56 @@
                 tbody.innerHTML = ret.data;
                 executionPageNation();
                 $('#item_update_modal').modal('toggle');
-            }
-            else//failed
+            } else//failed
             {
                 alert('Operation failed : ' + ret.data);
                 $(".uploading_backdrop").hide();
                 $(".progressing_area").hide();
                 // jQuery('#ncw_edit_modal').modal('toggle');
                 // alert(ret.data);
+            }
+        });
+    }
+
+    function publishItem(self) {
+        var id = self.getAttribute("data-id");
+        var status = self.getAttribute("data-status");
+
+        var msg_body = $('#publish-modal').find('.modal-body h4');
+        msg_body.html('是否启用？');
+        if (status == '1') msg_body.html('是否禁用？');
+
+        $('#publish-modal button[data-type="yes"]').attr("data-id", id);
+        $('#publish-modal button[data-type="yes"]').attr("data-status", status);
+        $('#publish-modal button[data-type="yes"]').attr("onclick", 'publishPerform(this)');
+        $("#publish-modal").modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+    }
+
+    function publishPerform(self) {
+
+        var id = self.getAttribute("data-id");
+        var status = 1 - 1 * self.getAttribute("data-status");
+
+        ///ajax process for publish/unpublish
+        $.ajax({
+            type: "post",
+            url: baseURL + "<?=$ctrlRoot?>/publishItem",
+            dataType: "json",
+            data: {id: id, status: status},
+            success: function (res) {
+                if (res.status == 'success') {
+                    var table = document.getElementById("main_tbl");
+                    var tbody = table.getElementsByTagName("tbody")[0];
+//                    tbody.innerHTML = res.data;
+                    $('#publish-modal').modal('toggle');
+                    location.reload();
+                } else//failed
+                {
+                    alert(res.data);
+                }
             }
         });
     }
@@ -552,8 +707,7 @@
                     tbody.innerHTML = res.data;
                     executionPageNation();
                     $('#item_delete_modal').modal('toggle');
-                }
-                else//failed
+                } else//failed
                 {
                     alert("Cannot delete user.");
                 }
@@ -659,8 +813,7 @@
                 else
                     tr[i].style.display = "";
 //                console.log(act_d);
-            }
-            else tr[i].style.display = "none";
+            } else tr[i].style.display = "none";
         }
 
         if (keyword == '' && txt1 == '' && txt2 == '' && txt3 == '' && txt4 == '' &&

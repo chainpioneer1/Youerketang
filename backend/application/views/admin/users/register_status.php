@@ -44,6 +44,7 @@
                                                     <option value="0"><?php echo $this->lang->line('please_select'); ?></option>
                                                     <option value="4"><?php echo $this->lang->line('first_reg_time'); ?></option>
                                                     <option value="5"><?php echo $this->lang->line('latest_reg_time'); ?></option>
+                                                    <option value="5"><?php echo $this->lang->line('latest_reg_time'); ?></option>
                                                     <option value="6"><?php echo $this->lang->line('reg_count'); ?></option>
                                                 </select>
                                             </div>
@@ -59,12 +60,13 @@
                         <table class="table table-striped table-bordered table-hover" id="main_tbl">
                             <thead>
                             <tr>
-                                <th><?php echo $this->lang->line('order_number_abbr'); ?></th>
                                 <th><?php echo $this->lang->line('account'); ?></th>
                                 <th><?php echo $this->lang->line('site_abbr'); ?></th>
                                 <th><?php echo $this->lang->line('user_type'); ?></th>
-                                <th><?php echo $this->lang->line('first_register'); ?></th>
+                                <th>注册时间</th>
                                 <th><?php echo $this->lang->line('last_register'); ?></th>
+                                <th>最近一次登录在线时长<br>
+                                    （min）</th>
                                 <th><?php echo $this->lang->line('register_count'); ?></th>
                             </tr>
                             </thead>
@@ -82,7 +84,7 @@
 <!-- END CONTENT -->
 <script>
 
-    $('a.nav-link[menu_id="50"]').addClass('menu-selected');
+    $('a.nav-link[menu_id="<?= $roleName; ?>"]').addClass('menu-selected');
     var main_sites = JSON.parse('<?php echo json_encode($main_sites);?>');
     console.log(main_sites);
     var prevstr = "<?php echo $this->lang->line('PrevPage');?>";

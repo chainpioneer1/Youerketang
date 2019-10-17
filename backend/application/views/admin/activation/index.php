@@ -191,7 +191,7 @@ $mainModel = 'tbl_activation';
 
     <script>
         $(function () {
-            $('a.nav-link[menu_id="10"]').addClass('menu-selected');
+            $('a.nav-link[menu_id="<?= $roleName; ?>"]').addClass('menu-selected');
             searchConfig();
         })
 

@@ -1,12 +1,15 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Adminsignin_m extends MY_Model {
+class Adminsignin_m extends MY_Model
+{
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
     }
 
-    public function signin() {
+    public function signin()
+    {
 
         $lang = 'chinese';
         $admin_name = $this->input->post('username');
@@ -14,16 +17,16 @@ class Adminsignin_m extends MY_Model {
 
         $admin_data = '';
         $adminInfo = $this->db->get_where('admins',
-            array("admin_name" => $admin_name, "admin_pass" =>$admin_pass));
+            array("admin_name" => $admin_name, "admin_pass" => $admin_pass));
         $admin_data = $adminInfo->row();
 
-        if( !empty($admin_data) ){
+        if (!empty($admin_data)) {
             $arr = array(
-                'login_count'=>intval($admin_data->login_count)+1,
-                'login_first_time'=>$admin_data->login_first_time,
-                'login_latest_time'=>$admin_data->login_latest_time
+                'login_count' => intval($admin_data->login_count) + 1,
+                'login_first_time' => $admin_data->login_first_time,
+                'login_latest_time' => $admin_data->login_latest_time
             );
-            if(empty($arr['login_first_time']))$arr['login_first_time'] = date('Y-m-d H:i:s');
+            if (empty($arr['login_first_time'])) $arr['login_first_time'] = date('Y-m-d H:i:s');
             else $arr['login_latest_time'] = date('Y-m-d H:i:s');
             $this->db->set($arr);
             $this->db->where('admin_id', $admin_data->admin_id);
@@ -31,7 +34,7 @@ class Adminsignin_m extends MY_Model {
 
             $data = array(
                 "admin_loginuserID" => $admin_data->admin_id,
-                "admin__name" => $admin_data->admin_name,
+                "admin_name" => $admin_data->admin_name,
                 "admin_user_type" => $admin_data->permission,
                 "adminlang" => $lang,
                 "admin_loggedin" => TRUE
@@ -44,18 +47,26 @@ class Adminsignin_m extends MY_Model {
             return FALSE;
         }
     }
-    public function signout() {
+
+    public function signout()
+    {
         //$this->session->sess_destroy();
         $this->session->unset_userdata('admin_loginuserID');
-        $this->session->unset_userdata('admin__name');
+        $this->session->unset_userdata('admin_name');
         $this->session->unset_userdata('admin_user_type');
         $this->session->unset_userdata('adminlang');
         $this->session->unset_userdata('admin_loggedin');
     }
-    public function loggedin() {
-        return (bool) $this->session->userdata("admin_loggedin");
+
+    public function loggedin()
+    {
+        $isLoggedIn = (bool)$this->session->userdata("admin_loggedin");
+        if ($isLoggedIn) $this->admins_m->update_usage_time();
+        return $isLoggedIn;
     }
-    public function hash($string) {
+
+    public function hash($string)
+    {
         return parent::hash($string);
     }
 }

@@ -18,6 +18,8 @@ class Lessons_m extends MY_Model
         $this->db->select($this->_table_name . '.*');
         $this->db->select('tbl_sites.title as site, tbl_sites.id as site_id');
         $this->db->select('tbl_package.title as package, tbl_package.id as package_id');
+        $this->db->select($this->_table_name.'.lesson_status as status');
+        $this->db->select($this->_table_name.'.lesson_name as title');
 
         if ($queryStr != '') {
             $this->db->where(
@@ -87,7 +89,7 @@ class Lessons_m extends MY_Model
         $this->db->set('lesson_status', $publish_st);
         $this->db->where('id', $item_id);
         $this->db->update('tbl_yekt_lessons');
-        return $this->get_where(array('site_id' => $this->session->userData('_siteID')));
+        return true;//$this->get_where(array('site_id' => $this->session->userData('_siteID')));
     }
 
     public function edit($param, $item_id)

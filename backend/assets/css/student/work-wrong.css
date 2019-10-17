@@ -5,7 +5,7 @@
     height: 10%;
     line-height: calc(5vh);
     margin: 18px 0 0 0;
-    background: white;
+    background-color: white;
 }
 
 .task-item .task-info[item_hover="1"]:hover {
@@ -42,74 +42,30 @@
     width: 14%;
 }
 
-.btn-prob-back {
-    background: url(../../images/student/work/wrong-back1.png);
-}
-
 .problem-item .prob-num {
-    background: #5496ea;
-}
-
-.problem-item .ans-img {
-    /*pointer-events: none;*/
-    background: url(../../images/student/work/wrong-option.png);
+    background-color: #a16331;
 }
 
 .problem-item .ans-img:hover,
 .problem-item .ans-img[item_sel="1"] {
-    background: url(../../images/student/work/wrong-option_hover.png);
-}
-
-.problem-item .btn-prob-prev,
-.problem-item .btn-prob-next {
-    left: 66.5%;
-    width: 12%;
-    height: 8%;
-    top: 93.3%;
-    cursor: pointer;
-    background: url(../../images/student/work/prev.png);
-}
-
-.problem-item .btn-prob-prev:hover {
-    background: url(../../images/student/work/prev_hover.png);
-}
-
-.problem-item .btn-prob-next {
-    left: 84.5%;
-    background: url(../../images/student/work/next.png);
-}
-
-.problem-item .btn-prob-next:hover {
-    left: 84.5%;
-    background: url(../../images/student/work/next_hover.png);
-}
-
-.problem-item .prob-sound {
-    background: url(../../images/student/work/wrong-play.png);
-}
-
-.problem-item .prob-sound:hover {
-    background: url(../../images/student/work/wrong-play4.png);
-}
-
-.problem-item .ans-record {
-    pointer-events: none;
-    background: url(../../images/student/work/wrong-record.png);
-}
-
-.problem-item .ans-record:hover {
-    background: url(../../images/student/work/wrong-record1.png);
+    background-color: #ffb72d;
 }
 
 .problem-item .ans-replay {
     pointer-events: none;
-    background: url(../../images/student/work/wrong-replay.png);
 }
 
-.problem-item .ans-replay:hover {
-    background: url(../../images/student/work/wrong-replay_pause.png);
+.problem-item .btn-prob-submit[data-status="1"] {
+    background-color: #eb7305;
+}
+.problem-item .btn-prob-submit[data-status="1"]:hover {
+    background-color: #f78723;
 }
 
-.problem-item .btn-prob-submit {
-    background: url(../../images/student/work/wrong-apply.png);
+.problem-item .btn-prob-submit[data-status="next"] {
+    background-color: #eb7305;
+}
+
+.problem-item .btn-prob-submit[data-status="next"]:hover {
+    background-color: #f78723;
 }

@@ -264,7 +264,7 @@ $mainModel = 'tbl_yekt_courses';
            value='<?= json_encode($this->session->userdata('filter') ? $this->session->userdata('filter') : array()) ?>'>
     <script>
         $(function () {
-            $('a.nav-link[menu_id="30"]').addClass('menu-selected');
+            $('a.nav-link[menu_id="<?= $roleName; ?>"]').addClass('menu-selected');
             searchConfig();
         })
 

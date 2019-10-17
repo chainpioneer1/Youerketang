@@ -25,7 +25,6 @@ class Work extends CI_Controller
         if ($this->signin_m->loggedin() == FALSE) {
             redirect(base_url('student/signin'));
         } else {
-            $this->data["subview"] = "student/work";
             $this->data['parentView'] = 'classroom/pinyin/'.$site_id;
             $this->data['site_id'] = $site_id;
             $this->data['taskList'] = $this->output_task_content($this->getTaskList(
@@ -33,6 +32,7 @@ class Work extends CI_Controller
                 $this->session->userdata('user_class'),
                 $site_id
             ));
+            $this->data["subview"] = "student/work";
             $this->load->view('_layout_student', $this->data);
         }
     }
@@ -54,7 +54,7 @@ class Work extends CI_Controller
         }
         if($class_name=='') return array();
         $user_status = $this->users_m->get_single_user($user_id);
-        if(count($user_status)<=0) return array();
+        if($user_status == null) return array();
         $user_status = $user_status->user_status;
         if($user_status == 0) return array();
         $class_id = $this->sclass_m->get_where(array('class_name' => $class_name))[0]->id;
@@ -67,7 +67,7 @@ class Work extends CI_Controller
                 'teacher_id' => $item->id,
                 'student_id' => $user_id
             ));
-            if (count($myItem) > 0) continue;
+            if ($myItem != 0) continue;
             $item->teacher_id = $item->id;
             $item->id = null;
             $item->student_id = $user_id;
@@ -142,7 +142,7 @@ class Work extends CI_Controller
         }
 
         $taskItem = $this->teacherwork_m->get_where(array('id' => $taskId))[0];
-        if (count($taskItem) == 0) {
+        if ($taskItem == null) {
             $ret['data'] = 'Test data is not exist.';
             echo json_encode($ret);
             return;
@@ -210,7 +210,7 @@ class Work extends CI_Controller
             unset($item->student_first_answer);
             unset($item->student_first_result);
 //            unset($item->student_answer);
-            if (count($res) > 0)
+            if ($res != null)
                 $this->wrongset_m->edit($item, $res[0]->id);
             else
                 $this->wrongset_m->add($item);
@@ -323,7 +323,9 @@ class Work extends CI_Controller
             $this->data['parentView'] = 'classroom/pinyin/'.$site_id;
 
             $this->data['site_id'] = $site_id;
-            $this->data['taskList'] = $this->output_wrong_content($this->wrongset_m->get_where(array('site_id' => $site_id)));
+            $this->data['taskList'] = $this->output_wrong_content(
+                $this->wrongset_m->get_where(array('site_id' => $site_id))
+            );
             $this->load->view('_layout_student', $this->data);
         }
     }

@@ -47,7 +47,6 @@ class Classroom extends CI_Controller
             $this->data["selectedIndex"] = 1;
             $this->data["site_id"] = $site_id;
             $this->data["subview"] = "classroom/index";
-
         }
         $this->load->view('_layout_main', $this->data);
     }

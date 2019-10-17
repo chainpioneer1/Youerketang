@@ -497,7 +497,7 @@ $mainModel = 'tbl_problem_set';
 <!----------pagenation-------->
 <script type="text/javascript">
     var site_id = 1;
-    var menu_id = "33";
+    var menu_id = "<?= $roleName; ?>";
     $('a.nav-link[menu_id=' + menu_id + ']').addClass('menu-selected');
 
     var prevstr = "<?php echo $this->lang->line('PrevPage');?>";

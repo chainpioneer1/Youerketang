@@ -1,13 +1,13 @@
 .bg {
-    background: url(../../images/student/home/bg.png);
+    background-image: url(../../images/student/home/bg.png);
 }
 
 .load-bg {
     position: fixed;
     width: calc(100vw);
     height: calc(100vh);
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
 }
 
 .top-bar {
@@ -27,11 +27,11 @@
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
-    background: url(../../images/student/back.png);
+    background-image: url(../../images/student/back.png);
 }
 
 .top-back:hover {
-    background: url(../../images/student/back_hover.png);
+    background-image: url(../../images/student/back_hover.png);
 }
 
 .top-profile {
@@ -41,13 +41,13 @@
     height: calc(8vh);
     border-radius: 50%;
     border: none;
-    background: url(../../images/student/profile.png);
+    background-image: url(../../images/student/profile.png);
 }
 
 .nav {
     width: 27%;
     height: 48%;
-    background: rgba(0, 0, 0, .1);
+    background-color: rgba(0, 0, 0, .1);
     border-radius: 50%;
     transition: all .2s ease-in-out;
 }
@@ -60,11 +60,11 @@
 .nav[itemid="1"] {
     left: 14%;
     top: 17.5%;
-    background: var(--home-bg-color);
+    background-color: var(--home-bg-color);
 }
 
 .nav[itemid="1"]:hover {
-    background: var(--home-bg-hover-color);
+    background-color: var(--home-bg-hover-color);
 }
 
 .nav[itemid="2"] {
@@ -72,11 +72,11 @@
     top: 15.5%;
     width: 29%;
     height: 51%;
-    background: var(--home-bg-color);
+    background-color: var(--home-bg-color);
 }
 
 .nav[itemid="2"]:hover {
-    background: var(--home-bg-hover-color);
+    background-color: var(--home-bg-hover-color);
 }
 
 .success-modal {
@@ -84,7 +84,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../../images/student/signin/bg_success.png);
+    background-image: url(../../images/student/signin/bg_success.png);
     display: none;
 }
 
@@ -108,10 +108,10 @@
 
 .work-top-nav {
     position: absolute;
-    top: 25%;
-    width: 39%;
-    height: 5%;
-    left: 35.2%;
+    top: 17%;
+    width: 7%;
+    height: 71%;
+    left: 13.9%;
     text-align: center;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -124,32 +124,46 @@
 .work-top-nav a {
     position: relative;
     display: inline-block;
-    width: 30%;
-    height: 100%;
+    width: 100%;
+    height: 28%;
     padding: 0;
-    margin: 0;
-    border-radius: calc(5vw);
+    margin: 10% 0;
 }
 
 .work-task {
-    background: url(../../images/student/work/work_task.png);
+    background-image: url(../../images/student/work/work_task_normal.png);
 }
+
+.work-task[data-sel="1"] {
+    background-image: url(../../images/student/work/work_task.png);
+}
+
 .work-task:hover {
-    background: url(../../images/student/work/work_task_hover.png);
+    background-image: url(../../images/student/work/work_task_hover.png);
 }
 
 .work-history {
-    background: url(../../images/student/work/work_history.png);
+    background-image: url(../../images/student/work/work_history_normal.png);
 }
+
+.work-history[data-sel="1"] {
+    background-image: url(../../images/student/work/work_history.png);
+}
+
 .work-history:hover {
-    background: url(../../images/student/work/work_history_hover.png);
+    background-image: url(../../images/student/work/work_history_hover.png);
 }
 
 .work-wrong {
-    background: url(../../images/student/work/work_wrong.png);
+    background-image: url(../../images/student/work/work_wrong_normal.png);
 }
+
+.work-wrong[data-sel="1"] {
+    background-image: url(../../images/student/work/work_wrong.png);
+}
+
 .work-wrong:hover {
-    background: url(../../images/student/work/work_wrong_hover.png);
+    background-image: url(../../images/student/work/work_wrong_hover.png);
 }
 
 .work-frame {
@@ -180,7 +194,7 @@
     height: 10%;
     line-height: calc(5vh);
     margin: 18px 0 0 0;
-    background: white;
+    background-color: white;
 }
 
 .task-item .task-info {
@@ -230,10 +244,10 @@
 }
 
 .work-frame[item_type="2"] {
-    width: 77%;
-    height: 72%;
-    top: 49.5%;
-    left: 49%;
+    width: 69%;
+    height: 79%;
+    top: 54.5%;
+    left: 51%;
 }
 
 .work-frame .problem-item {
@@ -265,17 +279,17 @@
     font-size: calc(2.1vw);
     font-weight: 600;
     border-radius: calc(3vw);
-    background: #975419;
+    background-color: #b67035;
 }
 
 .problem-item .prob-type,
 .problem-item .prob-img,
 .problem-item .prob-sound {
-    left: 26%;
+    left: 23%;
 }
 
 .problem-item .prob-type {
-    top: 4%;
+    top: 6%;
     height: calc(5vh);
     line-height: calc(5vh);
     width: 20%;
@@ -288,56 +302,68 @@
 .problem-item .prob-img {
     top: 50%;
     width: 44%;
-    height: 75%;
+    height: 70%;
     border-radius: calc(5vw);
 }
 
 .problem-item .prob-sound {
-    top: 96%;
-    width: 9%;
-    height: 8%;
+    top: 91%;
+    width: 10%;
+    height: 7%;
     cursor: pointer;
-    background: url(../../images/student/work/play.png);
+    background-color: #b67035;
+    background-image: url(../../images/student/work/play.png);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 }
 
 .problem-item .prob-sound:hover {
-    background: url(../../images/student/work/play4.png);
+    background-color: #c57c38;
 }
 
 .btn-prob-back {
-    top: 10%;
+    top: 6%;
     left: 5%;
-    width: 4.3%;
+    width: 5%;
     height: 8%;
     cursor: pointer;
-    background: url(../../images/student/work/back1.png);
+    background-color: #b67035;
+    background-image: url(../../images/student/work/back1.png);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.btn-prob-back:hover {
+    background-color: #c57c38;
 }
 
 .problem-item .ans-img {
-    left: 77%;
-    width: 38%;
+    left: 78.5%;
+    width: 32%;
     height: 8%;
-    top: 21%;
+    top: 25%;
     cursor: pointer;
     display: none;
-    background: url(../../images/student/work/option.png);
+    background-color: #b67035;
+    border-radius: 10px;
 }
 
 .problem-item .ans-img:hover,
 .problem-item .ans-img[item_sel="1"] {
-    background: url(../../images/student/work/option_hover.png);
+    background-color: #c47d36;
 }
 
 .problem-item .ans-img[item_type="2"] {
-    top: 35%;
+    top: 38%;
 }
 
 .problem-item .ans-img[item_type="3"] {
-    top: 49%;
+    top: 51%;
 }
 
 .problem-item .ans-img[item_type="4"] {
-    top: 63%;
+    top: 64%;
 }
 
 .problem-item .ans-img div {
@@ -345,17 +371,35 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    opacity:.6;
+    opacity: .6;
     pointer-events: none;
 }
 
 .problem-item .btn-prob-submit {
     left: 75%;
-    width: 10%;
-    height: 8%;
+    width: 14%;
+    height: 8.5%;
     top: 92%;
     cursor: pointer;
-    background: url(../../images/student/work/apply.png);
+    background-color: #ccb7a6;
+    background-image: url(../../images/student/work/apply.png);
+    border-radius: 20px;
+}
+
+.problem-item .btn-prob-submit[data-status="1"] {
+    background-color: #70c007;
+}
+.problem-item .btn-prob-submit[data-status="1"]:hover {
+    background-color: #85d220;
+}
+
+.problem-item .btn-prob-submit[data-status="next"] {
+    background-color: #70c007;
+    background-image: url(../../images/student/work/next.png);
+}
+
+.problem-item .btn-prob-submit[data-status="next"]:hover {
+    background-color: #85d220;
 }
 
 .problem-item .ans-txt {
@@ -371,29 +415,49 @@
 }
 
 .problem-item .ans-record {
-    left: 66.5%;
-    width: 9.5%;
+    left: 65.5%;
+    width: 11.5%;
     height: 18.5%;
     top: 58%;
     cursor: pointer;
-    background: url(../../images/student/work/record.png);
+    background-color: #b67035;
+    background-image: url(../../images/student/work/record.png);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
 }
 
-.problem-item .ans-record:hover {
-    background: url(../../images/student/work/record1.png);
-}
 
 .problem-item .ans-replay {
     left: 84%;
-    width: 9.5%;
+    width: 11.5%;
     height: 18.5%;
     top: 58%;
     cursor: pointer;
-    background: url(../../images/student/work/replay.png);
+    background-color: #b67035;
+    background-image: url(../../images/student/work/replay.png);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.problem-item .ans-record:hover,
+.problem-item .ans-replay:hover {
+    background-color: #c47d36;
+}
+.problem-item .ans-record[item_sel="1"]{
+    background-color: #ffb72d;
+}
+.problem-item .ans-record[item_sel="1"]:hover {
+    background-color: #ffc226;
 }
 
 .problem-item .ans-replay[item_sel="1"] {
-    background: url(../../images/student/work/replay_pause.png);
+    background-color: #ffb72d;
+    background-image: url(../../images/student/work/replay_pause.png);
+}
+.problem-item .ans-replay[item_sel="1"]:hover {
+    background-color: #ffc226;
 }
 
 .right-modal,
@@ -403,13 +467,13 @@
     width: 13%;
     height: 25%;
     display: none;
-    background: url(../../images/student/work/right.png);
+    background-image: url(../../images/student/work/right.png);
 }
 
 .wrong-modal {
     width: 15%;
     left: 60.8%;
-    background: url(../../images/student/work/wrong.png);
+    background-image: url(../../images/student/work/wrong.png);
 }
 
 .wrong-modal .ans-right {
@@ -448,11 +512,11 @@
     display: inline-block;
     width: calc(2.5vw);
     height: calc(2.5vw);
-    background: url(../../images/student/work/star0.png);
+    background-image: url(../../images/student/work/star0.png);
 }
 
 .star-set .star-item[item_type="1"] {
-    background: url(../../images/student/work/star1.png);
+    background-image: url(../../images/student/work/star1.png);
 }
 
 .problem-result .btn-finish {
@@ -460,13 +524,13 @@
     left: 50%;
     width: 15%;
     height: 17%;
-    background: url(../../images/student/work/finish.png);
+    background-image: url(../../images/student/work/finish.png);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .problem-result[item_type="2"] .star-set {
@@ -478,7 +542,7 @@
     left: 50%;
     width: 12%;
     height: 13%;
-    background: url(../../images/student/work/goupdate.png);
+    background-image: url(../../images/student/work/goupdate.png);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);

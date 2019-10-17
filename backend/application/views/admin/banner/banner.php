@@ -150,7 +150,7 @@
 <script>
     var baseURL = "<?php echo base_url();?>";
 
-    $('a[menu_id="00"]').addClass('menu-selected');
+    $('a[menu_id="<?= $roleName; ?>"]').addClass('menu-selected');
 
     function edit_unit(self) {
         var unit_id = self.getAttribute('unit_id');

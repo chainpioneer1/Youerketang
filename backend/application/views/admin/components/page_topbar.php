@@ -100,7 +100,8 @@ if( !empty( $admin_id ) ){
                     <label class="col-md-4 control-label"
                            style="text-align:center;"><?php echo $this->lang->line('password'); ?>:</label>
                     <div class="col-md-7" style="pediting-left: 0">
-                        <input type="password" class="form-control" name="edit_admin_password" id="edit_current_passwd_password"
+                        <input type="password" class="form-control" name="edit_admin_password"
+                               id="edit_current_passwd_password"
                                value="" onkeyup="confirmEditPassword();">
                     </div>
                 </div>
@@ -109,7 +110,8 @@ if( !empty( $admin_id ) ){
                            style="text-align:center;"><?php echo $this->lang->line('repeat_password'); ?>:</label>
                     <div class="col-md-7" style="pediting-left: 0">
                         <input type="password" class="form-control" name="item_repeat_password"
-                               id="edit_current_passwd_repeatpassword" value="" onkeyup="confirmEditPassword();">
+                               id="edit_current_passwd_repeatpassword"
+                               value="" onkeyup="confirmEditPassword();">
                     </div>
                 </div>
             </div>
@@ -176,4 +178,24 @@ if( !empty( $admin_id ) ){
         });
         jQuery('#edit_current_passwd_modal').modal('toggle');
     });
+
+
+    function confirmEditPassword() {
+        var addSaveButton = document.getElementById('edit_current_passwd_saveBtn');
+        var userPassBox = document.getElementById("edit_current_passwd_password");
+        var userpass = userPassBox.value;
+        var userRepeatPassBox = document.getElementById("edit_current_passwd_repeatpassword");
+        var userRepeatPass = userRepeatPassBox.value;
+        if (userpass == userRepeatPass) {
+            userRepeatPassBox.style.borderColor = '#c2cad8';
+            userRepeatPassBox.style.borderWidth = '1px';
+            userRepeatPassBox.style.borderStyle = 'solid';
+            addSaveButton.disabled = false;
+        } else {
+            userRepeatPassBox.style.borderColor = '#f00';
+            userRepeatPassBox.style.borderWidth = '2px';
+            userRepeatPassBox.style.borderStyle = 'solid';
+            addSaveButton.disabled = true;
+        }
+    }
 </script>

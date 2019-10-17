@@ -34,7 +34,8 @@ function sendSMSToServer(phoneNumber) {
     mobileVerificationCode = '';
     $.ajax({
         type: 'POST',
-        url: baseURL + 'application/controllers/sms/SendTemplateSMS.php', //rest API url
+        // url: baseURL + 'application/controllers/sms/SendTemplateSMS.php', //rest API url
+        url: 'https://hllyekt.hulalaedu.com/application/controllers/sms/SendTemplateSMS.php', //rest API url
         dataType: 'json',
         data: {'phoneNumber': phoneNumber}, // set function name and parameters
         success: function (data) {

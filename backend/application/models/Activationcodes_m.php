@@ -21,7 +21,7 @@ class Activationcodes_m extends MY_Model
             ->from($this->_table_name)
             ->join('tbl_sites', $this->_table_name . '.site_id = tbl_sites.id', 'left')
             ->join('tbl_user', $this->_table_name . '.user_id = tbl_user.id', 'left')
-            ->order_by($this->_table_name.'.status', 'desc')
+            ->order_by($this->_table_name . '.status', 'desc')
             ->order_by($this->_order_by)
             ->limit($cntPerPage, $pageId);
         $query = $this->db->get();
@@ -34,7 +34,7 @@ class Activationcodes_m extends MY_Model
             ->from($this->_table_name)
             ->join('tbl_sites', $this->_table_name . '.site_id = tbl_sites.id', 'left')
             ->join('tbl_user', $this->_table_name . '.user_id = tbl_user.id', 'left')
-            ->order_by($this->_table_name.'.status', 'desc')
+            ->order_by($this->_table_name . '.status', 'desc')
             ->order_by($this->_order_by);
         $query = $this->db->get();
         return $query->num_rows();
@@ -47,7 +47,7 @@ class Activationcodes_m extends MY_Model
         $this->db->select('tbl_sites.title');
         $this->db->from($this->_table_name)
             ->join('tbl_user', $this->_table_name . '.user_id = tbl_user.id', 'left')
-            ->join('tbl_sites', 'tbl_user.site_id = tbl_sites.id', 'left')
+            ->join('tbl_sites', $this->_table_name . '.site_id = tbl_sites.id', 'left')
             ->order_by('tbl_activation.status', 'desc')
             ->order_by($this->_order_by);
         $query = $this->db->get();
@@ -71,7 +71,7 @@ class Activationcodes_m extends MY_Model
         $this->db->select('tbl_sites.title as site_name');
         $this->db->from($this->_table_name)
             ->join('tbl_user', $this->_table_name . '.user_id = tbl_user.id', 'left')
-            ->join('tbl_sites', 'tbl_user.site_id = tbl_sites.id', 'left');
+            ->join('tbl_sites', $this->_table_name . '.site_id = tbl_sites.id', 'left');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->row();
@@ -88,7 +88,7 @@ class Activationcodes_m extends MY_Model
         $this->db->select('tbl_sites.title as site_name');
         $this->db->from($this->_table_name)
             ->join('tbl_user', $this->_table_name . '.user_id = tbl_user.id', 'left')
-            ->join('tbl_sites', 'tbl_user.site_id = tbl_sites.id', 'left');
+            ->join('tbl_sites', $this->_table_name . '.site_id = tbl_sites.id', 'left');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -105,7 +105,7 @@ class Activationcodes_m extends MY_Model
         $this->db->select('tbl_sites.title as site_name');
         $this->db->from($this->_table_name)
             ->join('tbl_user', $this->_table_name . '.user_id = tbl_user.id', 'left')
-            ->join('tbl_sites', 'tbl_user.site_id = tbl_sites.id', 'left')
+            ->join('tbl_sites', $this->_table_name . '.site_id = tbl_sites.id', 'left')
             ->order_by('tbl_activation.status', 'desc')
             ->order_by($this->_order_by);
         $this->db->where_in($this->_table_name . '.' . $key, $ids);
@@ -197,7 +197,8 @@ class Activationcodes_m extends MY_Model
         return $this->getItems();
     }
 
-    public function hash($string) {
+    public function hash($string)
+    {
         return parent::hash($string);
     }
 }

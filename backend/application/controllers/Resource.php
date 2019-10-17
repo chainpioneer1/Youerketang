@@ -730,6 +730,30 @@ class Resource extends CI_Controller
         }
         echo json_encode($ret);
     }
+
+    // added
+    public function getContents()
+    {
+        $ret = array(
+            'data' => array(),
+            'status' => false
+        );
+        if ($_POST) {
+            $user_id = $_POST['user_id'];
+            $package_id = $_POST['package_id'];
+            $result = $this->courses_m->get_where(
+                array(
+                    'package_id' => $package_id,
+                    'owner_type' => $user_id,
+                    'status' => 1
+                )
+            );
+
+            $ret['status'] = true;
+            $ret['data'] = $result;
+        }
+        echo json_encode($ret);
+    }
 }
 
 ?>

@@ -171,12 +171,14 @@ class Sitemanage extends Admin_Controller
         return $randomString;
     }
 
-    function checkRole()
+
+    function checkRole($id = 10)
     {
+        $this->data['roleName'] = $id;
         $permission = $this->session->userdata('admin_user_type');
         if ($permission != NULL) {
-            $permissionData = json_decode($permission);
-            $accessInfo = $permissionData->menu_10;
+            $permissionData = (array)(json_decode($permission));
+            $accessInfo = $permissionData['menu_' . $id];
             if ($accessInfo == '1') return true;
             else return false;
         }

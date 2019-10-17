@@ -1,0 +1,223 @@
+/* here you can put your own css to customize and override the theme */
+/*
+  Admin Create Lesson Css
+
+*/
+.form-group div .img_preview[item_type="4"] {
+    width: 60px;
+    height: 35px;
+    left: 50%;
+    cursor: pointer;
+    border:1px solid #bbb;
+}
+
+.content-items[data-type="contents"], .list-container {
+    width: 100%;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.list-container {
+    text-align: center;
+}
+
+.list-container .list-title {
+    position: relative;
+    width: auto;
+    text-align: center;
+}
+
+.list-container .list-title .edit-btns {
+    position: relative;
+    display: inline-block;
+    background: #caffa0;
+    color: #555;
+    border: 1px solid #888;
+    border-radius: 3px;
+    padding: 2px 10px;
+    margin: 3px 5px;
+    cursor: pointer;
+    font-size: 12px;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+
+.list-container .list-title .edit-btns:hover {
+    background: #009965;
+    color: white;
+}
+
+.list-container .content-items {
+    display: inline-block;
+    width: 98%;
+    height: 165px;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.content-titleinfo {
+    position: absolute;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 1px 3px;
+    display: none;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.content-items {
+    text-align: left;
+    padding: 5px 10px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.content-items .list-item {
+    width: 31%;
+    height: auto;
+    text-align: center;
+    display: inline-block;
+    padding: 3px 3px 0;
+    margin: 1px;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    background: transparent;
+    outline-color: transparent;
+}
+
+.content-items .list-item:hover {
+    background: #f0f0f0;
+}
+
+.content-items[data-type="lesson"] .list-item[data-sel="1"] {
+    outline: 1px solid #01cdaf;
+}
+
+.content-items[data-type="contents"] .list-item {
+    width: 100%;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+.content-items .list-item .item-icon,
+.content-items .list-item .item-desc {
+    width: 100%;
+    height: 30px;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.edit-area .content-items .list-item {
+    width: 30%;
+}
+
+.edit-area .content-items .list-item .item-icon {
+    width: 80%;
+    height: 45px;
+}
+
+.edit-area .list-title {
+    text-align: center;
+}
+
+.content-items .list-item .item-desc {
+    width: 100%;
+    height: auto;
+    padding: 3px 0 0;
+    margin: 0;
+}
+
+.content-items .list-item .item-desc > div {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    line-height: 1;
+    padding: 1px 0;
+    margin: 0;
+    text-align: center;
+    pointer-events: none;
+}
+
+.question-editor{
+    position: relative;
+    top:0%;
+    left:0%;
+    width: 100%;
+    height:400px;
+    background: white;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow:  none;
+    box-shadow:  none;
+    border-radius: 0;
+    padding:0;
+    margin:0;
+}
+
+.preview-player{
+    position: absolute;
+    top:0%;
+    left:0%;
+    width: 100%;
+    height:100%;
+    background: white;
+    border: 1px solid #eee;
+    -webkit-box-shadow: 2px 2px 6px #aaa;
+    -moz-box-shadow: 2px 2px 6px #aaa;
+    box-shadow: 2px 2px 6px #aaa;
+    border-radius: 5px;
+}
+
+.preview-player > div{
+    position: absolute;
+    display: none;
+    top:-1%;
+    right:-1%;
+    width: 30px;
+    height:30px;
+    font-size: 25px;
+    color: #aaa;
+    cursor: pointer;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+.preview-player > div:hover{
+    color: #888;
+}
+.preview-player iframe{
+    position: absolute;
+    top:0%;
+    left:0%;
+    width: 100%;
+    height:100%;
+    border:none;
+    outline:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}

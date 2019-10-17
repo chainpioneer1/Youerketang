@@ -24,7 +24,7 @@
 <!--</div>-->
 
 <script>
-    var packageList = JSON.parse('<?php echo json_encode($packageList);?>');
+    var packageList = JSON.parse('<?= json_encode($packageList); ?>');
     var loginUserType = '<?= $this->session->userdata('user_type')?>';
     var loginUserId = '<?= $this->session->userdata('loginuserID')?>';
     var site_id = '<?= $site_id ?>';

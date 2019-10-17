@@ -1,9 +1,9 @@
 <div class="bg"></div>
 
 <div class="work-top-nav">
-    <a href="<?= base_url('student/work/index/'.$site_id) ?>" class="work-task"></a>
-    <a href="<?= base_url('student/work/history/'.$site_id) ?>" class="work-history"></a>
-    <a href="<?= base_url('student/work/wrong/'.$site_id) ?>" class="work-wrong"></a>
+    <a href="<?= base_url('student/work/index/' . $site_id) ?>" class="work-task"></a>
+    <a href="<?= base_url('student/work/history/' . $site_id) ?>" class="work-history"></a>
+    <a href="<?= base_url('student/work/wrong/' . $site_id) ?>" class="work-wrong"></a>
 </div>
 <div class="work-frame" item_type="1">
     <div class="task-list-container"><?= $taskList ?></div>
@@ -70,7 +70,8 @@
     var currentTaskId;
     var curId = 0;
     var bg_str = ['bg.png', 'bg-success.png', 'bg-fail.png'];
-    var btn_str = ['apply.png', 'next.png'];
+    var btn_str = ['apply', 'next'];
+    var btnID = 0;
     var type_str = ['选择', '判断', '语音识别', '语音识别'];
     var btn_status = false;
     // 0:task list, 1:work start
@@ -82,8 +83,8 @@
         reg_step = 1;
         $('.work-frame').hide();
         $('.work-frame[item_type=' + (reg_step) + ']').fadeIn('fast');
-        $('.bg').css({background: 'url(' + baseURL + '/assets/images/student/work/' + bg_str[reg_step - 1] + ')'});
-        $('.work-task').css({background: 'url(' + baseURL + '/assets/images/student/work/work_task_hover.png'});
+        $('.bg').css({'background-image': 'url(' + baseURL + '/assets/images/student/work/' + bg_str[reg_step - 1] + ')'});
+        $('.work-task').css({'background-image': 'url(' + baseURL + '/assets/images/student/work/work_task_hover.png'});
     }
 
     function showResult() {
@@ -98,11 +99,10 @@
         $('.problem-result').hide();
 
         if (marks == 5) {
-            $('.bg').css({background: 'url(' + baseURL + '/assets/images/student/work/' + bg_str[1] + ')'});
+            $('.bg').css({'background-image': 'url(' + baseURL + '/assets/images/student/work/' + bg_str[1] + ')'});
             $('.problem-result[item_type="1"]').show();
-        }
-        else {
-            $('.bg').css({background: 'url(' + baseURL + '/assets/images/student/work/' + bg_str[2] + ')'});
+        } else {
+            $('.bg').css({'background-image': 'url(' + baseURL + '/assets/images/student/work/' + bg_str[2] + ')'});
 //            $('.star-set').hide();
             $('.problem-result[item_type="2"]').show();
         }
@@ -160,8 +160,7 @@
             answer_cnt = 1;
             item.student_first_answer = student_answer;
             item.student_first_result = result;
-        }
-        else answer_cnt++;
+        } else answer_cnt++;
         item.answer_cnt = answer_cnt;
         item.student_answer = student_answer;
         item.result = result;
@@ -171,9 +170,8 @@
         } else {
             $('.wrong-modal .ans-right').html(sel_str[item.prob_answer - 1]);
             $('.wrong-modal').fadeIn('fast');
-            $('.btn-prob-submit').css({
-                background: 'url(' + baseURL + 'assets/images/student/work/' + btn_str[1] + ')'
-            });
+            btnID = 1;
+            $('.btn-prob-submit').attr('data-status','next');
             $('.btn-prob-submit').attr('itemtype', '1');
             btn_status = false;
         }
@@ -187,7 +185,7 @@
         var answer_type = 2;
         if (marks < 5)
             answer_type = 3;
-        var last_spent_time = (new Date()).getTime()/1000 - first_spent_time;
+        var last_spent_time = (new Date()).getTime() / 1000 - first_spent_time;
 
         $.ajax({
             type: "post",
@@ -198,7 +196,7 @@
                 id: currentTaskId,
                 student_mark: marks,
                 answer_type: answer_type,
-                spent_time:last_spent_time
+                spent_time: last_spent_time
             },
             success: function (res) {
                 console.log(res);
@@ -213,8 +211,7 @@
                         else
                             showResult();
                     }, 700);
-                }
-                else//failed
+                } else//failed
                 {
                     alert("Cannot change answer status.");
                 }
@@ -231,10 +228,12 @@
         }
         return Math.ceil(5 * marks / currentProblems.length);
     }
+
     var spent_time = 0;
     var first_spent_time = 0;
+
     function startWork(id) {
-        first_spent_time = (new Date()).getTime()/ 1000;
+        first_spent_time = (new Date()).getTime() / 1000;
         reg_step = 2;
         btn_status = false;
         var item = currentProblems[id];
@@ -250,21 +249,20 @@
             }
             return;
         }
-        $('.btn-prob-submit').css({
-            background: 'url(' + baseURL + 'assets/images/student/work/' + btn_str[0] + ')'
-        })
+        btnID = 0;
+        $('.btn-prob-submit').removeAttr('data-status');
         $('.btn-prob-submit').attr('itemtype', '0');
         $('.work-frame').hide();
         $('.problem-item .ans-img').removeAttr('item_sel');
         if (item.prob_type != 4)
-            $('.bg').css({background: 'url(' + baseURL + '/assets/images/student/work/bg-test' + item.prob_type + '.png)'});
+            $('.bg').css({'background-image': 'url(' + baseURL + '/assets/images/student/work/bg-test' + item.prob_type + '.png)'});
         else
-            $('.bg').css({background: 'url(' + baseURL + '/assets/images/student/work/bg-test3.png)'});
+            $('.bg').css({'background-image': 'url(' + baseURL + '/assets/images/student/work/bg-test3.png)'});
 
         $('.prob-type').html(type_str[parseInt(item.prob_type) - 1]);
         $('.prob-num').html((id + 1) + ' / ' + currentProblems.length);
         if (item.prob_img != null) {
-            $('.prob-img').css({background: 'url(' + baseURL + '/' + item.prob_img + ')'});
+            $('.prob-img').css({'background-image': 'url(' + baseURL + '/' + item.prob_img + ')'});
             $('.prob-img').show();
         } else {
             $('.prob-img').hide();
@@ -276,25 +274,25 @@
             $('.prob-sound').hide();
         }
         if (item.ans_img1 != null) {
-            $('.ans-img[item_type="1"] div').css({background: 'url(' + baseURL + '/' + item.ans_img1 + ')'});
+            $('.ans-img[item_type="1"] div').css({'background-image': 'url(' + baseURL + '/' + item.ans_img1 + ')'});
             $('.ans-img[item_type="1"]').show();
         } else {
             $('.ans-img[item_type="1"]').hide();
         }
         if (item.ans_img2 != null) {
-            $('.ans-img[item_type="2"] div').css({background: 'url(' + baseURL + '/' + item.ans_img2 + ')'});
+            $('.ans-img[item_type="2"] div').css({'background-image': 'url(' + baseURL + '/' + item.ans_img2 + ')'});
             $('.ans-img[item_type="2"]').show();
         } else {
             $('.ans-img[item_type="2"]').hide();
         }
         if (item.ans_img3 != null) {
-            $('.ans-img[item_type="3"] div').css({background: 'url(' + baseURL + '/' + item.ans_img3 + ')'});
+            $('.ans-img[item_type="3"] div').css({'background-image': 'url(' + baseURL + '/' + item.ans_img3 + ')'});
             $('.ans-img[item_type="3"]').show();
         } else {
             $('.ans-img[item_type="3"]').hide();
         }
         if (item.ans_img4 != null) {
-            $('.ans-img[item_type="4"] div').css({background: 'url(' + baseURL + '/' + item.ans_img4 + ')'});
+            $('.ans-img[item_type="4"] div').css({'background-image': 'url(' + baseURL + '/' + item.ans_img4 + ')'});
             $('.ans-img[item_type="4"]').show();
         } else {
             $('.ans-img[item_type="4"]').hide();
@@ -307,8 +305,8 @@
         }
         switch (item.prob_type) {
             case '2':
-                $('.ans-img[item_type="1"] div').css({background: 'url(' + baseURL + '/assets/images/student/work/yes.png)'});
-                $('.ans-img[item_type="2"] div').css({background: 'url(' + baseURL + '/assets/images/student/work/no.png)'});
+                $('.ans-img[item_type="1"] div').css({'background-image': 'url(' + baseURL + '/assets/images/student/work/yes.png)'});
+                $('.ans-img[item_type="2"] div').css({'background-image': 'url(' + baseURL + '/assets/images/student/work/no.png)'});
                 $('.ans-img[item_type="1"]').show();
                 $('.ans-img[item_type="2"]').show();
                 $('.ans-img[item_type="3"]').hide();
@@ -336,6 +334,7 @@
         btn_status = false;
         $('.problem-item .ans-img').removeAttr('item_sel');
         $(this).attr('item_sel', '1');
+        $('.btn-prob-submit').attr('data-status',1);
     })
     $('.btn-finish').on('click', function (object) {
         location.reload();
@@ -370,7 +369,7 @@
                 imgId++;
                 if (imgId > 4) imgId = 1;
                 $('.prob-sound').css({
-                    background: 'url(' + baseURL + 'assets/images/student/work/play' + imgId + '.png)'
+                    'background-image': 'url(' + baseURL + 'assets/images/student/work/play' + imgId + '.png)'
                 })
             }, 500);
             effecSoundPlay($(this).attr('item_src'), stopSound);
@@ -381,7 +380,7 @@
         effecSoundPlay('');
         imgId = 0;
         clearInterval(interval);
-        $('.prob-sound').css({background: 'url(' + baseURL + 'assets/images/student/work/play.png)'})
+        $('.prob-sound').css({'background-image': 'url(' + baseURL + 'assets/images/student/work/play.png)'})
         $('.ans-replay').removeAttr('item_sel');
         problemAnswerAudioPause();
     }
@@ -392,8 +391,9 @@
             interval = setInterval(function () {
                 imgId++;
                 if (imgId > 4) imgId = 1;
-                $('.ans-record').css({background: 'url(' + baseURL + 'assets/images/student/work/record' + imgId + '.png)'})
-            }, 1000);
+                $('.ans-record').css({'background-image': 'url(' + baseURL + 'assets/images/student/work/record' + imgId + '.png)'})
+            }, 500);
+            $('.ans-record').attr('item_sel', '1');
             problemAnswerAudioRecord();
 //            effecSoundPlay($(this).attr('item_src'), stopRecord);
         } else stopRecord();
@@ -404,9 +404,11 @@
         problemAnswerAudioRecordStop(currentTaskId, curId);
         imgId = 0;
         clearInterval(interval);
-        $('.ans-record').css({background: 'url(' + baseURL + 'assets/images/student/work/record.png)'})
+        $('.ans-record').css({'background-image': 'url(' + baseURL + 'assets/images/student/work/record.png)'})
         currentProblems[curId].ans_audio = 'uploads/problem_set/answer/' + currentTaskId + "_" + curId + "_" + 'answer_mp3.mp3';
         btn_status = false;
+        $('.ans-record').removeAttr('item_sel');
+        $('.btn-prob-submit').attr('data-status',1);
     }
 
     $('.ans-replay').on('click', function () {
@@ -418,8 +420,8 @@
             console.log("--------------" + audio_path);
             effecSoundPlay(audio_path, stopSound);
             interval = setInterval(function () {
-                $('.ans-replay').attr('item_sel', '1');
             }, 500);
+            $('.ans-replay').attr('item_sel', '1');
             problemAnswerAudioPlay();
         } else {
             stopSound()

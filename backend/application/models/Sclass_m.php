@@ -48,6 +48,17 @@ class Sclass_m extends MY_Model
         }
         return $class;
     }
+    public function getAllStudents($class_id)
+    {
+        $this->db->select('tbl_user.*');
+        $this->db->select('tbl_yekt_class.class_name');
+        $this->db->from('tbl_user');
+        $this->db->join('tbl_yekt_class', 'tbl_yekt_class.id = tbl_user.class_id');
+        $this->db->where('tbl_yekt_class.id', $class_id);
+        $query = $this->db->get();
+        $result = $query->result();
+        return $result;
+    }
 
     function insert($array)
     {

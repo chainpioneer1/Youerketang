@@ -13,6 +13,13 @@ class Users_m extends MY_Model
         parent::__construct();
     }
 
+    public function update_usage_time()
+    {
+        $loginUserId = $this->session->userdata('loginuserID');
+        $userInfo = array('update_time' => date('Y-m-d H:i:s'));
+        $this->edit($userInfo, $loginUserId);
+    }
+
     public function get_where_count($arr = array())
     {
         $this->db->where($arr)
@@ -24,15 +31,55 @@ class Users_m extends MY_Model
         return $query->num_rows();
     }
 
-    public function get_users()
+    public function get_users($type = 'all')
     {
         $this->db->select($this->_table_name . '.*');
-        $this->db->select("tbl_activation.code, tbl_activation.activate_time");
+        $this->db->select("tbl_activation.code, tbl_activation.status as code_status");
+        $this->db->select(" tbl_activation.activate_time, tbl_activation.expire_time");
+        $this->db->select("tbl_activation.used_status");
         $this->db->select('tbl_sites.title as site_name');
+        switch ($type) {
+            case 'all':
+                break;
+            case 'teacher':
+                $this->db->where($this->_table_name . '.user_type', 1);
+                break;
+            case 'student':
+                $this->db->where($this->_table_name . '.user_type', 2);
+                break;
+        }
         $this->db->from($this->_table_name)
             ->join('tbl_activation', $this->_table_name . '.id = tbl_activation.user_id and tbl_activation.used_status = 1', 'left')
-            ->join('tbl_sites', 'tbl_user.site_id = tbl_sites.id', 'left')
+            ->join('tbl_sites', 'tbl_activation.site_id = tbl_sites.id', 'left')
             ->order_by($this->_order_by);
+        $this->db->group_by($this->_table_name.'.id');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function get_paid_users($type = 'all')
+    {
+        $this->db->select($this->_table_name . '.*');
+        $this->db->select("tbl_activation.code, tbl_activation.status as code_status");
+        $this->db->select(" tbl_activation.activate_time, tbl_activation.expire_time");
+        $this->db->select("tbl_activation.used_status");
+        $this->db->select('tbl_sites.title as site_name');
+        switch ($type) {
+            case 'all':
+                break;
+            case 'teacher':
+                $this->db->where($this->_table_name . '.user_type', 1);
+                break;
+            case 'student':
+                $this->db->where($this->_table_name . '.user_type', 2);
+                break;
+        }
+        $this->db->where('tbl_activation.used_status = 1');
+        $this->db->from('tbl_activation')
+            ->join($this->_table_name, $this->_table_name . '.id = tbl_activation.user_id', 'left')
+            ->join('tbl_sites', 'tbl_activation.site_id = tbl_sites.id', 'left')
+            ->order_by($this->_order_by);
+        $this->db->order_by('tbl_activation.expire_time asc');
         $query = $this->db->get();
         return $query->result();
     }
@@ -47,6 +94,14 @@ class Users_m extends MY_Model
         $this->db->where($this->_primary_key, $item_id);
         $this->db->update($this->_table_name, $arr);
         return $item_id;
+    }
+
+    public function publish($item_id, $publish_st)//$stop_st==1 then enabled state, $stop_st == 0 then Disabled
+    {
+        $this->db->set('user_status', $publish_st);
+        $this->db->where('id', $item_id);
+        $this->db->update('tbl_user');
+        return;
     }
 
     public function add($param)
@@ -71,15 +126,15 @@ class Users_m extends MY_Model
 
     public function get_single_user($user_id)
     {
-
         $this->db->select($this->_table_name . '.*');
-        $this->db->select("tbl_activation.code, tbl_activation.activate_time, tbl_activation.expire_time");
+        $this->db->select("tbl_activation.code, tbl_activation.activate_time");
+        $this->db->select("tbl_activation.expire_time");
         $this->db->select('tbl_sites.title as site_name');
         $this->db->from($this->_table_name)
             ->join('tbl_activation', $this->_table_name . '.id = tbl_activation.user_id and tbl_activation.used_status = 1', 'left')
-            ->join('tbl_sites', 'tbl_user.site_id = tbl_sites.id', 'left')
+            ->join('tbl_sites', 'tbl_activation.site_id = tbl_sites.id', 'left')
             ->order_by($this->_order_by);
-        $this->db->where($this->_table_name.'.id', $user_id);
+        $this->db->where($this->_table_name . '.id', $user_id);
         $query = $this->db->get();
 
         return $query->row();
@@ -107,14 +162,14 @@ class Users_m extends MY_Model
         $result = $this->db->get()->result();
 
         foreach ($result as $item) {
-            if ($item->user_type==1 && $item->user_class == ''){
+            if ($item->user_type == 1 && $item->user_class == '') {
                 $user_class = $this->sclass_m->getUserClass($item->id);
                 $this->update(array('user_class' => $user_class), $item->id);
             }
-            if ($item->user_type==2 && $item->user_school == ''){
-                $user_class = $this->sclass_m->get_where(array('class_name'=>$item->user_class))[0];
-                $user_school= $this->get_where(array('id'=>$user_class->teacher_id))[0];
-                $this->edit(array('user_school'=>$user_school->user_school), $item->id);
+            if ($item->user_type == 2 && $item->user_school == '') {
+                $user_class = $this->sclass_m->get_where(array('class_name' => $item->user_class))[0];
+                $user_school = $this->get_where(array('id' => $user_class->teacher_id))[0];
+                $this->edit(array('user_school' => $user_school->user_school), $item->id);
             }
         }
         return true;
@@ -146,6 +201,7 @@ class Users_m extends MY_Model
         $query = $this->db->get();
         return $query->result();
     }
+
     function getAreas()
     {
         $this->db->select('user_address');

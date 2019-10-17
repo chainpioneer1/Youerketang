@@ -3,6 +3,8 @@
 class Usermanage extends Admin_Controller
 {
 
+    protected $mainModel;
+
     function __construct()
     {
         parent::__construct();
@@ -16,19 +18,98 @@ class Usermanage extends Admin_Controller
         $this->lang->load('courses', $language);
         $this->load->library("pagination");
 
+        $this->mainModel = $this->users_m;
+
     }
 
     public function index()
     {
-        $this->prepareUserInfo();
-        $this->data['items'] = $this->users_m->get_users();
-//        $this->data['user_areas'] = $this->users_m->getAreas();
-//        $this->data['user_class'] = $this->users_m->getSchools();
+        $this->main_manage('teacher');
+    }
+
+    public function student()
+    {
+        $this->main_manage('student');
+    }
+
+    public function paid_status()
+    {
+        $this->main_manage('paid_status');
+    }
+
+    public function coming_soon()
+    {
         $this->data["subview"] = "admin/users/index";
         $this->data["subscript"] = "admin/settings/script";
         $this->data["subcss"] = "admin/settings/css";
-        $this->data["tbl_content"] = $this->output_content($this->data['items']);
-        if (!$this->checkRole()) {
+        $this->load->view('admin/_layout_error', $this->data);
+    }
+
+    public function getUserDetails()
+    {
+        $ret = array(
+            'data' => '操作失败',
+            'status' => 'fail'
+        );
+        if (!$this->adminsignin_m->loggedin() && !$this->signin_m->loggedin()) {
+            echo json_encode($ret);
+            return;
+        }
+        if ($_POST) {
+            $id = $_POST['id'];
+            $userItem = $this->mainModel->get_where(array('id' => $id));
+            if ($userItem == null) {
+                $ret['data'] = '用户没有存在';
+                echo json_decode($ret);
+                return;
+            }
+            $userItem = $userItem[0];
+            $activationItems = $this->activationcodes_m->get_where(array('user_id' => $id));
+            $classItems = $this->sclass_m->get_where(array('teacher_id' => $id));
+            $allStudents = array();
+            if ($classItems != null)
+                $allStudents = $this->sclass_m->getAllStudents($classItems[0]->id);
+
+            $ret['data'] = array(
+                'item' => $userItem,
+                'activationItems' => $activationItems,
+                'classItems' => $classItems,
+                'allStudents' => $allStudents
+            );
+            $ret['status'] = 'success';
+        }
+        echo json_encode($ret);
+    }
+
+    public function main_manage($type = 'teacher')
+    {
+        $this->prepareUserInfo();
+        $this->data['items'] = $this->users_m->get_users($type);
+//        $this->data['user_areas'] = $this->users_m->getAreas();
+//        $this->data['user_class'] = $this->users_m->getSchools();
+        $this->data['pageType'] = $type;
+        $this->data["subview"] = "admin/users/index";
+        $this->data["subscript"] = "admin/settings/script";
+        $this->data["subcss"] = "admin/settings/css";
+        $roleType = 50;
+        switch ($type) {
+            case 'teacher':
+                $this->data['items'] = $this->users_m->get_users($type);
+                $this->data["tbl_content"] = $this->output_content($this->data['items']);
+                break;
+            case 'student':
+                $roleType = 51;
+                $this->data['items'] = $this->users_m->get_users($type);
+                $this->data["tbl_content"] = $this->output_content_student($this->data['items']);
+                break;
+            case 'paid_status':
+                $roleType = 61;
+                $this->data['items'] = $this->users_m->get_paid_users($type);
+                $this->data["tbl_content"] = $this->output_content_paid($this->data['items']);
+                break;
+        }
+
+        if (!$this->checkRole($roleType)) {
             $this->load->view('admin/_layout_error', $this->data);
         } else {
             $this->load->view('admin/_layout_main', $this->data);
@@ -40,14 +121,17 @@ class Usermanage extends Admin_Controller
         $users = $this->users_m->getUnusedItems();
     }
 
-    function output_content($items)
+    function output_content($items, $type = 'teacher')
     {
         $output_html = '';
         $j = 0;
 //        for ($i = 0; $i < 10; $i++)
+        $btn_str = ['启用', '禁用', '修改', '删除'];
         foreach ($items as $unit):
             $j++;
             $gender = '';
+
+            $editable = $unit->user_status == 0;
             if ($unit->gender == '1') $gender = $this->lang->line('male');
             else if ($unit->gender == '2') $gender = $this->lang->line('female');
             $user_type = '';
@@ -57,30 +141,161 @@ class Usermanage extends Admin_Controller
             $userInfo = json_decode($unit->user_info);
             $output_html .= '<tr item_id="' . $unit->id . '">';
             $output_html .= '<td>' . $unit->user_account . '</td>';
-            $output_html .= '<td>' . $unit->code . '</td>';
+//            $output_html .= '<td>' . $unit->code . '</td>';
             $output_html .= '<td>' . $unit->user_name . '</td>';
-            $output_html .= '<td>' . $gender . '</td>';
-            $output_html .= '<td>' . $unit->user_class . '</td>';
+//            $output_html .= '<td>' . $gender . '</td>';
+//            $output_html .= '<td>' . $unit->user_class . '</td>';
             $output_html .= '<td>' . $unit->user_address . '</td>';
             $output_html .= '<td>' . $unit->user_school . '</td>';
-            $output_html .= '<td>' . $user_type . '</td>';
+//            $output_html .= '<td>' . $user_type . '</td>';
+//            if ($unit->user_type == '1')
+//                $output_html .= '<td>' . $unit->user_phone . '</td>';
+//            else if ($unit->user_type == '2')
+//                $output_html .= '<td>' . $unit->user_account . '</td>';
+            $output_html .= '<td>' . $unit->create_time . '</td>';
+            $output_html .= '<td>' . $unit->register_time . '</td>';
+            $output_html .= '<td>';
+            $viewable = true;
+            $output_html .= '<button style="" '
+                . ' class="btn btn-sm ' . ($viewable ? 'btn-success' : 'disabled') . '" '
+                . ' onclick = "' . ($viewable ? 'view_item(this);' : '') . '" '
+                . ' item_info = \'' . json_encode($unit) . '\' '
+                . ' item_id = "' . $unit->id . '">'
+                . '查看</button>';
+//            $output_html .= '<button style="" '
+//                . ' class="btn btn-sm btn-success ' . ($editable ? 'btn-success' : 'disabled') . '" '
+//                . ' onclick = "' . ($editable ? 'update_item(this);' : '') . '" '
+//                . ' item_info = \'' . json_encode($unit) . '\' '
+//                . ' item_id = "' . $unit->id . '">'
+//                . '修改</button>';
+            $output_html .= '<button style=""'
+                . ' class="btn btn-sm ' . ($editable ? 'btn-danger' : 'disabled') . '"'
+                . ' onclick = "' . ($editable ? 'deleteItem(this);' : '') . '"'
+                . ' item_id = "' . $unit->id . '">'
+                . $this->lang->line('delete') . '</button>';
+            $output_html .= '<button'
+                . ' class="btn btn-sm ' . ($editable ? 'btn-default' : 'btn-warning') . '"'
+                . ' onclick = "publishItem(this);"'
+                . ' data-status = "' . $unit->user_status . '"'
+                . ' data-id = "' . $unit->id . '">'
+                . $btn_str[$unit->user_status] . '</button>';
+            $output_html .= '</td>';
+            $output_html .= '</tr>';
+        endforeach;
+        return $output_html;
+    }
+
+    function output_content_paid($items, $type = 'teacher')
+    {
+        $output_html = '';
+        $j = 0;
+//        for ($i = 0; $i < 10; $i++)
+        $btn_str = ['启用', '禁用', '修改', '删除'];
+        $userArr = $this->removeDuplicated($items, 'user_account');
+
+        foreach ($userArr as $unit):
+            $j++;
+            $gender = '';
+            $siteArr = array_filter($items, function ($_item) use ($unit) {
+                return ($_item->user_account == $unit->user_account && $_item->used_status == 1);
+            }, ARRAY_FILTER_USE_BOTH);
+            $siteStr = '';
+            foreach ($siteArr as $subject) {
+                if ($siteStr != '') $siteStr .= ', ';
+                $siteStr .= $subject->site_name;
+            }
+            $editable = $unit->user_status == 0;
+            if ($unit->gender == '1') $gender = $this->lang->line('male');
+            else if ($unit->gender == '2') $gender = $this->lang->line('female');
+            $user_type = '';
+            if ($unit->user_type == '1') $user_type = $this->lang->line('teacher');
+            else if ($unit->user_type == '2') $user_type = $this->lang->line('student');
+
+            $userInfo = json_decode($unit->user_info);
+            $output_html .= '<tr item_id="' . $unit->id . '">';
+            $output_html .= '<td>' . $unit->user_account . '</td>';
+            $output_html .= '<td>' . $unit->user_name . '</td>';
+            $output_html .= '<td>' . $unit->user_address . '</td>';
+            $output_html .= '<td>' . $unit->user_school . '</td>';
+            $output_html .= '<td>' . count($siteArr) . '</td>';
+//            $output_html .= '<td>' . $user_type . '</td>';
+//            if ($unit->user_type == '1')
+//                $output_html .= '<td>' . $unit->user_phone . '</td>';
+//            else if ($unit->user_type == '2')
+//                $output_html .= '<td>' . $unit->user_account . '</td>';
+            $output_html .= '<td>' . $siteStr . '</td>';
+            $output_html .= '<td>' . $unit->expire_time . '</td>';
+            $output_html .= '<td>';
+            $viewable = true;
+            $output_html .= '<button style="" '
+                . ' class="btn btn-sm ' . ($viewable ? 'btn-success' : 'disabled') . '" '
+                . ' onclick = "' . ($viewable ? 'view_item(this);' : '') . '" '
+                . ' item_info = \'' . json_encode($unit) . '\' '
+                . ' item_id = "' . $unit->id . '">'
+                . '查看</button>';
+//            $output_html .= '<button style="" '
+//                . ' class="btn btn-sm btn-success ' . ($editable ? 'btn-success' : 'disabled') . '" '
+//                . ' onclick = "' . ($editable ? 'update_item(this);' : '') . '" '
+//                . ' item_info = \'' . json_encode($unit) . '\' '
+//                . ' item_id = "' . $unit->id . '">'
+//                . '修改</button>';
+            $output_html .= '<button style=""'
+                . ' class="btn btn-sm ' . ($editable ? 'btn-danger' : 'disabled') . '"'
+                . ' onclick = "' . ($editable ? 'deleteItem(this);' : '') . '"'
+                . ' item_id = "' . $unit->id . '">'
+                . $this->lang->line('delete') . '</button>';
+            $output_html .= '<button'
+                . ' class="btn btn-sm ' . ($editable ? 'btn-default' : 'btn-warning') . '"'
+                . ' onclick = "publishItem(this);"'
+                . ' data-status = "' . $unit->user_status . '"'
+                . ' data-id = "' . $unit->id . '">'
+                . $btn_str[$unit->user_status] . '</button>';
+            $output_html .= '</td>';
+            $output_html .= '</tr>';
+        endforeach;
+        return $output_html;
+    }
+
+    function output_content_student($items, $type = 'teacher')
+    {
+        $output_html = '';
+        $j = 0;
+//        for ($i = 0; $i < 10; $i++)
+        $btn_str = ['启用', '禁用', '修改', '删除'];
+        foreach ($items as $unit):
+            $j++;
+            $gender = '';
+
+            $editable = $unit->user_status == 0;
+            if ($unit->gender == '1') $gender = $this->lang->line('male');
+            else if ($unit->gender == '2') $gender = $this->lang->line('female');
+            $user_type = '';
+            if ($unit->user_type == '1') $user_type = $this->lang->line('teacher');
+            else if ($unit->user_type == '2') $user_type = $this->lang->line('student');
+
+            $userInfo = json_decode($unit->user_info);
+            $output_html .= '<tr item_id="' . $unit->id . '">';
+            $output_html .= '<td>' . $unit->user_account . '</td>';
+            $output_html .= '<td>' . $unit->user_name . '</td>';
+            $output_html .= '<td>' . $unit->user_address . '</td>';
+            $output_html .= '<td>' . $unit->user_school . '</td>';
             if ($unit->user_type == '1')
                 $output_html .= '<td>' . $unit->user_phone . '</td>';
             else if ($unit->user_type == '2')
                 $output_html .= '<td>' . $unit->user_account . '</td>';
             $output_html .= '<td>' . $unit->create_time . '</td>';
             $output_html .= '<td>';
-            $output_html .= '<button style="width:70px;" '
-                . ' class="btn btn-sm btn-success" '
-                . ' onclick = "update_item(this);" '
-                . ' item_info = \'' . json_encode($unit) . '\' '
-                . ' item_id = "' . $unit->id . '">'
-                . $this->lang->line('update') . '</button>';
-            $output_html .= '<button style="width:70px;"'
-                . ' class="btn btn-sm btn-danger"'
-                . ' onclick = "delete_item(this);"'
+            $output_html .= '<button style=""'
+                . ' class="btn btn-sm btn-danger ' . ($editable ? 'btn-success' : 'disabled') . '"'
+                . ' onclick = "' . ($editable ? 'deleteItem(this);' : '') . '"'
                 . ' item_id = "' . $unit->id . '">'
                 . $this->lang->line('delete') . '</button>';
+            $output_html .= '<button'
+                . ' class="btn btn-sm ' . ($editable ? 'btn-default' : 'btn-warning') . '"'
+                . ' onclick = "publishItem(this);"'
+                . ' data-status = "' . $unit->user_status . '"'
+                . ' data-id = "' . $unit->id . '">'
+                . $btn_str[$unit->user_status] . '</button>';
             $output_html .= '</td>';
             $output_html .= '</tr>';
         endforeach;
@@ -95,7 +310,7 @@ class Usermanage extends Admin_Controller
         $this->data["subscript"] = "admin/settings/script";
         $this->data["subcss"] = "admin/settings/css";
         $this->data["tbl_content"] = $this->register_status_content($this->data['items']);
-        if (!$this->checkRole()) {
+        if (!$this->checkRole(60)) {
             $this->load->view('admin/_layout_error', $this->data);
         } else {
             $this->load->view('admin/_layout_main', $this->data);
@@ -113,13 +328,20 @@ class Usermanage extends Admin_Controller
             $user_type = '';
             if ($unit->user_type == 1) $user_type = $this->lang->line('teacher');
             else if ($unit->user_type == 2) $user_type = $this->lang->line('student');
+
+            $lastUsedTime = strtotime($unit->update_time) - strtotime($unit->register_time);
+            if ($lastUsedTime < 0) $lastUsedTime = 0;
+            $hh = intval($lastUsedTime / 3600);
+            $mm = intval(($lastUsedTime % 3600) / 60) + 1;
+
             $output_html .= '<tr>';
-            $output_html .= '<td>' . $j . '</td>';
+//            $output_html .= '<td>' . $j . '</td>';
             $output_html .= '<td>' . $unit->user_account . '</td>';
             $output_html .= '<td>' . $unit->site_name . '</td>';
             $output_html .= '<td>' . $user_type . '</td>';
             $output_html .= '<td>' . $unit->activate_time . '</td>';
             $output_html .= '<td>' . $unit->register_time . '</td>';
+            $output_html .= '<td>' . $hh . '小时' . $mm . "分钟" . '</td>';
             $output_html .= '<td>' . $unit->register_count . '</td>';
             $output_html .= '</tr>';
         endforeach;
@@ -301,6 +523,36 @@ class Usermanage extends Admin_Controller
         echo json_encode($ret);
     }
 
+    public function publishItem()
+    {
+        $ret = array(
+            'data' => '操作失败',
+            'status' => 'fail'
+        );
+        if (!$this->adminsignin_m->loggedin()) {
+            echo json_encode($ret);
+            return;
+        }
+        if ($_POST) {
+            $id = $_POST['id'];
+            $status = $_POST['status'];
+            if ($id < 0) {
+                $filter = array();
+                $this->session->userdata('filter') != null && $filter = $this->session->userdata('filter');
+                $pageId = 0;
+                if (isset($_POST['pageId'])) $pageId = $_POST['pageId'];
+                $perPage = PERPAGE;
+                $lists = $this->mainModel->getItemsByPage($filter, $pageId, $perPage);
+                foreach ($lists as $item) $this->mainModel->publish($item->id, $status);
+            } else {
+                $this->mainModel->publish($id, $status);
+            }
+            $ret['data'] = $ret['data'] = '操作成功';//$this->output_content($items);
+            $ret['status'] = 'success';
+        }
+        echo json_encode($ret);
+    }
+
     function generateRandomString($length = 10)
     {
         $characters = '23456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';
@@ -312,12 +564,30 @@ class Usermanage extends Admin_Controller
         return $randomString;
     }
 
-    function checkRole()
+    function removeDuplicated($data = array(), $key = '')
     {
+        $_data = array();
+        if ($data == null) return array();
+        if ($key == '') return array();
+        foreach ($data as $v) {
+            if (isset($_data[$v->{$key}])) {
+                // found duplicate
+                continue;
+            }
+            // remember unique item
+            $_data[$v->{$key}] = $v;
+        }
+        return $_data;
+    }
+
+
+    function checkRole($id = 50)
+    {
+        $this->data['roleName'] = $id;
         $permission = $this->session->userdata('admin_user_type');
         if ($permission != NULL) {
-            $permissionData = json_decode($permission);
-            $accessInfo = $permissionData->menu_20;
+            $permissionData = (array)(json_decode($permission));
+            $accessInfo = $permissionData['menu_' . $id];
             if ($accessInfo == '1') return true;
             else return false;
         }

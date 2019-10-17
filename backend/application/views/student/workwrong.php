@@ -82,8 +82,8 @@
         $('.work-frame[item_type=' + (reg_step) + ']').fadeIn('fast');
         $('.right-modal').fadeOut('fast');
         $('.wrong-modal').fadeOut('fast');
-        $('.bg').css({background: 'url(' + baseURL + '/assets/images/student/work/' + bg_str[reg_step - 1] + ')'});
-        $('.work-wrong').css({background: 'url(' + baseURL + '/assets/images/student/work/work_wrong_hover.png'});
+        $('.bg').css({'background-image':'url(' + baseURL + '/assets/images/student/work/' + bg_str[reg_step - 1] + ')'});
+        $('.work-wrong').css({'background-image':'url(' + baseURL + '/assets/images/student/work/work_wrong_hover.png'});
     }
 
     function showResult() {
@@ -95,8 +95,8 @@
         }
         $('.work-frame').hide();
         $('.work-frame[item_type=' + (reg_step) + ']').fadeIn('fast');
-        if (marks == 5) $('.bg').css({background: 'url(' + baseURL + '/assets/images/student/work/' + bg_str[1] + ')'});
-        else $('.bg').css({background: 'url(' + baseURL + '/assets/images/student/work/' + bg_str[2] + ')'});
+        if (marks == 5) $('.bg').css({'background-image':'url(' + baseURL + '/assets/images/student/work/' + bg_str[1] + ')'});
+        else $('.bg').css({'background-image':'url(' + baseURL + '/assets/images/student/work/' + bg_str[2] + ')'});
     }
 
     $('.task-info[item_hover="1"]').on('click', function (object) {
@@ -227,16 +227,17 @@
         }
         console.log('solving');
         $('.work-frame').hide();
+        $('.btn-prob-submit').removeAttr('data-status');
         $('.problem-item .ans-img').removeAttr('item_sel');
         if (item.prob_type != 4)
-            $('.bg').css({background: 'url(' + baseURL + '/assets/images/student/work/wrong-bg-test' + item.prob_type + '.png)'});
+            $('.bg').css({'background-image':'url(' + baseURL + '/assets/images/student/work/wrong-bg-test' + item.prob_type + '.png)'});
         else
-            $('.bg').css({background: 'url(' + baseURL + '/assets/images/student/work/wrong-bg-test3.png)'});
+            $('.bg').css({'background-image':'url(' + baseURL + '/assets/images/student/work/wrong-bg-test3.png)'});
 
         $('.prob-type').html(type_str[parseInt(item.prob_type) - 1]);
         $('.prob-num').html((id + 1) + ' / ' + currentProblems.length);
         if (item.prob_img != null) {
-            $('.prob-img').css({background: 'url(' + baseURL + '/' + item.prob_img + ')'});
+            $('.prob-img').css({'background-image':'url(' + baseURL + '/' + item.prob_img + ')'});
             $('.prob-img').show();
         } else {
             $('.prob-img').hide();
@@ -248,25 +249,25 @@
             $('.prob-sound').hide();
         }
         if (item.ans_img1 != null) {
-            $('.ans-img[item_type="1"] div').css({background: 'url(' + baseURL + '/' + item.ans_img1 + ')'});
+            $('.ans-img[item_type="1"] div').css({'background-image':'url(' + baseURL + '/' + item.ans_img1 + ')'});
             $('.ans-img[item_type="1"]').show();
         } else {
             $('.ans-img[item_type="1"]').hide();
         }
         if (item.ans_img2 != null) {
-            $('.ans-img[item_type="2"] div').css({background: 'url(' + baseURL + '/' + item.ans_img2 + ')'});
+            $('.ans-img[item_type="2"] div').css({'background-image':'url(' + baseURL + '/' + item.ans_img2 + ')'});
             $('.ans-img[item_type="2"]').show();
         } else {
             $('.ans-img[item_type="2"]').hide();
         }
         if (item.ans_img3 != null) {
-            $('.ans-img[item_type="3"] div').css({background: 'url(' + baseURL + '/' + item.ans_img3 + ')'});
+            $('.ans-img[item_type="3"] div').css({'background-image':'url(' + baseURL + '/' + item.ans_img3 + ')'});
             $('.ans-img[item_type="3"]').show();
         } else {
             $('.ans-img[item_type="3"]').hide();
         }
         if (item.ans_img4 != null) {
-            $('.ans-img[item_type="4"] div').css({background: 'url(' + baseURL + '/' + item.ans_img4 + ')'});
+            $('.ans-img[item_type="4"] div').css({'background-image':'url(' + baseURL + '/' + item.ans_img4 + ')'});
             $('.ans-img[item_type="4"]').show();
         } else {
             $('.ans-img[item_type="4"]').hide();
@@ -279,8 +280,8 @@
         }
         switch (item.prob_type) {
             case '2':
-                $('.ans-img[item_type="1"] div').css({background: 'url(' + baseURL + '/assets/images/student/work/yes.png)'});
-                $('.ans-img[item_type="2"] div').css({background: 'url(' + baseURL + '/assets/images/student/work/no.png)'});
+                $('.ans-img[item_type="1"] div').css({'background-image':'url(' + baseURL + '/assets/images/student/work/yes.png)'});
+                $('.ans-img[item_type="2"] div').css({'background-image':'url(' + baseURL + '/assets/images/student/work/no.png)'});
                 $('.ans-img[item_type="1"]').show();
                 $('.ans-img[item_type="2"]').show();
                 $('.ans-img[item_type="3"]').hide();
@@ -307,6 +308,7 @@
     $('.problem-item .ans-img').on('click', function (object) {
         $('.problem-item .ans-img').removeAttr('item_sel');
         $(this).attr('item_sel', '1');
+        $('.btn-prob-submit').attr('data-status',1);
     })
     $('.btn-finish').on('click', function (object) {
         $('.btn-prob-back').trigger('click');
@@ -335,7 +337,7 @@
                 imgId++;
                 if (imgId > 4) imgId = 1;
                 $('.prob-sound').css({
-                    background: 'url(' + baseURL + 'assets/images/student/work/wrong-play' + imgId + '.png)'
+                    'background-image':'url(' + baseURL + 'assets/images/student/work/play' + imgId + '.png)'
                 })
             }, 500);
             effecSoundPlay($(this).attr('item_src'), stopSound);
@@ -346,7 +348,7 @@
         effecSoundPlay('');
         imgId = 0;
         clearInterval(interval);
-        $('.prob-sound').css({background: 'url(' + baseURL + 'assets/images/student/work/wrong-play.png)'})
+        $('.prob-sound').css({'background-image':'url(' + baseURL + 'assets/images/student/work/play.png)'})
         $('.ans-replay').removeAttr('item_sel');
         problemAnswerAudioPause();
     }
@@ -357,7 +359,7 @@
             interval = setInterval(function () {
                 imgId++;
                 if (imgId > 4) imgId = 1;
-                $('.ans-record').css({background: 'url(' + baseURL + 'assets/images/student/work/wrong-record' + imgId + '.png)'})
+                $('.ans-record').css({'background-image':'url(' + baseURL + 'assets/images/student/work/record' + imgId + '.png)'})
             }, 500);
             problemAnswerAudioRecord();
 //            effecSoundPlay($(this).attr('item_src'), stopRecord);
@@ -369,7 +371,8 @@
         problemAnswerAudioRecordStop(currentTaskId, curId);
         imgId = 0;
         clearInterval(interval);
-        $('.ans-record').css({background: 'url(' + baseURL + 'assets/images/student/work/wrong-record.png)'})
+        $('.ans-record').css({'background-image':'url(' + baseURL + 'assets/images/student/work/record.png)'})
+        $('.btn-prob-submit').attr('data-status',1);
     }
 
     $('.ans-replay').on('click', function () {

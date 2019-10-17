@@ -90,13 +90,14 @@ class Banner extends Admin_Controller
         return $output;
     }
 
-    function checkRole()
+
+    function checkRole($id = '00')
     {
-        return true;
+        $this->data['roleName'] = $id;
         $permission = $this->session->userdata('admin_user_type');
         if ($permission != NULL) {
-            $permissionData = json_decode($permission);
-            $accessInfo = $permissionData[3]->banner_st;
+            $permissionData = (array)(json_decode($permission));
+            $accessInfo = $permissionData['menu_' . $id];
             if ($accessInfo == '1') return true;
             else return false;
         }

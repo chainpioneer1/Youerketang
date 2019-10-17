@@ -7,6 +7,7 @@ class Signin_m extends MY_Model
     {
         parent::__construct();
         $this->db->query('update tbl_activation set used_status=2 where TIME_TO_SEC(TIMEDIFF(tbl_activation.expire_time, now()))<0');
+        $this->load->model("users_m");
     }
 
     public function hash($string)
@@ -29,8 +30,9 @@ class Signin_m extends MY_Model
 
     public function loggedin()
     {
-        return (bool)$this->session->userdata("loggedin");
-        //return TRUE;
+        $isLoggedIn = (bool)$this->session->userdata("loggedin");
+        if($isLoggedIn) $this->users_m->update_usage_time();
+        return $isLoggedIn;
     }
 
     public function signin($uaccount = '', $utype = '', $upassword = '')

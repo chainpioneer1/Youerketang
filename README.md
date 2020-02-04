@@ -30,4 +30,4 @@ iOS Package : Youerketang.ipa
 
 > Live Site : http://hllyekt.hulalaedu.com
 >
-> Contact Developer Email : gong.fei@outlook.com
+> Contact Developer Email : pandaworld1985@outlook.com

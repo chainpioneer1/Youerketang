@@ -30,4 +30,4 @@ iOS Package : Youerketang.ipa
 
 > Live Site : http://hllyekt.hulalaedu.com
 >
-> Contact Developer : [LinkedIn](https://www.linkedin.com/in/astonishgong/)
+> Contact Developer : https://www.linkedin.com/in/astonishgong/
